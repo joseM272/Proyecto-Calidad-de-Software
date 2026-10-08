@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos de Calidad</title>
+     <link rel="stylesheet" href="CSS/estilos.css" />
+       <link rel="icon" href="fotos/Logo.jpg" type="image/png">
+    <script src="JS/script.js" defer></script>
+  </head>
+  <body>
+          <header class="topbar">
+      <nav class="nav container" aria-label="Navegación principal">
+        <ul class="nav__menu">
+            <li><a href="index.html">Inicio</a></li>
+          <li><a href="fundamentos de calidad.html">Fundamentos de Calidad</a></li>
+          <li><a href="sdlc.html">SDLC</a></li>
+          <li><a href="">Metodologías Ágiles</a></li>
+          <li><a href="">Recursos y Aprendizaje</a></li>
+          <li><a href="">Herramienta de Calidad</a></li>
+        </ul>
+      </nav>
+    </header>
+      <section class="quality-hero" aria-label="Fundamentos de Calidad y Software Quality Assurance">
+        <div class="quality-hero__content">
+          <h1>Fundamentos de Calidad</h1>
+          <p>La calidad de software es uno de los aspectos fundamentales dentro de la Ingeniería de Software. No se refiere únicamente a que un programa funcione o que no tenga errores, sino a que el producto desarrollado cumpla con los requisitos establecidos, satisfaga las necesidades de los usuarios y pueda mantenerse y evolucionar de manera adecuada.
+
+A medida que los sistemas de software se vuelven más complejos y tienen una mayor importancia en áreas como la banca, la salud, la educación, el comercio y la industria, la calidad adquiere una importancia cada vez mayor.
+
+Un sistema de mala calidad puede generar pérdidas económicas, problemas de seguridad, pérdida de información, insatisfacción de los usuarios e incluso consecuencias graves cuando se utiliza en sistemas críticos.
+
+Por este motivo, la calidad debe considerarse durante todo el ciclo de vida del software, desde la definición de los requisitos hasta el mantenimiento del sistema.</p>
+        </div>
+
+        <aside class="quality-intro" aria-label="Software Quality Assurance">
+          <div class="quality-intro__content">
+            <img src="fotos/calidad.jpg" alt="Ilustración relacionada con Software Quality Assurance">
+            <h2>Software Quality Assurance</h2>
+            <p>La calidad es el grado en que un sistema cumple con los requisitos definidos, satisface las necesidades de los usuarios y funciona de manera confiable durante su ciclo de vida.</p>
+          </div>
+        </aside>
+      </section>
+    <main>
+      
+    <h2>¿Qué significa que un software sea de calidad?</h2>
+    <p>Un software de calidad no significa solamente que “funcione”. También debe ser:</p>
+    <ul>
+      <li>Correcto: hace lo que se especificó.</li>
+      <li>Confiable: funciona de manera consistente y sin fallos frecuentes.</li>
+      <li>Seguro: protege los datos y evita accesos no autorizados.</li>
+      <li>Eficiente: utiliza adecuadamente recursos como memoria, CPU y red.</li>
+      <li>Usable: es fácil de aprender y utilizar.</li>
+      <li>Mantenible: permite corregir errores y realizar cambios fácilmente.</li>
+      <li>Escalable: puede soportar un aumento de usuarios o datos.</li>
+      <li>Compatible: puede funcionar con otros sistemas y entornos.</li>
+    </ul>
+    <h2>Calidad vs. pruebas</h2>
+    <p>Es importante distinguir estos conceptos:</p>
+
+    <h3>Aseguramiento de la calidad (QA)</h3>
+    <p>Busca prevenir defectos y mejorar los procesos utilizados para desarrollar software.</p>
+
+    <h3>Control de calidad (QC)</h3>
+    <p>Busca detectar defectos en el producto mediante revisiones, pruebas y otras técnicas.</p>
+
+    <h3>Testing o pruebas</h3>
+    <p>Consiste en ejecutar o analizar el software para encontrar comportamientos incorrectos.</p>
+
+    <blockquote>
+      <strong>QA</strong> → definir buenas prácticas y procesos.<br>
+      <strong>QC</strong> → verificar que el producto cumpla los criterios establecidos.<br>
+      <strong>Testing</strong> → ejecutar casos de prueba para descubrir errores.
+    </blockquote>
+
+    <h2>Principales atributos de calidad</h2>
+    <p>Un modelo muy utilizado es <strong>ISO/IEC 25010</strong>, que organiza la calidad del producto software en las siguientes características:</p>
+
+    <dl>
+      <dt>Adecuación funcional</dt>
+      <dd>¿Hace correctamente lo que debe hacer?</dd>
+      <dt>Eficiencia de desempeño</dt>
+      <dd>¿Utiliza bien los recursos y responde rápidamente?</dd>
+      <dt>Compatibilidad</dt>
+      <dd>¿Puede coexistir e interactuar con otros sistemas?</dd>
+      <dt>Usabilidad</dt>
+      <dd>¿Es fácil de aprender y utilizar?</dd>
+      <dt>Fiabilidad</dt>
+      <dd>¿Funciona correctamente durante el tiempo esperado?</dd>
+      <dt>Seguridad</dt>
+      <dd>¿Protege la información y los accesos?</dd>
+      <dt>Mantenibilidad</dt>
+      <dd>¿Es fácil modificar, corregir y mantener?</dd>
+      <dt>Portabilidad</dt>
+      <dd>¿Puede trasladarse a otros entornos?</dd>
+    </dl>
+
+    <h2>Prevención de defectos</h2>
+    <p>Un principio fundamental es que es más barato prevenir un error que corregirlo cuando ya llegó al usuario.</p>
+    <p>Por eso se utilizan prácticas como:</p>
+    <ul>
+      <li>Revisiones de código.</li>
+      <li>Análisis estático.</li>
+      <li>Pruebas unitarias.</li>
+      <li>Pruebas de integración.</li>
+      <li>Integración continua.</li>
+      <li>Automatización de pruebas.</li>
+      <li>Revisiones de requisitos.</li>
+      <li>Control de versión.</li>
+      <li>Estándares de programación.</li>
+    </ul>
+
+    <h2>Niveles de pruebas</h2>
+    <p>Las pruebas suelen organizarse en diferentes niveles:</p>
+    <ul>
+      <li><strong>Pruebas unitarias:</strong> verifican componentes pequeños, como funciones o clases.</li>
+      <li><strong>Pruebas de integración:</strong> verifican que varios componentes funcionen correctamente juntos.</li>
+      <li><strong>Pruebas de sistema:</strong> evalúan el sistema completo.</li>
+      <li><strong>Pruebas de aceptación:</strong> comprueban que el software satisface las necesidades del cliente o usuario.</li>
+    </ul>
+
+    <h2>Un concepto clave: la calidad no es ausencia de errores</h2>
+    <p>Un programa puede tener pocos errores y aun así ser de mala calidad.</p>
+    <p>Por ejemplo, una aplicación bancaria podría funcionar técnicamente sin errores, pero si tarda 30 segundos en mostrar cada pantalla o tiene una interfaz confusa, la calidad percibida será baja.</p>
+    <p>Por eso la calidad debe evaluarse desde diferentes perspectivas:</p>
+    <p><strong>Requisitos + funcionamiento + rendimiento + seguridad + experiencia del usuario + mantenibilidad.</strong></p>    </main>
+    
+  </body>                       
+</html>
