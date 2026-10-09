@@ -278,29 +278,32 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
       <li>Estándares de programación.</li>
     </ul>
 
-    <h2>Niveles de pruebas</h2>
-    <p>Las pruebas suelen organizarse en diferentes niveles:</p>
-    <ul>
-      <li><strong>Pruebas unitarias:</strong> verifican componentes pequeños, como funciones o clases.</li>
-      <li><strong>Pruebas de integración:</strong> verifican que varios componentes funcionen correctamente juntos.</li>
-      <li><strong>Pruebas de sistema:</strong> evalúan el sistema completo.</li>
-      <li><strong>Pruebas de aceptación:</strong> comprueban que el software satisface las necesidades del cliente o usuario.</li>
-    </ul>
+    <section class="test-levels" aria-labelledby="test-levels-title">
+      <h2 id="test-levels-title">Niveles de pruebas</h2>
+      <p>Las pruebas suelen organizarse en diferentes niveles:</p>
+      <ul class="test-levels__list">
+        <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg><p><strong>Pruebas unitarias:</strong> verifican componentes pequeños, como funciones o clases.</p></li>
+        <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg><p><strong>Pruebas de integración:</strong> verifican que varios componentes funcionen correctamente juntos.</p></li>
+        <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg><p><strong>Pruebas de sistema:</strong> evalúan el sistema completo.</p></li>
+        <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg><p><strong>Pruebas de aceptación:</strong> comprueban que el software satisface las necesidades del cliente o usuario.</p></li>
+      </ul>
+    </section>
 
-    <h2>Un concepto clave: la calidad no es ausencia de errores</h2>
-    <p>Un programa puede tener pocos errores y aun así ser de mala calidad.</p>
-    <p>Por ejemplo, una aplicación bancaria podría funcionar técnicamente sin errores, pero si tarda 30 segundos en mostrar cada pantalla o tiene una interfaz confusa, la calidad percibida será baja.</p>
-    <p>Por eso la calidad debe evaluarse desde diferentes perspectivas:</p>
-    <p><strong>Requisitos + funcionamiento + rendimiento + seguridad + experiencia del usuario + mantenibilidad.</strong></p>    </main>
-    
-    <h1>Herramientas de Calidad de Software</h1>
-        <p>
-            Conceptos, tipos de herramientas, ejemplos y beneficios
-            para mejorar el desarrollo y la calidad de los sistemas.
-        </p>
-    <main>
+    <aside class="quality-callout" aria-labelledby="quality-callout-title">
+      <h2 id="quality-callout-title">Un concepto clave: la calidad no es ausencia de errores</h2>
+      <p>Un programa puede tener pocos errores y aun así ser de mala calidad.</p>
+      <p>Por ejemplo, una aplicación bancaria podría funcionar técnicamente sin errores, pero si tarda 30 segundos en mostrar cada pantalla o tiene una interfaz confusa, la calidad percibida será baja.</p>
+      <p>Por eso la calidad debe evaluarse desde diferentes perspectivas:</p>
+      <p class="quality-callout__formula"><strong>Requisitos + funcionamiento + rendimiento + seguridad + experiencia del usuario + mantenibilidad</strong></p>
+    </aside>
 
-        <section>
+    <section class="quality-tools" aria-labelledby="quality-tools-title">
+      <header class="quality-tools__header">
+        <h2 id="quality-tools-title">Herramientas de Calidad de Software</h2>
+        <h3>Conceptos, tipos de herramientas, ejemplos y beneficios para mejorar el desarrollo y la calidad de los sistemas.</h3>
+      </header>
+
+        <section class="quality-tools__overview">
             <div class="intro">
                 <h2>1. ¿Qué son las herramientas de calidad de software?</h2>
 
@@ -337,13 +340,13 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
             </div>
         </section>
 
-        <section>
+        <section class="quality-tools__types">
             <h2>2. Principales tipos de herramientas</h2>
 
-            <div class="grid">
+          <div class="tool-type-list">
 
-                <article class="card">
-                    <span class="tag">Gestión de defectos</span>
+            <article class="tool-type">
+              <span class="tool-type__category">Gestión de defectos</span>
                     <h3>2.1. Herramientas de gestión de defectos</h3>
 
                     <p>
@@ -365,14 +368,14 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         las correcciones realizadas funcionan correctamente.
                     </p>
 
-                    <div class="tools">
-                        <strong>Herramientas de ejemplo:</strong>
-                        Jira, Bugzilla y Azure DevOps.
+                    <div class="tool-type__examples">
+                      <strong>Herramientas de ejemplo:</strong>
+                      <code>Jira</code>, <code>Bugzilla</code> y <code>Azure DevOps</code>.
                     </div>
                 </article>
 
-                <article class="card">
-                    <span class="tag">Testing</span>
+                  <article class="tool-type">
+                    <span class="tool-type__category">Testing</span>
                     <h3>2.2. Herramientas de pruebas de software</h3>
 
                     <p>
@@ -390,19 +393,19 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         de modificar el código.
                     </p>
 
-                    <div class="tools">
+                    <div class="tool-type__examples">
                         <strong>Herramientas de ejemplo:</strong>
-                        JUnit para pruebas unitarias en Java, Selenium y Cypress
-                        para automatizar pruebas web, y Postman para probar API.
+                      <code>JUnit</code> para pruebas unitarias en Java, <code>Selenium</code> y <code>Cypress</code>
+                      para automatizar pruebas web, y <code>Postman</code> para probar API.
                     </div>
                 </article>
 
-                <article class="card">
-                    <span class="tag">Análisis estático</span>
+                  <article class="tool-type">
+                    <span class="tool-type__category">Análisis estático</span>
                     <h3>2.3. Herramientas de análisis de código</h3>
 
                     <p>
-                        Exam inan el código fuente sin necesidad de ejecutar
+                        Examinan el código fuente sin necesidad de ejecutar
                         el programa. Su objetivo es identificar posibles defectos,
                         problemas de seguridad, incumplimientos de estándares
                         y aspectos que dificulten el mantenimiento.
@@ -415,14 +418,14 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         las primeras etapas del desarrollo.
                     </p>
 
-                    <div class="tools">
+                    <div class="tool-type__examples">
                         <strong>Herramienta de ejemplo:</strong>
-                        SonarQube.
+                      <code>SonarQube</code>.
                     </div>
                 </article>
 
-                <article class="card">
-                    <span class="tag">Control de versiones</span>
+                  <article class="tool-type">
+                    <span class="tool-type__category">Control de versiones</span>
                     <h3>2.4. Herramientas de control de versiones</h3>
 
                     <p>
@@ -438,14 +441,14 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         de modificaciones que pudieron introducir un defecto.
                     </p>
 
-                    <div class="tools">
+                    <div class="tool-type__examples">
                         <strong>Herramientas de ejemplo:</strong>
-                        Git, GitHub, GitLab y Bitbucket.
+                      <code>Git</code>, <code>GitHub</code>, <code>GitLab</code> y <code>Bitbucket</code>.
                     </div>
                 </article>
 
-                <article class="card">
-                    <span class="tag">Automatización</span>
+                  <article class="tool-type">
+                    <span class="tool-type__category">Automatización</span>
                     <h3>2.5. Herramientas de integración continua</h3>
 
                     <p>
@@ -461,14 +464,14 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         que avance hacia otras etapas del desarrollo.
                     </p>
 
-                    <div class="tools">
+                    <div class="tool-type__examples">
                         <strong>Herramientas de ejemplo:</strong>
-                        Jenkins, GitHub Actions y GitLab CI/CD.
+                      <code>Jenkins</code>, <code>GitHub Actions</code> y <code>GitLab CI/CD</code>.
                     </div>
                 </article>
 
-                <article class="card">
-                    <span class="tag">Rendimiento</span>
+                  <article class="tool-type">
+                    <span class="tool-type__category">Rendimiento</span>
                     <h3>2.6. Herramientas de pruebas de rendimiento</h3>
 
                     <p>
@@ -485,14 +488,14 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         simultáneamente.
                     </p>
 
-                    <div class="tools">
+                    <div class="tool-type__examples">
                         <strong>Herramientas de ejemplo:</strong>
-                        Apache JMeter, Gatling y k6.
+                      <code>Apache JMeter</code>, <code>Gatling</code> y <code>k6</code>.
                     </div>
                 </article>
 
-                <article class="card">
-                    <span class="tag">Ciberseguridad</span>
+                  <article class="tool-type">
+                    <span class="tool-type__category">Ciberseguridad</span>
                     <h3>2.7. Herramientas de seguridad</h3>
 
                     <p>
@@ -508,14 +511,14 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         que un atacante aproveche fallos del sistema.
                     </p>
 
-                    <div class="tools">
+                    <div class="tool-type__examples">
                         <strong>Herramientas de ejemplo:</strong>
-                        OWASP ZAP y Snyk.
+                      <code>OWASP ZAP</code> y <code>Snyk</code>.
                     </div>
                 </article>
 
-                <article class="card">
-                    <span class="tag">Organización</span>
+                  <article class="tool-type">
+                    <span class="tool-type__category">Organización</span>
                     <h3>2.8. Herramientas de documentación y gestión</h3>
 
                     <p>
@@ -531,16 +534,16 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                         al proyecto con mayor facilidad.
                     </p>
 
-                    <div class="tools">
+                    <div class="tool-type__examples">
                         <strong>Herramientas de ejemplo:</strong>
-                        Confluence, Jira y Azure DevOps.
+                      <code>Confluence</code>, <code>Jira</code> y <code>Azure DevOps</code>.
                     </div>
                 </article>
 
             </div>
         </section>
 
-        <section>
+        <section class="quality-tools__benefits">
             <h2>3. Importancia de las herramientas de calidad</h2>
 
             <p>
@@ -549,9 +552,9 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                 principales beneficios se encuentran los siguientes:
             </p>
 
-            <div class="benefits">
+            <div class="quality-benefits-grid">
 
-                <article class="benefit">
+              <article class="quality-benefit">
                     <h3>Detección temprana</h3>
                     <p>
                         Ayudan a encontrar problemas antes de que lleguen
@@ -559,7 +562,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </p>
                 </article>
 
-                <article class="benefit">
+                <article class="quality-benefit">
                     <h3>Reducción de costos</h3>
                     <p>
                         Detectar defectos durante el desarrollo suele ser
@@ -567,7 +570,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </p>
                 </article>
 
-                <article class="benefit">
+                <article class="quality-benefit">
                     <h3>Automatización</h3>
                     <p>
                         Reducen el trabajo repetitivo y permiten ejecutar
@@ -575,7 +578,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </p>
                 </article>
 
-                <article class="benefit">
+                <article class="quality-benefit">
                     <h3>Confiabilidad</h3>
                     <p>
                         Ayudan a comprobar que las funcionalidades continúen
@@ -583,7 +586,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </p>
                 </article>
 
-                <article class="benefit">
+                <article class="quality-benefit">
                     <h3>Mayor seguridad</h3>
                     <p>
                         Facilitan la identificación de vulnerabilidades
@@ -591,7 +594,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </p>
                 </article>
 
-                <article class="benefit">
+                <article class="quality-benefit">
                     <h3>Trazabilidad</h3>
                     <p>
                         Permiten conocer qué se modificó, qué defectos se
@@ -602,10 +605,11 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
             </div>
         </section>
 
-        <section>
-            <h2>4. Ejemplo práctico de utilización</h2>
+        </section>
 
-            <div class="example">
+        <section class="practical-example" aria-labelledby="practical-example-title">
+          <header class="practical-example__intro">
+            <h2 id="practical-example-title">4. Ejemplo práctico de utilización</h2>
                 <p>
                     Supongamos que una empresa desarrolla una aplicación de
                     comercio electrónico. Para controlar su calidad, el equipo
@@ -618,66 +622,73 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     funcione correctamente, sea seguro y responda a las
                     necesidades de los usuarios.
                 </p>
+                </header>
 
-                <div class="steps">
-
-                    <div class="step">
-                        <strong>1. Git</strong>
+                  <ol class="quality-timeline" aria-label="Herramientas utilizadas durante el proyecto">
+                    <li class="quality-timeline__item">
+                      <h3><span>01</span>Git</h3>
+                      <p>
                         Administra los cambios del código fuente y permite
                         recuperar versiones anteriores.
-                    </div>
+                      </p>
+                    </li>
 
-                    <div class="step">
-                        <strong>2. SonarQube</strong>
+                    <li class="quality-timeline__item">
+                      <h3><span>02</span>SonarQube</h3>
+                      <p>
                         Analiza el código para identificar posibles defectos,
                         vulnerabilidades y problemas de mantenibilidad.
-                    </div>
+                      </p>
+                    </li>
 
-                    <div class="step">
-                        <strong>3. JUnit</strong>
+                    <li class="quality-timeline__item">
+                      <h3><span>03</span>JUnit</h3>
+                      <p>
                         Comprueba que las funciones de cálculo de precios
                         y otras operaciones produzcan resultados correctos.
-                    </div>
+                      </p>
+                    </li>
 
-                    <div class="step">
-                        <strong>4. Postman</strong>
+                    <li class="quality-timeline__item">
+                      <h3><span>04</span>Postman</h3>
+                      <p>
                         Permite probar las API utilizadas para consultar
                         productos y procesar pedidos.
-                    </div>
+                      </p>
+                    </li>
 
-                    <div class="step">
-                        <strong>5. Selenium o Cypress</strong>
+                    <li class="quality-timeline__item">
+                      <h3><span>05</span>Selenium o Cypress</h3>
+                      <p>
                         Automatizan acciones de usuario, como iniciar sesión,
                         agregar productos al carrito y finalizar una compra.
-                    </div>
+                      </p>
+                    </li>
 
-                    <div class="step">
-                        <strong>6. JMeter o k6</strong>
+                    <li class="quality-timeline__item">
+                      <h3><span>06</span>JMeter o k6</h3>
+                      <p>
                         Evalúan el rendimiento cuando muchos usuarios realizan
                         operaciones al mismo tiempo.
-                    </div>
+                      </p>
+                    </li>
 
-                    <div class="step">
-                        <strong>7. Jira</strong>
+                    <li class="quality-timeline__item">
+                      <h3><span>07</span>Jira</h3>
+                      <p>
                         Registra los defectos encontrados, permite asignarlos
                         y facilita el seguimiento de sus correcciones.
-                    </div>
+                      </p>
+                    </li>
 
-                    <div class="step">
-                        <strong>8. Integración continua</strong>
+                    <li class="quality-timeline__item">
+                      <h3><span>08</span>Integración continua</h3>
+                      <p>
                         Ejecuta automáticamente las pruebas y los análisis
                         cada vez que se incorporan cambios al proyecto.
-                    </div>
-
-                </div>
-
-                <p style="margin-top: 22px;">
-                    Este ejemplo demuestra que las herramientas se complementan
-                    entre sí. La combinación adecuada permite detectar problemas
-                    en diferentes etapas y reducir el riesgo de entregar un
-                    producto defectuoso.
-                </p>
-            </div>
+                      </p>
+                    </li>
+                  </ol>
         </section>
     </main>
   </body>                       
