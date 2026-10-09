@@ -49,4 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  document.querySelectorAll(".quality-traits__grid").forEach((grid) => {
+    grid.querySelectorAll(".quality-trait__trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const panel = document.getElementById(trigger.getAttribute("aria-controls"));
+        const isOpen = trigger.getAttribute("aria-expanded") !== "true";
+
+        trigger.setAttribute("aria-expanded", String(isOpen));
+        panel.classList.toggle("is-open", isOpen);
+        panel.inert = !isOpen;
+        panel.closest(".quality-trait").classList.toggle("is-open", isOpen);
+      });
+    });
+  });
 });

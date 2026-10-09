@@ -139,7 +139,13 @@ Ejemplo: una aplicación para solicitar turnos médicos debería permitir selecc
             </button>
           </h3>
           <div class="quality-accordion__panel" id="quality-panel-mantenible" role="region" aria-labelledby="quality-trigger-mantenible" inert>
-            <div class="quality-accordion__panel-inner"><p>Permite corregir errores y realizar cambios fácilmente.</p></div>
+            <div class="quality-accordion__panel-inner"><p>La mantenibilidad es la facilidad con la que el software puede analizarse, corregirse, modificarse o ampliarse después de su desarrollo inicial.
+
+Con el tiempo, los sistemas necesitan solucionar errores, adaptarse a cambios tecnológicos e incorporar nuevas funcionalidades. Si el código está desorganizado, contiene muchas repeticiones o carece de documentación, realizar estas modificaciones puede resultar difícil, costoso y riesgoso.
+
+Para mejorar la mantenibilidad, se utilizan buenas prácticas de programación, una arquitectura organizada, componentes independientes, documentación adecuada y pruebas automatizadas.
+
+Ejemplo: una empresa tiene un sistema de facturación y necesita incorporar una nueva forma de pago. Si el código está bien organizado, los desarrolladores podrán agregar esa funcionalidad sin tener que modificar grandes partes del sistema ni provocar errores en las funciones existentes.</p></div>
           </div>
         </article>
 
@@ -150,7 +156,13 @@ Ejemplo: una aplicación para solicitar turnos médicos debería permitir selecc
             </button>
           </h3>
           <div class="quality-accordion__panel" id="quality-panel-escalable" role="region" aria-labelledby="quality-trigger-escalable" inert>
-            <div class="quality-accordion__panel-inner"><p>Puede soportar un aumento de usuarios o datos.</p></div>
+            <div class="quality-accordion__panel-inner"><p>La escalabilidad es la capacidad del software para adaptarse al aumento de la cantidad de usuarios, operaciones o datos sin que su rendimiento se deteriore de manera inaceptable.
+
+Un sistema escalable puede crecer junto con las necesidades de la organización. Para lograrlo, puede necesitar optimizaciones, una arquitectura adecuada, mejores recursos de infraestructura o la distribución del procesamiento entre varios servidores.
+
+La escalabilidad es importante porque una aplicación que funciona correctamente con pocos usuarios puede presentar dificultades cuando recibe miles de solicitudes simultáneas.
+
+Ejemplo: una plataforma educativa debe funcionar correctamente cuando se conectan 100 estudiantes, pero también debe estar preparada para soportar a 10.000 estudiantes durante un examen virtual masivo.</p></div>
           </div>
         </article>
 
@@ -161,7 +173,13 @@ Ejemplo: una aplicación para solicitar turnos médicos debería permitir selecc
             </button>
           </h3>
           <div class="quality-accordion__panel" id="quality-panel-compatible" role="region" aria-labelledby="quality-trigger-compatible" inert>
-            <div class="quality-accordion__panel-inner"><p>Puede funcionar con otros sistemas y entornos.</p></div>
+            <div class="quality-accordion__panel-inner"><p>La compatibilidad es la capacidad del software para funcionar correctamente junto con otros sistemas, aplicaciones, dispositivos o componentes de su entorno.
+
+Un programa suele depender de servicios externos, bases de datos, interfaces de programación (API), sistemas operativos y otras tecnologías. Por eso, debe poder intercambiar información con esos componentes sin provocar conflictos ni perder datos.
+
+La compatibilidad también puede implicar que varias aplicaciones compartan recursos o funcionen simultáneamente dentro de un mismo entorno.
+
+Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela de pagos, consultar los productos almacenados en su base de datos y enviar información al sistema de logística para gestionar los pedidos.</p></div>
           </div>
         </article>
       </div>
@@ -196,27 +214,54 @@ Ejemplo: una aplicación para solicitar turnos médicos debería permitir selecc
       </div>
     </section>
 
-    <h2>Principales atributos de calidad</h2>
-    <p>Un modelo muy utilizado es <strong>ISO/IEC 25010</strong>, que organiza la calidad del producto software en las siguientes características:</p>
+    <section class="quality-traits" aria-labelledby="quality-traits-title">
+      <header class="quality-traits__intro">
+        <h2 id="quality-traits-title">Principales atributos de calidad</h2>
+        <h3>Un modelo muy utilizado es <strong>ISO/IEC 25010</strong>, que organiza la calidad del producto software en las siguientes características:</h3>
+      </header>
 
-    <dl>
-      <dt>Adecuación funcional</dt>
-      <dd>¿Hace correctamente lo que debe hacer?</dd>
-      <dt>Eficiencia de desempeño</dt>
-      <dd>¿Utiliza bien los recursos y responde rápidamente?</dd>
-      <dt>Compatibilidad</dt>
-      <dd>¿Puede coexistir e interactuar con otros sistemas?</dd>
-      <dt>Usabilidad</dt>
-      <dd>¿Es fácil de aprender y utilizar?</dd>
-      <dt>Fiabilidad</dt>
-      <dd>¿Funciona correctamente durante el tiempo esperado?</dd>
-      <dt>Seguridad</dt>
-      <dd>¿Protege la información y los accesos?</dd>
-      <dt>Mantenibilidad</dt>
-      <dd>¿Es fácil modificar, corregir y mantener?</dd>
-      <dt>Portabilidad</dt>
-      <dd>¿Puede trasladarse a otros entornos?</dd>
-    </dl>
+      <div class="quality-traits__grid">
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-functional" type="button" aria-expanded="false" aria-controls="trait-panel-functional"><span>Adecuación funcional</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-functional" role="region" aria-labelledby="trait-trigger-functional" inert><div class="quality-trait__panel-inner"><p>¿Hace correctamente lo que debe hacer?</p></div></div>
+        </article>
+
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-performance" type="button" aria-expanded="false" aria-controls="trait-panel-performance"><span>Desempeño</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-performance" role="region" aria-labelledby="trait-trigger-performance" inert><div class="quality-trait__panel-inner"><p>¿Utiliza bien los recursos y responde rápidamente?</p></div></div>
+        </article>
+
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-compatibility" type="button" aria-expanded="false" aria-controls="trait-panel-compatibility"><span>Compatibilidad</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-compatibility" role="region" aria-labelledby="trait-trigger-compatibility" inert><div class="quality-trait__panel-inner"><p>¿Puede coexistir e interactuar con otros sistemas?</p></div></div>
+        </article>
+
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-usability" type="button" aria-expanded="false" aria-controls="trait-panel-usability"><span>Usabilidad</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-usability" role="region" aria-labelledby="trait-trigger-usability" inert><div class="quality-trait__panel-inner"><p>¿Es fácil de aprender y utilizar?</p></div></div>
+        </article>
+
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-reliability" type="button" aria-expanded="false" aria-controls="trait-panel-reliability"><span>Fiabilidad</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-reliability" role="region" aria-labelledby="trait-trigger-reliability" inert><div class="quality-trait__panel-inner"><p>¿Funciona correctamente durante el tiempo esperado?</p></div></div>
+        </article>
+
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-security" type="button" aria-expanded="false" aria-controls="trait-panel-security"><span>Seguridad</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-security" role="region" aria-labelledby="trait-trigger-security" inert><div class="quality-trait__panel-inner"><p>¿Protege la información y los accesos?</p></div></div>
+        </article>
+
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-maintainability" type="button" aria-expanded="false" aria-controls="trait-panel-maintainability"><span>Mantenibilidad</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-maintainability" role="region" aria-labelledby="trait-trigger-maintainability" inert><div class="quality-trait__panel-inner"><p>¿Es fácil modificar, corregir y mantener?</p></div></div>
+        </article>
+
+        <article class="quality-trait">
+          <h3 class="quality-trait__heading"><button class="quality-trait__trigger" id="trait-trigger-portability" type="button" aria-expanded="false" aria-controls="trait-panel-portability"><span>Portabilidad</span><span class="quality-trait__icon" aria-hidden="true"></span></button></h3>
+          <div class="quality-trait__panel" id="trait-panel-portability" role="region" aria-labelledby="trait-trigger-portability" inert><div class="quality-trait__panel-inner"><p>¿Puede trasladarse a otros entornos?</p></div></div>
+        </article>
+      </div>
+    </section>
 
     <h2>Prevención de defectos</h2>
     <p>Un principio fundamental es que es más barato prevenir un error que corregirlo cuando ya llegó al usuario.</p>
@@ -248,5 +293,392 @@ Ejemplo: una aplicación para solicitar turnos médicos debería permitir selecc
     <p>Por eso la calidad debe evaluarse desde diferentes perspectivas:</p>
     <p><strong>Requisitos + funcionamiento + rendimiento + seguridad + experiencia del usuario + mantenibilidad.</strong></p>    </main>
     
+    <h1>Herramientas de Calidad de Software</h1>
+        <p>
+            Conceptos, tipos de herramientas, ejemplos y beneficios
+            para mejorar el desarrollo y la calidad de los sistemas.
+        </p>
+    <main>
+
+        <section>
+            <div class="intro">
+                <h2>1. ¿Qué son las herramientas de calidad de software?</h2>
+
+                <p>
+                    Las herramientas de calidad de software son aplicaciones,
+                    técnicas y recursos que se utilizan durante el desarrollo
+                    de un sistema para prevenir errores, detectar defectos,
+                    verificar el cumplimiento de los requisitos y mejorar
+                    la calidad del producto final.
+                </p>
+
+                <p>
+                    Estas herramientas permiten evaluar tanto el funcionamiento
+                    del software como los procesos utilizados para construirlo
+                    y mantenerlo. Algunas revisan automáticamente el código,
+                    otras ejecutan pruebas para encontrar fallos y otras ayudan
+                    a organizar los defectos detectados y realizar un seguimiento
+                    de su corrección.
+                </p>
+
+                <p>
+                    Pueden utilizarse en diferentes etapas del ciclo de vida
+                    del software, desde el análisis de requisitos hasta las
+                    pruebas, la implementación y el mantenimiento.
+                </p>
+
+                <p>
+                    Es importante destacar que las herramientas no garantizan
+                    por sí solas la calidad de un sistema. Para obtener buenos
+                    resultados, deben combinarse con procedimientos adecuados,
+                    personal capacitado, requisitos claros y buenas prácticas
+                    de desarrollo.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Principales tipos de herramientas</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <span class="tag">Gestión de defectos</span>
+                    <h3>2.1. Herramientas de gestión de defectos</h3>
+
+                    <p>
+                        Permiten registrar, organizar y realizar un seguimiento
+                        de los errores encontrados durante el desarrollo y las
+                        pruebas del software.
+                    </p>
+
+                    <p>
+                        Cuando un tester identifica un defecto, puede documentar
+                        su descripción, los pasos para reproducirlo, el resultado
+                        esperado, el resultado obtenido, la severidad, la prioridad
+                        y el estado de resolución.
+                    </p>
+
+                    <p>
+                        De esta manera, el equipo puede conocer los problemas
+                        pendientes, asignar responsabilidades y comprobar si
+                        las correcciones realizadas funcionan correctamente.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramientas de ejemplo:</strong>
+                        Jira, Bugzilla y Azure DevOps.
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Testing</span>
+                    <h3>2.2. Herramientas de pruebas de software</h3>
+
+                    <p>
+                        Permiten comprobar si el sistema cumple con los requisitos
+                        establecidos y detectar comportamientos incorrectos.
+                        Pueden utilizarse para realizar pruebas manuales o
+                        automatizadas.
+                    </p>
+
+                    <p>
+                        Las pruebas automatizadas ejecutan instrucciones
+                        previamente definidas y comparan los resultados
+                        obtenidos con los esperados. Esto permite repetir
+                        pruebas con frecuencia y detectar errores después
+                        de modificar el código.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramientas de ejemplo:</strong>
+                        JUnit para pruebas unitarias en Java, Selenium y Cypress
+                        para automatizar pruebas web, y Postman para probar API.
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Análisis estático</span>
+                    <h3>2.3. Herramientas de análisis de código</h3>
+
+                    <p>
+                        Exam inan el código fuente sin necesidad de ejecutar
+                        el programa. Su objetivo es identificar posibles defectos,
+                        problemas de seguridad, incumplimientos de estándares
+                        y aspectos que dificulten el mantenimiento.
+                    </p>
+
+                    <p>
+                        Pueden detectar código duplicado, estructuras complejas,
+                        variables que no se utilizan y determinados problemas
+                        de seguridad. Esto ayuda a encontrar fallos durante
+                        las primeras etapas del desarrollo.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramienta de ejemplo:</strong>
+                        SonarQube.
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Control de versiones</span>
+                    <h3>2.4. Herramientas de control de versiones</h3>
+
+                    <p>
+                        Permiten registrar los cambios realizados en el código
+                        fuente y mantener un historial de las modificaciones.
+                        Son fundamentales cuando varios desarrolladores trabajan
+                        sobre un mismo proyecto.
+                    </p>
+
+                    <p>
+                        Facilitan la colaboración, la comparación de cambios,
+                        la recuperación de versiones anteriores y la identificación
+                        de modificaciones que pudieron introducir un defecto.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramientas de ejemplo:</strong>
+                        Git, GitHub, GitLab y Bitbucket.
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Automatización</span>
+                    <h3>2.5. Herramientas de integración continua</h3>
+
+                    <p>
+                        Automatizan tareas que se ejecutan cuando se incorporan
+                        cambios al código fuente. Pueden compilar el proyecto,
+                        ejecutar pruebas automatizadas y realizar análisis
+                        estáticos.
+                    </p>
+
+                    <p>
+                        Si alguna comprobación falla, el equipo recibe una
+                        notificación y puede corregir el problema antes de
+                        que avance hacia otras etapas del desarrollo.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramientas de ejemplo:</strong>
+                        Jenkins, GitHub Actions y GitLab CI/CD.
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Rendimiento</span>
+                    <h3>2.6. Herramientas de pruebas de rendimiento</h3>
+
+                    <p>
+                        Evalúan cómo responde un sistema ante diferentes niveles
+                        de actividad y carga de trabajo. Se utilizan para medir
+                        tiempos de respuesta, solicitudes procesadas y uso de
+                        recursos.
+                    </p>
+
+                    <p>
+                        Ayudan a identificar cuellos de botella y determinar
+                        si la infraestructura puede soportar la demanda prevista,
+                        especialmente cuando muchos usuarios acceden
+                        simultáneamente.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramientas de ejemplo:</strong>
+                        Apache JMeter, Gatling y k6.
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Ciberseguridad</span>
+                    <h3>2.7. Herramientas de seguridad</h3>
+
+                    <p>
+                        Ayudan a identificar vulnerabilidades y riesgos que
+                        podrían comprometer la información o el funcionamiento
+                        del sistema.
+                    </p>
+
+                    <p>
+                        Pueden analizar dependencias, revisar el código, detectar
+                        configuraciones inseguras y examinar aplicaciones en
+                        ejecución. Su objetivo es reducir la posibilidad de
+                        que un atacante aproveche fallos del sistema.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramientas de ejemplo:</strong>
+                        OWASP ZAP y Snyk.
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Organización</span>
+                    <h3>2.8. Herramientas de documentación y gestión</h3>
+
+                    <p>
+                        Ayudan a organizar los requisitos, las tareas, los casos
+                        de prueba, las incidencias y la documentación del proyecto.
+                        Permiten que los integrantes del equipo compartan
+                        información y controlen el avance del trabajo.
+                    </p>
+
+                    <p>
+                        Una documentación adecuada facilita la comprensión
+                        del sistema y permite que nuevos integrantes se incorporen
+                        al proyecto con mayor facilidad.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Herramientas de ejemplo:</strong>
+                        Confluence, Jira y Azure DevOps.
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Importancia de las herramientas de calidad</h2>
+
+            <p>
+                La utilización de herramientas de calidad permite trabajar de
+                forma más organizada, sistemática y eficiente. Entre sus
+                principales beneficios se encuentran los siguientes:
+            </p>
+
+            <div class="benefits">
+
+                <article class="benefit">
+                    <h3>Detección temprana</h3>
+                    <p>
+                        Ayudan a encontrar problemas antes de que lleguen
+                        a producción y afecten a los usuarios.
+                    </p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Reducción de costos</h3>
+                    <p>
+                        Detectar defectos durante el desarrollo suele ser
+                        menos costoso que corregirlos después de la implementación.
+                    </p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Automatización</h3>
+                    <p>
+                        Reducen el trabajo repetitivo y permiten ejecutar
+                        controles con mayor frecuencia.
+                    </p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Confiabilidad</h3>
+                    <p>
+                        Ayudan a comprobar que las funcionalidades continúen
+                        funcionando después de realizar cambios.
+                    </p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Mayor seguridad</h3>
+                    <p>
+                        Facilitan la identificación de vulnerabilidades
+                        y configuraciones incorrectas.
+                    </p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Trazabilidad</h3>
+                    <p>
+                        Permiten conocer qué se modificó, qué defectos se
+                        detectaron y qué pruebas se ejecutaron.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Ejemplo práctico de utilización</h2>
+
+            <div class="example">
+                <p>
+                    Supongamos que una empresa desarrolla una aplicación de
+                    comercio electrónico. Para controlar su calidad, el equipo
+                    puede utilizar diferentes herramientas durante el proyecto.
+                </p>
+
+                <p>
+                    Cada herramienta cumple una función específica y se
+                    complementa con las demás para verificar que el producto
+                    funcione correctamente, sea seguro y responda a las
+                    necesidades de los usuarios.
+                </p>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <strong>1. Git</strong>
+                        Administra los cambios del código fuente y permite
+                        recuperar versiones anteriores.
+                    </div>
+
+                    <div class="step">
+                        <strong>2. SonarQube</strong>
+                        Analiza el código para identificar posibles defectos,
+                        vulnerabilidades y problemas de mantenibilidad.
+                    </div>
+
+                    <div class="step">
+                        <strong>3. JUnit</strong>
+                        Comprueba que las funciones de cálculo de precios
+                        y otras operaciones produzcan resultados correctos.
+                    </div>
+
+                    <div class="step">
+                        <strong>4. Postman</strong>
+                        Permite probar las API utilizadas para consultar
+                        productos y procesar pedidos.
+                    </div>
+
+                    <div class="step">
+                        <strong>5. Selenium o Cypress</strong>
+                        Automatizan acciones de usuario, como iniciar sesión,
+                        agregar productos al carrito y finalizar una compra.
+                    </div>
+
+                    <div class="step">
+                        <strong>6. JMeter o k6</strong>
+                        Evalúan el rendimiento cuando muchos usuarios realizan
+                        operaciones al mismo tiempo.
+                    </div>
+
+                    <div class="step">
+                        <strong>7. Jira</strong>
+                        Registra los defectos encontrados, permite asignarlos
+                        y facilita el seguimiento de sus correcciones.
+                    </div>
+
+                    <div class="step">
+                        <strong>8. Integración continua</strong>
+                        Ejecuta automáticamente las pruebas y los análisis
+                        cada vez que se incorporan cambios al proyecto.
+                    </div>
+
+                </div>
+
+                <p style="margin-top: 22px;">
+                    Este ejemplo demuestra que las herramientas se complementan
+                    entre sí. La combinación adecuada permite detectar problemas
+                    en diferentes etapas y reducir el riesgo de entregar un
+                    producto defectuoso.
+                </p>
+            </div>
+        </section>
+    </main>
   </body>                       
 </html>
