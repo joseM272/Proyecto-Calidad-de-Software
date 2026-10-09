@@ -42,35 +42,159 @@ Por este motivo, la calidad debe considerarse durante todo el ciclo de vida del 
       </section>
     <main>
       
-    <h2>¿Qué significa que un software sea de calidad?</h2>
-    <p>Un software de calidad no significa solamente que “funcione”. También debe ser:</p>
-    <ul>
-      <li>Correcto: hace lo que se especificó.</li>
-      <li>Confiable: funciona de manera consistente y sin fallos frecuentes.</li>
-      <li>Seguro: protege los datos y evita accesos no autorizados.</li>
-      <li>Eficiente: utiliza adecuadamente recursos como memoria, CPU y red.</li>
-      <li>Usable: es fácil de aprender y utilizar.</li>
-      <li>Mantenible: permite corregir errores y realizar cambios fácilmente.</li>
-      <li>Escalable: puede soportar un aumento de usuarios o datos.</li>
-      <li>Compatible: puede funcionar con otros sistemas y entornos.</li>
-    </ul>
-    <h2>Calidad vs. pruebas</h2>
-    <p>Es importante distinguir estos conceptos:</p>
+    <section class="quality-attributes" aria-labelledby="quality-attributes-title">
+      <div class="quality-attributes__intro">
+        <h2 id="quality-attributes-title">¿Qué significa que un software sea de calidad?</h2>
+        <h3>Un software de calidad no significa solamente que “funcione”. También debe ser:</h3>
+      </div>
 
-    <h3>Aseguramiento de la calidad (QA)</h3>
-    <p>Busca prevenir defectos y mejorar los procesos utilizados para desarrollar software.</p>
+      <div class="quality-accordion" data-accordion>
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-correcto" type="button" aria-expanded="false" aria-controls="quality-panel-correcto">
+              <span>Correcto</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-correcto" role="region" aria-labelledby="quality-trigger-correcto" inert>
+            <div class="quality-accordion__panel-inner"><p>La correcto es la capacidad del software para producir los resultados esperados y cumplir con los requisitos especificados. Un programa es correcto cuando realiza las operaciones para las cuales fue diseñado de acuerdo con las reglas del negocio y las condiciones establecidas.
 
-    <h3>Control de calidad (QC)</h3>
-    <p>Busca detectar defectos en el producto mediante revisiones, pruebas y otras técnicas.</p>
+Para conseguirlo, es necesario que los requisitos estén claramente definidos y que el comportamiento del sistema coincida con ellos. Si una función realiza una operación diferente de la solicitada, existe un problema de correctitud, aunque el programa no se cierre ni presente errores visibles.
 
-    <h3>Testing o pruebas</h3>
-    <p>Consiste en ejecutar o analizar el software para encontrar comportamientos incorrectos.</p>
+Ejemplo: en una aplicación bancaria, si un usuario transfiere $50.000 a otra cuenta, el sistema debe debitar ese importe de la cuenta de origen y acreditarlo en la cuenta de destino. Si transfiere una cantidad diferente, el software no está funcionando correctamente.</p></div>
+          </div>
+        </article>
 
-    <blockquote>
-      <strong>QA</strong> → definir buenas prácticas y procesos.<br>
-      <strong>QC</strong> → verificar que el producto cumpla los criterios establecidos.<br>
-      <strong>Testing</strong> → ejecutar casos de prueba para descubrir errores.
-    </blockquote>
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-confiable" type="button" aria-expanded="false" aria-controls="quality-panel-confiable">
+              <span>Confiable</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-confiable" role="region" aria-labelledby="quality-trigger-confiable" inert>
+            <div class="quality-accordion__panel-inner"><p>La confiabilidad, también denominada fiabilidad, es la capacidad del software para funcionar de manera estable y consistente durante un período determinado y bajo condiciones específicas.
+
+Un sistema confiable debe minimizar la aparición de fallos y, cuando se produzca un problema, debe poder recuperarse sin perder información importante ni afectar gravemente a los usuarios. La confiabilidad es especialmente importante en sistemas que deben estar disponibles durante muchas horas o que procesan operaciones críticas.
+
+Para mejorarla, se utilizan pruebas, mecanismos de recuperación, copias de seguridad, monitoreo y controles que permitan detectar problemas antes de que provoquen consecuencias mayores.
+
+Ejemplo: un sistema de turnos médicos debe permitir que los pacientes consulten, reserven y cancelen turnos sin que la información desaparezca o se dupliquen las reservas cuando muchas personas utilizan la aplicación.</p></div>
+          </div>
+        </article>
+
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-seguro" type="button" aria-expanded="false" aria-controls="quality-panel-seguro">
+              <span>Seguro</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-seguro" role="region" aria-labelledby="quality-trigger-seguro" inert>
+            <div class="quality-accordion__panel-inner"><p>La seguridad es la capacidad del software para proteger la información, los recursos y las funcionalidades frente a accesos, modificaciones, pérdidas o acciones no autorizadas.
+
+Un software seguro debe garantizar que cada usuario pueda acceder únicamente a la información y las operaciones que le corresponden. También debe proteger los datos personales y evitar que personas externas puedan aprovechar vulnerabilidades para alterar el funcionamiento del sistema.
+
+Entre las medidas de seguridad se encuentran la autenticación, la autorización, el cifrado de datos, la validación de entradas, la gestión segura de sesiones y el registro de actividades relevantes.
+
+Ejemplo: en una aplicación bancaria, un usuario debe poder consultar sus propias cuentas, pero no las de otros clientes. Además, las operaciones sensibles deben contar con mecanismos de protección que impidan su ejecución por personas no autorizadas.</p></div>
+          </div>
+        </article>
+
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-eficiente" type="button" aria-expanded="false" aria-controls="quality-panel-eficiente">
+              <span>Eficiencia</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-eficiente" role="region" aria-labelledby="quality-trigger-eficiente" inert>
+            <div class="quality-accordion__panel-inner"><p>La eficiencia es la capacidad del software para realizar sus operaciones utilizando adecuadamente los recursos disponibles, como el procesador, la memoria, el almacenamiento y la conexión de red.
+
+Un sistema eficiente responde en tiempos razonables, procesa las solicitudes sin consumir recursos innecesarios y mantiene un rendimiento adecuado incluso cuando aumenta la cantidad de información o de usuarios.
+
+La eficiencia no significa únicamente que el programa sea rápido. También implica que utilice los recursos de manera equilibrada y que no provoque un consumo excesivo que afecte a otros procesos.
+
+Ejemplo: una tienda online debe mostrar los productos rápidamente y permitir que los clientes realicen compras sin demoras excesivas. Si cada búsqueda tarda 30 segundos y consume demasiada memoria, el sistema presenta problemas de eficiencia.</p></div>
+          </div>
+        </article>
+
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-usable" type="button" aria-expanded="false" aria-controls="quality-panel-usable">
+              <span>Usable</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-usable" role="region" aria-labelledby="quality-trigger-usable" inert>
+            <div class="quality-accordion__panel-inner"><p>La usabilidad es la facilidad con la que los usuarios pueden aprender, comprender y utilizar un sistema para alcanzar sus objetivos.
+
+Un software usable presenta una interfaz clara, instrucciones comprensibles, opciones organizadas y mensajes que ayudan a interpretar lo que sucede. También debe permitir que los usuarios identifiquen y corrijan errores sin dificultades innecesarias.
+
+Una buena usabilidad reduce el tiempo de aprendizaje, evita confusiones y mejora la satisfacción de las personas. Asimismo, debe tener en cuenta la accesibilidad para facilitar el uso por parte de personas con diferentes capacidades.
+
+Ejemplo: una aplicación para solicitar turnos médicos debería permitir seleccionar una especialidad, elegir un profesional y confirmar una fecha sin que el usuario tenga que recorrer numerosas pantallas o interpretar mensajes confusos.</p></div>
+          </div>
+        </article>
+
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-mantenible" type="button" aria-expanded="false" aria-controls="quality-panel-mantenible">
+              <span>Mantenible</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-mantenible" role="region" aria-labelledby="quality-trigger-mantenible" inert>
+            <div class="quality-accordion__panel-inner"><p>Permite corregir errores y realizar cambios fácilmente.</p></div>
+          </div>
+        </article>
+
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-escalable" type="button" aria-expanded="false" aria-controls="quality-panel-escalable">
+              <span>Escalable</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-escalable" role="region" aria-labelledby="quality-trigger-escalable" inert>
+            <div class="quality-accordion__panel-inner"><p>Puede soportar un aumento de usuarios o datos.</p></div>
+          </div>
+        </article>
+
+        <article class="quality-accordion__item">
+          <h3 class="quality-accordion__heading">
+            <button class="quality-accordion__trigger" id="quality-trigger-compatible" type="button" aria-expanded="false" aria-controls="quality-panel-compatible">
+              <span>Compatible</span><span class="quality-accordion__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="quality-accordion__panel" id="quality-panel-compatible" role="region" aria-labelledby="quality-trigger-compatible" inert>
+            <div class="quality-accordion__panel-inner"><p>Puede funcionar con otros sistemas y entornos.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="quality-comparison" aria-labelledby="quality-comparison-title">
+      <header class="quality-comparison__intro">
+        <h2 id="quality-comparison-title">Calidad vs. pruebas</h2>
+        <p>Es importante distinguir estos conceptos:</p>
+      </header>
+
+      <div class="quality-comparison__grid">
+        <article class="quality-comparison__card quality-comparison__card--qa">
+          <span class="quality-comparison__label">Prevenir</span>
+          <h3>Aseguramiento de la calidad <span>(QA)</span></h3>
+          <p>Busca prevenir defectos y mejorar los procesos utilizados para desarrollar software.</p>
+          <footer class="quality-comparison__note"><strong>QA</strong><span aria-hidden="true">→</span> definir buenas prácticas y procesos.</footer>
+        </article>
+
+        <article class="quality-comparison__card quality-comparison__card--qc">
+          <span class="quality-comparison__label">Verificar</span>
+          <h3>Control de calidad <span>(QC)</span></h3>
+          <p>Busca detectar defectos en el producto mediante revisiones, pruebas y otras técnicas.</p>
+          <footer class="quality-comparison__note"><strong>QC</strong><span aria-hidden="true">→</span> verificar que el producto cumpla los criterios establecidos.</footer>
+        </article>
+
+        <article class="quality-comparison__card quality-comparison__card--testing">
+          <span class="quality-comparison__label">Evaluar</span>
+          <h3>Testing o pruebas</h3>
+          <p>Consiste en ejecutar o analizar el software para encontrar comportamientos incorrectos.</p>
+          <footer class="quality-comparison__note"><strong>Testing</strong><span aria-hidden="true">→</span> ejecutar casos de prueba para descubrir errores.</footer>
+        </article>
+      </div>
+    </section>
 
     <h2>Principales atributos de calidad</h2>
     <p>Un modelo muy utilizado es <strong>ISO/IEC 25010</strong>, que organiza la calidad del producto software en las siguientes características:</p>

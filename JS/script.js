@@ -27,4 +27,26 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach((card, index) => {
     card.style.animationDelay = `${index * 90}ms`;
   });
+
+  document.querySelectorAll("[data-accordion]").forEach((accordion) => {
+    const triggers = accordion.querySelectorAll(".quality-accordion__trigger");
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const panel = document.getElementById(trigger.getAttribute("aria-controls"));
+        const willOpen = trigger.getAttribute("aria-expanded") !== "true";
+
+        triggers.forEach((otherTrigger) => {
+          const otherPanel = document.getElementById(otherTrigger.getAttribute("aria-controls"));
+          const isCurrent = otherTrigger === trigger;
+          const isOpen = isCurrent && willOpen;
+
+          otherTrigger.setAttribute("aria-expanded", String(isOpen));
+          otherPanel.classList.toggle("is-open", isOpen);
+          otherPanel.inert = !isOpen;
+          otherPanel.closest(".quality-accordion__item").classList.toggle("is-open", isOpen);
+        });
+      });
+    });
+  });
 });
