@@ -16,14 +16,13 @@
           <li><a href="sdlc.html">SDLC</a></li>
           <li><a href="">Metodologías Ágiles</a></li>
           <li><a href="">Recursos y Aprendizaje</a></li>
-          <li><a href="">Herramienta de Calidad</a></li>
         </ul>
       </nav>
     </header>
     <main>
 
         <section id="introduccion">
-            <h2>1. ¿Qué es el SDLC?</h2>
+            <h2> ¿Qué es el SDLC?</h2>
 
             <p>
                 SDLC significa Software Development Life Cycle, que en
@@ -50,9 +49,16 @@
                 corregirlos.
             </p>
         </section>
-     <img src="fotos/SDLC_Cycle.jpg" alt="Ciclo de Vida del Desarrollo de Software" class="imagen-sdlc" />
+        <figure class="sdlc-cycle">
+            <img
+                src="fotos/SDLC_Cycle.jpg"
+                alt="Diagrama circular del ciclo de vida del desarrollo de software: análisis, diseño, desarrollo, pruebas e implementación."
+                class="imagen-sdlc"
+            />
+            <figcaption>Las etapas se retroalimentan y pueden repetirse para mejorar el producto.</figcaption>
+        </figure>
         <section id="objetivos">
-            <h2>2. Objetivos del SDLC</h2>
+            <h2> Objetivos del SDLC</h2>
 
             <p>Los principales objetivos del SDLC son:</p>
 
@@ -88,7 +94,7 @@
         </section>
 
         <section id="etapas">
-            <h2>3. Etapas del SDLC</h2>
+            <h2>Etapas del SDLC</h2>
 
             <p>
                 El SDLC suele dividirse en seis etapas principales.
@@ -97,7 +103,7 @@
             </p>
 
             <article>
-                <h3>3.1. Planificación y análisis de requisitos</h3>
+                <h3>Planificación y análisis de requisitos</h3>
 
                 <p>
                     En esta etapa se determinan los objetivos del
@@ -137,7 +143,7 @@
             </article>
 
             <article>
-                <h3>3.2. Diseño del software</h3>
+                <h3>Diseño del software</h3>
 
                 <p>
                     En esta etapa se define cómo se construirá el
@@ -158,7 +164,7 @@
             </article>
 
             <article>
-                <h3>3.3. Desarrollo o codificación</h3>
+                <h3>Desarrollo o codificación</h3>
 
                 <p>
                     Los programadores escriben el código fuente y
@@ -184,7 +190,7 @@
             </article>
 
             <article>
-                <h3>3.4. Pruebas y validación</h3>
+                <h3>Pruebas y validación</h3>
 
                 <p>
                     En esta etapa se evalúa el comportamiento del
@@ -239,7 +245,7 @@
             </article>
 
             <article>
-                <h3>3.5. Implementación o despliegue</h3>
+                <h3>Implementación o despliegue</h3>
 
                 <p>
                     En esta etapa el software se instala o publica en
@@ -261,7 +267,7 @@
             </article>
 
             <article>
-                <h3>3.6. Mantenimiento y mejora continua</h3>
+                <h3> Mantenimiento y mejora continua</h3>
 
                 <p>
                     Después de la implementación, el software requiere
@@ -284,7 +290,7 @@
         </section>
 
         <section id="calidad">
-            <h2>4. Importancia del SDLC en la calidad de software</h2>
+            <h2> Importancia del SDLC en la calidad de software</h2>
 
             <p>
                 Integrar la calidad en el SDLC permite detectar
@@ -294,7 +300,7 @@
                 a otros componentes o a sistemas ya implementados.
             </p>
 
-            <h3>4.1. Aseguramiento de la calidad (QA)</h3>
+            <h3>Aseguramiento de la calidad (QA)</h3>
 
             <p>
                 El aseguramiento de la calidad, conocido como QA
@@ -309,7 +315,7 @@
                 mejorar los procesos de desarrollo.
             </p>
 
-            <h3>4.2. Control de calidad (QC)</h3>
+            <h3>Control de calidad (QC)</h3>
 
             <p>
                 El control de calidad, conocido como QC (Quality
@@ -323,7 +329,7 @@
                 para verificar que los pagos se procesen correctamente.
             </p>
 
-            <h3>4.3. Métricas de calidad</h3>
+            <h3> Métricas de calidad</h3>
 
             <p>
                 Las métricas permiten medir y evaluar diferentes
@@ -364,7 +370,7 @@
         </section>
 
         <section id="ejemplo">
-            <h2>5. Ejemplo práctico del SDLC</h2>
+            <h2> Ejemplo práctico del SDLC</h2>
 
             <p>
                 Imaginemos que una empresa necesita desarrollar una
@@ -414,60 +420,77 @@
         </section>
 
         <section id="stlc">
-            <h2>6. Diferencia entre SDLC y STLC</h2>
+            <h2> Diferencia entre SDLC y STLC</h2>
 
-            <p>
-                El SDLC y el STLC son conceptos relacionados, pero
-                tienen alcances diferentes.
+            <p class="sdlc-comparison__intro">
+                El SDLC organiza la creación y evolución del producto; el STLC
+                estructura las actividades que permiten comprobar su calidad.
+                Ambos ciclos se coordinan y se solapan durante el proyecto.
             </p>
 
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Aspecto</th>
-                        <th>SDLC</th>
-                        <th>STLC</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Significado</td>
-                        <td>Ciclo de vida del desarrollo de software.</td>
-                        <td>Ciclo de vida de las pruebas de software.</td>
-                    </tr>
-                    <tr>
-                        <td>Objetivo</td>
-                        <td>Organizar el desarrollo y mantenimiento del producto.</td>
-                        <td>Organizar y ejecutar las actividades de prueba.</td>
-                    </tr>
-                    <tr>
-                        <td>Alcance</td>
-                        <td>Todo el ciclo de vida del software.</td>
-                        <td>Las actividades relacionadas con testing.</td>
-                    </tr>
-                    <tr>
-                        <td>Actividades</td>
-                        <td>Planificación, diseño, desarrollo, pruebas, despliegue y mantenimiento.</td>
-                        <td>Análisis de pruebas, planificación, diseño de casos, ejecución y cierre.</td>
-                    </tr>
-                    <tr>
-                        <td>Participantes</td>
-                        <td>Analistas, desarrolladores, testers, responsables de producto y operaciones.</td>
-                        <td>Testers, QA, desarrolladores y otros participantes de la validación.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <p class="sdlc-comparison__scroll-hint">
+                En pantallas pequeñas, desliza la tabla horizontalmente para comparar las columnas.
+            </p>
 
-            <p>
-                El STLC forma parte de las actividades de calidad
-                relacionadas con el desarrollo. Las pruebas pueden
-                comenzar desde el análisis de requisitos y continuar
-                después de la implementación.
+            <div
+                class="sdlc-comparison__table-wrap"
+                role="region"
+                aria-label="Comparación entre SDLC y STLC"
+                tabindex="0"
+            >
+                <table class="sdlc-comparison__table">
+                    <caption>SDLC y STLC: dos ciclos relacionados con objetivos distintos</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Aspecto</th>
+                            <th scope="col">SDLC · Desarrollo</th>
+                            <th scope="col">STLC · Pruebas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Propósito</th>
+                            <td>Construir, entregar y mantener un producto de software que responda a las necesidades del usuario.</td>
+                            <td>Planificar y realizar pruebas para evaluar el producto y aportar evidencia sobre su calidad.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Alcance</th>
+                            <td>El producto y el proceso completo: desde la definición de necesidades hasta su mantenimiento.</td>
+                            <td>Las actividades de prueba aplicadas a requisitos, componentes, integraciones y al sistema completo.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Etapas habituales</th>
+                            <td>Requisitos, diseño, desarrollo, pruebas, despliegue y mantenimiento.</td>
+                            <td>Análisis, planificación, diseño de pruebas, preparación, ejecución y cierre.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Participantes</th>
+                            <td>Equipo multidisciplinario: producto, análisis, desarrollo, pruebas y operaciones.</td>
+                            <td>Testers y QA, en colaboración con desarrollo, producto y otros especialistas.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Resultados</th>
+                            <td>Software funcional, documentación, versiones y mejoras del producto.</td>
+                            <td>Casos y evidencias de prueba, defectos registrados e informes de resultados.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Relación temporal</th>
+                            <td>Avanza durante la vida del producto y puede organizarse de forma secuencial o iterativa.</td>
+                            <td>Comienza desde el análisis de requisitos y continúa junto al desarrollo, incluso después de cada cambio.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="sdlc-comparison__note">
+                <strong>En síntesis:</strong> el STLC no es una etapa aislada al
+                final del SDLC; sus actividades acompañan el desarrollo para
+                detectar problemas cuanto antes.
             </p>
         </section>
 
         <section id="metodologias">
-            <h2>7. Modelos de desarrollo de software</h2>
+            <h2>Modelos de desarrollo de software</h2>
 
             <p>
                 El SDLC puede organizarse mediante diferentes modelos.
@@ -518,71 +541,70 @@
         </section>
 
         <section id="glosario">
-            <h2>8. Glosario de conceptos importantes</h2>
+            <h2>Glosario de conceptos importantes</h2>
+            <p class="sdlc-glossary__intro">
+                Términos frecuentes para comprender el desarrollo de software
+                y las actividades que ayudan a construir y verificar su calidad.
+            </p>
 
-            <dl>
-                <dt><strong>SDLC</strong></dt>
-                <dd>
-                    Ciclo de vida del desarrollo de software.
-                </dd>
-
-                <dt><strong>STLC</strong></dt>
-                <dd>
-                    Ciclo de vida de las pruebas de software.
-                </dd>
-
-                <dt><strong>QA</strong></dt>
-                <dd>
-                    Aseguramiento de la calidad mediante procesos
-                    orientados a prevenir defectos.
-                </dd>
-
-                <dt><strong>QC</strong></dt>
-                <dd>
-                    Control de calidad mediante la evaluación del
-                    producto y la detección de defectos.
-                </dd>
-
-                <dt><strong>Testing</strong></dt>
-                <dd>
-                    Actividades destinadas a evaluar el software
-                    y detectar fallos.
-                </dd>
-
-                <dt><strong>Defecto o bug</strong></dt>
-                <dd>
-                    Problema en un producto que puede provocar que
-                    su comportamiento no cumpla lo esperado.
-                </dd>
-
-                <dt><strong>Caso de prueba</strong></dt>
-                <dd>
-                    Conjunto de condiciones, datos y pasos que permiten
-                    comprobar un comportamiento específico.
-                </dd>
-
-                <dt><strong>Prueba de regresión</strong></dt>
-                <dd>
-                    Prueba que verifica que un cambio no haya afectado
-                    funcionalidades que anteriormente funcionaban.
-                </dd>
-
-                <dt><strong>Criterio de aceptación</strong></dt>
-                <dd>
-                    Condición que debe cumplir una funcionalidad para
-                    considerarse aceptable.
-                </dd>
-
-                <dt><strong>Automatización de pruebas</strong></dt>
-                <dd>
-                    Uso de herramientas y scripts para ejecutar
-                    comprobaciones de manera automática.
-                </dd>
+            <dl class="sdlc-glossary__grid">
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Ciclos de vida</span>SDLC</dt>
+                    <dd>Ciclo de vida del desarrollo de software. Organiza el trabajo desde la definición de necesidades hasta el despliegue y mantenimiento del producto.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Ciclos de vida</span>STLC</dt>
+                    <dd>Ciclo de vida de las pruebas de software. Ordena actividades como analizar requisitos, diseñar y ejecutar pruebas, y comunicar sus resultados.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Calidad</span>QA</dt>
+                    <dd>Aseguramiento de la calidad (<em>Quality Assurance</em>): prácticas centradas en mejorar el proceso y prevenir defectos antes de que lleguen al producto.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Calidad</span>QC</dt>
+                    <dd>Control de calidad (<em>Quality Control</em>): actividades que evalúan el producto, por ejemplo, mediante pruebas, para identificar defectos y verificar requisitos.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Pruebas</span>Testing</dt>
+                    <dd>Proceso de evaluar un componente o sistema y analizar sus resultados para comprobar comportamientos y detectar fallos. Las pruebas aportan información sobre la calidad, pero no demuestran que no existan defectos.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Pruebas</span>Defecto o bug</dt>
+                    <dd>Problema en el software que puede hacer que el sistema produzca un resultado incorrecto o se comporte de manera distinta a la esperada.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Pruebas</span>Caso de prueba</dt>
+                    <dd>Especificación de condiciones, datos de entrada, pasos y resultados esperados que permite verificar un comportamiento concreto.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Pruebas</span>Prueba de regresión</dt>
+                    <dd>Prueba que se repite después de un cambio para comprobar que las funciones existentes siguen comportándose correctamente.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Requisitos</span>Criterio de aceptación</dt>
+                    <dd>Condición verificable que una funcionalidad debe cumplir para que el equipo y las partes interesadas la consideren aceptada.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Pruebas</span>Cobertura de pruebas</dt>
+                    <dd>Medida de los requisitos, escenarios o elementos del código que han sido comprobados, según el criterio de cobertura utilizado. Una cobertura alta no garantiza por sí sola que las pruebas sean suficientes.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Pruebas</span>Prueba de humo</dt>
+                    <dd>Comprobación inicial y breve que confirma que las funciones esenciales están operativas después de una compilación o un despliegue.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Pruebas</span>Prueba de integración</dt>
+                    <dd>Prueba que comprueba la interacción y el intercambio de datos entre dos o más componentes o servicios conectados.</dd>
+                </div>
+                <div class="sdlc-glossary__item">
+                    <dt><span class="sdlc-glossary__category">Automatización</span>Automatización de pruebas</dt>
+                    <dd>Uso de herramientas y scripts para ejecutar comprobaciones de forma repetible y comparar los resultados con los esperados.</dd>
+                </div>
             </dl>
         </section>
 
         <section id="conclusion">
-            <h2>9. Conclusión</h2>
+            <h2>Conclusión</h2>
 
             <p>
                 El SDLC es fundamental para desarrollar software
