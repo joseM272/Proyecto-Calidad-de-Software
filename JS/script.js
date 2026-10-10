@@ -1,6 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav__menu a");
+  const navDropdowns = document.querySelectorAll(".nav__dropdown");
   const sections = document.querySelectorAll("main section[id], article[id]");
+
+  navDropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("toggle", () => {
+      if (!dropdown.open) return;
+
+      navDropdowns.forEach((otherDropdown) => {
+        if (otherDropdown !== dropdown) otherDropdown.open = false;
+      });
+    });
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navDropdowns.forEach((dropdown) => {
+        dropdown.open = false;
+      });
+    });
+  });
 
   const setActiveNav = () => {
     let currentId = "inicio";

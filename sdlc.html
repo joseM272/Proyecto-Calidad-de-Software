@@ -12,15 +12,54 @@
       <nav class="nav container" aria-label="Navegación principal">
         <ul class="nav__menu">
             <li><a href="index.html">Inicio</a></li>
-          <li><a href="fundamentos de calidad.html">Fundamentos de Calidad</a></li>
-          <li><a href="sdlc.html">SDLC</a></li>
-          <li><a href="">Metodologías Ágiles</a></li>
-          <li><a href="">Recursos y Aprendizaje</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Fundamentos de Calidad</summary>
+              <ul class="nav__submenu">
+                <li><a href="fundamentos de calidad.html#quality-attributes-title">Atributos de calidad</a></li>
+                <li><a href="fundamentos de calidad.html#quality-comparison-title">Calidad y pruebas</a></li>
+                <li><a href="fundamentos de calidad.html#quality-traits-title">Características del software</a></li>
+                <li><a href="fundamentos de calidad.html#test-levels-title">Niveles de pruebas</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">SDLC</summary>
+              <ul class="nav__submenu">
+                <li><a href="sdlc.html#introduccion">¿Qué es el SDLC?</a></li>
+                <li><a href="sdlc.html#etapas">Etapas del SDLC</a></li>
+                <li><a href="sdlc.html#stlc">SDLC y STLC</a></li>
+                <li><a href="sdlc.html#glosario">Glosario</a></li>
+              </ul>
+            </details>
+          </li>
+             <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Metodologías Ágiles</summary>
+              <ul class="nav__submenu">
+                <li><a href="">.</a></li>
+                <li><a href="">.</a></li>
+                <li><a href="">.</a></li>
+                <li><a href=" ">.</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Recursos y Aprendizaje</summary>
+              <ul class="nav__submenu">
+                <li><a href="">.</a></li>
+                <li><a href="">.</a></li>
+                <li><a href="">.</a></li>
+                <li><a href="">.</a></li>
+              </ul>
+            </details>
+          </li>
         </ul>
       </nav>
     </header>
-    <main>
-
+<main>
         <section id="introduccion">
             <h2> ¿Qué es el SDLC?</h2>
 
@@ -498,7 +537,7 @@
                 los riesgos, los requisitos y la forma de trabajo del equipo.
             </p>
 
-            <h3>Modelo en cascada</h3>
+            <h3 id="modelo-cascada">Modelo en cascada</h3>
 
             <p>
                 Organiza el desarrollo en etapas secuenciales. Cada
@@ -507,7 +546,7 @@
                 y están bien definidos.
             </p>
 
-            <h3>Modelo iterativo e incremental</h3>
+            <h3 id="modelo-iterativo">Modelo iterativo e incremental</h3>
 
             <p>
                 El producto se desarrolla mediante ciclos sucesivos.
@@ -515,7 +554,7 @@
                 comentarios y mejorar el sistema.
             </p>
 
-            <h3>Metodologías ágiles</h3>
+            <h3 id="modelo-agil">Metodologías ágiles</h3>
 
             <p>
                 Promueven entregas frecuentes, colaboración con el
@@ -524,7 +563,7 @@
                 organizar el trabajo de los equipos.
             </p>
 
-            <h3>DevOps y CI/CD</h3>
+            <h3 id="modelo-devops">DevOps y CI/CD</h3>
 
             <p>
                 DevOps fomenta la colaboración entre desarrollo y

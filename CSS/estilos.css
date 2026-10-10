@@ -160,6 +160,94 @@ img {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
+.nav__dropdown {
+  position: relative;
+}
+
+.nav__dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav__dropdown-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.nav__dropdown-trigger::after {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: "";
+  transform: translateY(-0.12rem) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.nav__dropdown[open] > .nav__dropdown-trigger,
+.nav__dropdown-trigger:hover,
+.nav__dropdown-trigger:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  outline-color: rgba(255, 255, 255, 0.75);
+}
+
+.nav__dropdown[open] > .nav__dropdown-trigger::after {
+  transform: translateY(0.12rem) rotate(225deg);
+}
+
+.nav__submenu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 50%;
+  z-index: 60;
+  display: grid;
+  width: max-content;
+  max-width: min(320px, calc(100vw - 32px));
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: var(--navy-900);
+  box-shadow: 0 16px 32px rgba(11, 23, 39, 0.28);
+  list-style: none;
+  transform: translateX(-50%);
+}
+
+.nav__menu .nav__submenu li {
+  display: block;
+}
+
+.nav__menu .nav__submenu a {
+  display: block;
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: normal;
+}
+
+.nav__menu .nav__submenu a:hover,
+.nav__menu .nav__submenu a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  outline-color: rgba(255, 255, 255, 0.75);
+}
+
+:target {
+  scroll-margin-top: 6rem;
+}
+
 .page {
   padding-bottom: 4rem;
 }
@@ -255,7 +343,7 @@ img {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--navy-800);
+  background: transparent;
   border: none;
   box-shadow: none;
   color: var(--white);
@@ -1132,6 +1220,17 @@ img {
   .nav__menu a {
     font-size: 0.82rem;
     padding: 0.7rem 0.85rem;
+  }
+
+  .nav__dropdown-trigger {
+    gap: 0.4rem;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  .nav__menu .nav__submenu a {
+    padding: 0.65rem 0.8rem;
+    font-size: 0.9rem;
   }
 
   .hero__intro {
