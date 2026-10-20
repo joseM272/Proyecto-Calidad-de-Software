@@ -1,0 +1,1 @@
+en las cajas de categoria sumar una breve descripcion y un logo para cada uno

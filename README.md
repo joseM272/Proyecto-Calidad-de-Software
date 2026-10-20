@@ -1,1 +1,0 @@
-# Proyecto-Calidad-de-Software

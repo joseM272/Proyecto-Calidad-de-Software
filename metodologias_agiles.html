@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Calidad de Software</title>
+    <link rel="stylesheet" href="CSS/estilos.css" />
+ <link rel="icon" href="fotos/Logo.jpg" type="image/png">
+    <script src="JS/script.js" defer></script>
+  </head>
+   <body>
+    <header class="topbar">
+      <nav class="nav container" aria-label="Navegación principal">
+        <ul class="nav__menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Fundamentos de Calidad</summary>
+              <ul class="nav__submenu">
+                <li><a href="fundamentos de calidad.html#quality-attributes-title">Atributos de calidad</a></li>
+                <li><a href="fundamentos de calidad.html#quality-comparison-title">Calidad y pruebas</a></li>
+                <li><a href="fundamentos de calidad.html#quality-traits-title">Características del software</a></li>
+                <li><a href="fundamentos de calidad.html#test-levels-title">Niveles de pruebas</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">SDLC</summary>
+              <ul class="nav__submenu">
+                <li><a href="sdlc.html#introduccion">¿Qué es el SDLC?</a></li>
+                <li><a href="sdlc.html#etapas">Etapas del SDLC</a></li>
+                <li><a href="sdlc.html#stlc">SDLC y STLC</a></li>
+                <li><a href="sdlc.html#glosario">Conceptos</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Metodologías Ágiles</summary>
+              <ul class="nav__submenu">
+                <li><a href="metodologias_agiles.html#que-son-agiles">¿Qué son?</a></li>
+                <li><a href="metodologias_agiles.html#aporte-calidad">Agilidad y calidad</a></li>
+                <li><a href="metodologias_agiles.html#metodologias">Metodologías</a></li>
+                <li><a href="metodologias_agiles.html#tecnicas">Técnicas de calidad</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+             <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Recursos y Aprendizaje</summary>
+              <ul class="nav__submenu">
+                <li><a href="recursos_aprendizaje.html#recursos-educativos">Recursos educativos</a></li>
+                <li><a href="recursos_aprendizaje.html#habilidades">Habilidades</a></li>
+                <li><a href="recursos_aprendizaje.html#actividades">Actividades prácticas</a></li>
+                <li><a href="recursos_aprendizaje.html#consejos">Consejos de aprendizaje</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page agile-page">
+      <section class="container agile-hero" aria-labelledby="agile-title">
+        <div class="agile-hero__content">
+          <p class="agile-eyebrow">Desarrollo iterativo · Mejora continua</p>
+          <h1 id="agile-title">Metodologías Ágiles y Calidad del Software</h1>
+          <p class="agile-hero__lead">
+            Construir software de calidad significa aprender, probar y mejorar en cada etapa.
+            Las metodologías ágiles convierten ese compromiso en una práctica diaria del equipo.
+          </p>
+        </div>
+        <aside class="agile-hero__note" aria-label="Idea clave">
+          <span class="agile-hero__note-label">Idea clave</span>
+          <p>La calidad no se revisa solo al final: se construye en cada entrega.</p>
+        </aside>
+      </section>
+
+      <div class="container agile-content">
+        <section id="que-son-agiles" class="agile-section" aria-labelledby="agile-definition-title">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">01</span>
+            <div>
+              <p class="agile-kicker">Conceptos fundamentales</p>
+              <h2 id="agile-definition-title">¿Qué son las metodologías ágiles?</h2>
+            </div>
+          </div>
+          <div class="agile-intro-grid">
+            <p class="agile-copy">
+              Las metodologías ágiles son enfoques de trabajo que permiten desarrollar software de
+              manera flexible, colaborativa e incremental. Se basan en la entrega frecuente de
+              resultados, la comunicación constante y la adaptación a los cambios durante el
+              desarrollo de un proyecto.
+            </p>
+            <p class="agile-copy agile-copy--highlight">
+              Su relación con la calidad del software es fundamental: promueven las pruebas
+              continuas, la detección temprana de errores y la mejora permanente del producto.
+            </p>
+          </div>
+        </section>
+
+        <section id="calidad-software" class="agile-section" aria-labelledby="software-quality-title">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">02</span>
+            <div>
+              <p class="agile-kicker">El objetivo del equipo</p>
+              <h2 id="software-quality-title">¿Qué es la calidad del software?</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            Es el grado en que un sistema cumple los requisitos establecidos, satisface las
+            necesidades de sus usuarios y funciona de manera confiable, segura y eficiente.
+          </p>
+          <div class="agile-card-grid agile-card-grid--traits">
+            <article class="agile-card">
+              <span class="agile-card__index">01</span>
+              <h3>Funcionalidad</h3>
+              <p>Cumple correctamente las tareas para las que fue diseñado.</p>
+            </article>
+            <article class="agile-card">
+              <span class="agile-card__index">02</span>
+              <h3>Fiabilidad</h3>
+              <p>Funciona de manera estable y consistente.</p>
+            </article>
+            <article class="agile-card">
+              <span class="agile-card__index">03</span>
+              <h3>Usabilidad</h3>
+              <p>Es fácil de aprender y utilizar.</p>
+            </article>
+            <article class="agile-card">
+              <span class="agile-card__index">04</span>
+              <h3>Eficiencia</h3>
+              <p>Aprovecha bien los recursos y ofrece un buen rendimiento.</p>
+            </article>
+            <article class="agile-card">
+              <span class="agile-card__index">05</span>
+              <h3>Seguridad</h3>
+              <p>Protege los datos y evita accesos no autorizados.</p>
+            </article>
+            <article class="agile-card">
+              <span class="agile-card__index">06</span>
+              <h3>Mantenibilidad</h3>
+              <p>Facilita corregir errores, realizar cambios y agregar mejoras.</p>
+            </article>
+            <article class="agile-card agile-card--wide">
+              <span class="agile-card__index">07</span>
+              <h3>Compatibilidad</h3>
+              <p>Puede funcionar e interactuar con otros sistemas según los requisitos definidos.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="aporte-calidad" class="agile-section agile-section--tinted" aria-labelledby="agile-quality-title">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">03</span>
+            <div>
+              <p class="agile-kicker">Calidad durante todo el ciclo</p>
+              <h2 id="agile-quality-title">¿Cómo contribuye la agilidad?</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            En lugar de dejar las pruebas para el final, los equipos ágiles integran la calidad en
+            todas las etapas del desarrollo.
+          </p>
+          <div class="agile-card-grid agile-card-grid--contributions">
+            <article class="agile-card agile-card--numbered">
+              <span class="agile-card__index">01</span>
+              <h3>Pruebas frecuentes</h3>
+              <p>Ayudan a detectar errores mientras se desarrolla el producto.</p>
+            </article>
+            <article class="agile-card agile-card--numbered">
+              <span class="agile-card__index">02</span>
+              <h3>Retroalimentación continua</h3>
+              <p>Usuarios y clientes evalúan avances y proponen mejoras.</p>
+            </article>
+            <article class="agile-card agile-card--numbered">
+              <span class="agile-card__index">03</span>
+              <h3>Integración continua</h3>
+              <p>Los cambios se integran y verifican con frecuencia mediante procesos automatizados.</p>
+            </article>
+            <article class="agile-card agile-card--numbered">
+              <span class="agile-card__index">04</span>
+              <h3>Mejora continua</h3>
+              <p>El equipo analiza sus resultados y ajusta sus prácticas de trabajo.</p>
+            </article>
+            <article class="agile-card agile-card--numbered">
+              <span class="agile-card__index">05</span>
+              <h3>Colaboración</h3>
+              <p>Desarrolladores, evaluadores y demás integrantes comparten la responsabilidad de la calidad.</p>
+            </article>
+            <article class="agile-card agile-card--numbered">
+              <span class="agile-card__index">06</span>
+              <h3>Entrega incremental</h3>
+              <p>Cada versión puede evaluarse antes de incorporar nuevas funcionalidades.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="metodologias" class="agile-section" aria-labelledby="methods-title">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">04</span>
+            <div>
+              <p class="agile-kicker">Formas de organizar el trabajo</p>
+              <h2 id="methods-title">Metodologías ágiles relacionadas con la calidad</h2>
+            </div>
+          </div>
+          <div class="agile-method-grid">
+            <article class="agile-method">
+              <p class="agile-method__label">Gestión por ciclos</p>
+              <h3>Scrum</h3>
+              <p>Organiza el trabajo en ciclos cortos llamados <em>sprints</em>. Al cierre de cada ciclo, el equipo presenta un incremento del producto que debe cumplir criterios de calidad previamente establecidos.</p>
+              <p class="agile-method__quality"><strong>Aporte a la calidad</strong> Facilita la revisión frecuente, la detección de problemas y la incorporación de mejoras.</p>
+            </article>
+            <article class="agile-method">
+              <p class="agile-method__label">Flujo de trabajo visual</p>
+              <h3>Kanban</h3>
+              <p>Utiliza un tablero para organizar las tareas y controlar el flujo de trabajo, haciendo visibles las actividades pendientes y bloqueadas.</p>
+              <p class="agile-method__quality"><strong>Aporte a la calidad</strong> Ayuda a visualizar problemas, controlar el trabajo en curso y evitar que se acumulen defectos.</p>
+            </article>
+            <article class="agile-method">
+              <p class="agile-method__label">Prácticas técnicas</p>
+              <h3>Extreme Programming (XP)</h3>
+              <p>Destaca las buenas prácticas de programación, las pruebas automatizadas y la colaboración técnica entre integrantes del equipo.</p>
+              <p class="agile-method__quality"><strong>Aporte a la calidad</strong> Promueve pruebas antes o durante la implementación, programación en pareja, integración continua y refactorización.</p>
+            </article>
+            <article class="agile-method">
+              <p class="agile-method__label">Optimización del valor</p>
+              <h3>Lean Software Development</h3>
+              <p>Busca maximizar el valor entregado al usuario y eliminar las actividades que no aportan valor al producto.</p>
+              <p class="agile-method__quality"><strong>Aporte a la calidad</strong> Favorece la reducción de desperdicios, la prevención de defectos y la mejora de los procesos.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="tecnicas" class="agile-section agile-section--tinted" aria-labelledby="techniques-title">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">05</span>
+            <div>
+              <p class="agile-kicker">Prácticas que hacen la diferencia</p>
+              <h2 id="techniques-title">Técnicas para garantizar la calidad</h2>
+            </div>
+          </div>
+          <ul class="agile-technique-list">
+            <li><strong>Pruebas unitarias</strong><span>Verifican cada componente de forma aislada.</span></li>
+            <li><strong>Pruebas de integración</strong><span>Comprueban que los componentes trabajen correctamente en conjunto.</span></li>
+            <li><strong>Pruebas funcionales</strong><span>Verifican que el software cumpla los requisitos.</span></li>
+            <li><strong>Pruebas de regresión</strong><span>Comprueban que los cambios no afecten funcionalidades existentes.</span></li>
+            <li><strong>Revisión de código</strong><span>Ayuda a encontrar errores y mejorar la legibilidad y el mantenimiento.</span></li>
+            <li><strong>Automatización de pruebas</strong><span>Ejecuta verificaciones repetitivas con rapidez y consistencia.</span></li>
+            <li><strong>Integración continua</strong><span>Detecta incompatibilidades y fallos al incorporar cambios.</span></li>
+          </ul>
+        </section>
+
+        <section id="ejemplo" class="agile-section" aria-labelledby="example-title">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">06</span>
+            <div>
+              <p class="agile-kicker">De la idea a una entrega confiable</p>
+              <h2 id="example-title">Ejemplo práctico: registro e inicio de sesión</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            Imaginemos que un equipo está desarrollando una tienda en línea. Para entregar el
+            registro de usuarios con calidad, puede seguir estos pasos:
+          </p>
+          <ol class="agile-steps">
+            <li><span>Planificación</span><p>Define los requisitos y los criterios de aceptación.</p></li>
+            <li><span>Desarrollo</span><p>Implementa el registro de usuarios.</p></li>
+            <li><span>Pruebas</span><p>Comprueba que los datos se validen correctamente y que los usuarios puedan iniciar sesión.</p></li>
+            <li><span>Revisión</span><p>Identifica errores y evalúa la experiencia del usuario.</p></li>
+            <li><span>Corrección</span><p>Soluciona los defectos encontrados y repite las pruebas necesarias.</p></li>
+            <li><span>Entrega</span><p>Incorpora la funcionalidad cuando cumple los criterios de calidad establecidos.</p></li>
+          </ol>
+          <p class="agile-example-note">
+            Al repetir este ciclo, los problemas se detectan tempranamente y se reduce el riesgo de
+            entregar un sistema con errores.
+          </p>
+        </section>
+
+        <section id="ventajas-desafios" class="agile-section" aria-labelledby="tradeoffs-title">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">07</span>
+            <div>
+              <p class="agile-kicker">Una práctica sostenible</p>
+              <h2 id="tradeoffs-title">Ventajas y desafíos</h2>
+            </div>
+          </div>
+          <div class="agile-tradeoffs">
+            <article class="agile-tradeoffs__panel">
+              <h3>Ventajas</h3>
+              <ul>
+                <li>Detección temprana de defectos.</li>
+                <li>Mayor adaptación a los cambios.</li>
+                <li>Mejor comunicación entre integrantes del equipo.</li>
+                <li>Entregas frecuentes y verificables.</li>
+                <li>Mejora de la satisfacción del usuario.</li>
+                <li>Mayor facilidad para mantener y evolucionar el software.</li>
+              </ul>
+            </article>
+            <article class="agile-tradeoffs__panel agile-tradeoffs__panel--challenge">
+              <h3>Desafíos</h3>
+              <ul>
+                <li>Requiere participación constante del equipo y del cliente.</li>
+                <li>La automatización de pruebas necesita tiempo y recursos.</li>
+                <li>Los cambios frecuentes deben gestionarse cuidadosamente.</li>
+                <li>La presión por entregar rápido puede afectar la calidad si no hay criterios claros.</li>
+                <li>Es necesario mantener documentación adecuada y buenas prácticas técnicas.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
