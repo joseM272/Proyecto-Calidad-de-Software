@@ -2144,3 +2144,634 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   US-18: Comparador Interactivo de Metodologías
+   ========================================================================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.comparator-section {
+  margin-top: 2.5rem;
+}
+
+.comparator-fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.comparator-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* Tarjeta interactiva / Botón de selección */
+.methodology-card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.35rem;
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(13, 29, 47, 0.05);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.methodology-card-btn:hover {
+  transform: translateY(-3px);
+  border-color: #9cbddc;
+  box-shadow: 0 10px 24px rgba(13, 29, 47, 0.1);
+}
+
+.methodology-card-btn:focus-visible {
+  outline: 3px solid rgba(45, 106, 168, 0.45);
+  outline-offset: 3px;
+}
+
+/* Estado activo / seleccionado */
+.methodology-card-btn.is-selected {
+  border-color: var(--blue-500);
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8fd 100%);
+  box-shadow: 0 8px 22px rgba(45, 106, 168, 0.16);
+}
+
+.methodology-card-btn.is-selected .methodology-card__checkbox {
+  background: var(--blue-500);
+  border-color: var(--blue-500);
+  color: var(--white);
+}
+
+.methodology-card-btn.is-selected .check-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.methodology-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.methodology-card__badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge--scrum {
+  background: rgba(45, 106, 168, 0.12);
+  color: #174f85;
+  border: 1px solid rgba(45, 106, 168, 0.25);
+}
+
+.badge--kanban {
+  background: rgba(16, 149, 120, 0.12);
+  color: #0b6852;
+  border: 1px solid rgba(16, 149, 120, 0.25);
+}
+
+.badge--xp {
+  background: rgba(109, 40, 217, 0.12);
+  color: #551fa8;
+  border: 1px solid rgba(109, 40, 217, 0.25);
+}
+
+.badge--lean {
+  background: rgba(217, 119, 6, 0.12);
+  color: #92400e;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+}
+
+.methodology-card__checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 6px;
+  border: 2px solid var(--gray-300);
+  background: var(--white);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.check-icon {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.methodology-card__name {
+  color: var(--navy-900);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+}
+
+.methodology-card__desc {
+  color: var(--gray-500);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 0.95rem;
+  flex-grow: 1;
+}
+
+.methodology-card__status {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  margin-top: auto;
+}
+
+.methodology-card-btn.is-selected .methodology-card__status {
+  color: var(--blue-500);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gray-300);
+  transition: background 0.2s ease;
+}
+
+.methodology-card-btn.is-selected .status-dot {
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* Barra de herramientas y atajos */
+.comparator-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(13, 29, 47, 0.04);
+}
+
+.comparator-toolbar__info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.comparator-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  background: var(--blue-200);
+  color: var(--navy-800);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.comparator-counter-hint {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+}
+
+.comparator-toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.comparator-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.95rem;
+  background: var(--blue-500);
+  color: var(--white);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.comparator-action-btn:hover {
+  background: var(--navy-700);
+  transform: translateY(-1px);
+}
+
+.comparator-action-btn--ghost {
+  background: transparent;
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+
+.comparator-action-btn--ghost:hover {
+  background: var(--gray-100);
+  color: var(--navy-900);
+}
+
+.action-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.comparator-toolbar__presets {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.presets-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  margin-right: 0.25rem;
+}
+
+.preset-pill {
+  padding: 0.3rem 0.75rem;
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border: 1px solid var(--gray-200);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-pill:hover {
+  background: var(--blue-200);
+  color: var(--navy-800);
+  border-color: #9cbddc;
+}
+
+/* Tabla Comparativa Adaptativa */
+.comparator-table-wrap {
+  position: relative;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--gray-200);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 12px 32px rgba(13, 29, 47, 0.08);
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparator-table-scroll-hint {
+  display: none;
+  padding: 0.65rem 1rem;
+  background: #edf4fb;
+  color: var(--blue-500);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: right;
+}
+
+.comparator-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--gray-700);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.comparator-table caption {
+  padding: 1.1rem 1.4rem;
+  color: var(--navy-900);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+  background: #fafcff;
+}
+
+.comparator-table th,
+.comparator-table td {
+  padding: 1.15rem 1.35rem;
+  border-top: 1px solid var(--gray-200);
+  border-right: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+
+.comparator-table th:last-child,
+.comparator-table td:last-child {
+  border-right: none;
+}
+
+/* Cabeceras thead */
+.comparator-table thead th {
+  padding: 1.25rem 1.35rem;
+  color: var(--white);
+  font-size: 0.98rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.comparator-table thead th.col-dimension {
+  width: 22%;
+  min-width: 180px;
+  background: var(--navy-900);
+  color: #d8e5f3;
+  letter-spacing: 0.04em;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+}
+
+.comparator-table thead th.col-scrum {
+  background: linear-gradient(145deg, #102d4a 0%, #1d5a96 100%);
+}
+
+.comparator-table thead th.col-kanban {
+  background: linear-gradient(145deg, #0e3d36 0%, #0d765e 100%);
+}
+
+.comparator-table thead th.col-xp {
+  background: linear-gradient(145deg, #2b1754 0%, #6025ba 100%);
+}
+
+.comparator-table thead th.col-lean {
+  background: linear-gradient(145deg, #4d2b07 0%, #b45309 100%);
+}
+
+.col-header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.col-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.col-header-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.btn-remove-col {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-remove-col:hover {
+  background: rgba(239, 68, 68, 0.85);
+  border-color: rgba(239, 68, 68, 1);
+  color: var(--white);
+}
+
+.col-header-subtitle {
+  font-size: 0.78rem;
+  font-weight: 400;
+  opacity: 0.88;
+  line-height: 1.35;
+}
+
+/* Cuerpo de la tabla */
+.comparator-table tbody th.row-dimension {
+  width: 22%;
+  background: #f7f9fd;
+  color: var(--navy-800);
+  font-weight: 700;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.dimension-title {
+  display: block;
+  color: var(--navy-900);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.dimension-sub {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  line-height: 1.35;
+}
+
+.comparator-table tbody tr:nth-child(even) {
+  background: #fafcff;
+}
+
+.comparator-table tbody tr:hover {
+  background: #f1f6fc;
+}
+
+.comparator-table tbody td {
+  font-size: 0.91rem;
+  color: var(--gray-700);
+  line-height: 1.65;
+}
+
+.comparator-table tbody td strong {
+  color: var(--navy-900);
+}
+
+/* Destacado especial para la fila de Calidad */
+.comparator-table tbody tr.row--quality-highlight {
+  background: #eef6fc;
+}
+
+.comparator-table tbody tr.row--quality-highlight th {
+  background: #e1effa;
+  border-left: 4px solid var(--blue-500);
+}
+
+.comparator-table tbody tr.row--quality-highlight:hover {
+  background: #e5f2fb;
+}
+
+/* Estado de una sola metodología seleccionada */
+.comparator-single-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.4rem;
+  background: #edf4fb;
+  border: 1px solid #c2dbf3;
+  border-left: 4px solid var(--blue-500);
+  border-radius: 12px;
+  color: var(--navy-800);
+}
+
+.comparator-single-banner p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Estado Vacío (0 seleccionadas) */
+.comparator-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--white);
+  border: 2px dashed var(--gray-300);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.empty-state-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1.25rem;
+  background: var(--blue-200);
+  color: var(--blue-500);
+  border-radius: 50%;
+}
+
+.empty-state-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.comparator-empty-state h3 {
+  margin: 0 0 0.5rem;
+  color: var(--navy-900);
+  font-size: 1.4rem;
+}
+
+.comparator-empty-state p {
+  max-width: 52ch;
+  margin: 0 0 1.5rem;
+  color: var(--gray-500);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Caja de recomendación */
+.comparator-recommendation-box {
+  margin-top: 2rem;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e2effd 100%);
+  border: 1px solid #b8d8f8;
+  border-left: 5px solid var(--blue-500);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(45, 106, 168, 0.08);
+}
+
+.comparator-recommendation-box h4 {
+  margin: 0 0 0.65rem;
+  color: var(--navy-900);
+  font-size: 1.15rem;
+}
+
+.comparator-recommendation-box p {
+  margin: 0;
+  color: var(--navy-800);
+  line-height: 1.7;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .comparator-buttons-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .comparator-table-scroll-hint {
+    display: block;
+  }
+
+  .comparator-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .comparator-toolbar__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .comparator-buttons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .methodology-card-btn {
+    padding: 1.1rem;
+  }
+
+  .comparator-table th,
+  .comparator-table td {
+    padding: 0.85rem 0.95rem;
+    font-size: 0.84rem;
+  }
+
+  .col-header-title {
+    font-size: 1.05rem;
+  }
+}
+

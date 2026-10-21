@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparador de Metodologías Ágiles | Gestión de Calidad de Software</title>
+    <link rel="stylesheet" href="CSS/estilos.css" />
+    <link rel="icon" href="fotos/Logo.jpg" type="image/png" />
+    <script src="JS/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Encabezado y Navegación Principal -->
+    <header class="topbar">
+      <nav class="nav container" aria-label="Navegación principal">
+        <ul class="nav__menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Fundamentos de Calidad</summary>
+              <ul class="nav__submenu">
+                <li><a href="fundamentos de calidad.html#quality-attributes-title">Atributos de calidad</a></li>
+                <li><a href="fundamentos de calidad.html#quality-comparison-title">Calidad y pruebas</a></li>
+                <li><a href="fundamentos de calidad.html#quality-traits-title">Características del software</a></li>
+                <li><a href="fundamentos de calidad.html#test-levels-title">Niveles de pruebas</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">SDLC</summary>
+              <ul class="nav__submenu">
+                <li><a href="sdlc.html#introduccion">¿Qué es el SDLC?</a></li>
+                <li><a href="sdlc.html#etapas">Etapas del SDLC</a></li>
+                <li><a href="sdlc.html#stlc">SDLC y STLC</a></li>
+                <li><a href="sdlc.html#glosario">Conceptos</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Metodologías Ágiles</summary>
+              <ul class="nav__submenu">
+                <li><a href="metodologias_agiles.html#que-son-agiles">¿Qué son?</a></li>
+                <li><a href="metodologias_agiles.html#aporte-calidad">Agilidad y calidad</a></li>
+                <li><a href="metodologias_agiles.html#metodologias">Metodologías</a></li>
+                <li><a href="metodologias_agiles.html#tecnicas">Técnicas de calidad</a></li>
+                <li><a href="Comparar metodologias.html" class="is-active">Comparador de metodologías</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Recursos y Aprendizaje</summary>
+              <ul class="nav__submenu">
+                <li><a href="recursos_aprendizaje.html#recursos-educativos">Recursos educativos</a></li>
+                <li><a href="recursos_aprendizaje.html#habilidades">Habilidades</a></li>
+                <li><a href="recursos_aprendizaje.html#actividades">Actividades prácticas</a></li>
+                <li><a href="recursos_aprendizaje.html#consejos">Consejos de aprendizaje</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page agile-page comparator-page">
+      <!-- Sección Hero -->
+      <section class="container agile-hero" aria-labelledby="comparator-hero-title">
+        <div class="agile-hero__content">
+          <p class="agile-eyebrow">Herramienta Interactiva · Toma de Decisiones en Calidad</p>
+          <h1 id="comparator-hero-title">Comparador de Metodologías Ágiles</h1>
+          <p class="agile-hero__lead">
+            Contrasta de manera dinámica las características, aportes a la calidad de software, cadencia de entrega y prácticas técnicas de <strong>Scrum</strong>, <strong>Kanban</strong>, <strong>Extreme Programming (XP)</strong> y <strong>Lean</strong> para determinar el marco ideal de tu equipo de desarrollo.
+          </p>
+        </div>
+        <aside class="agile-hero__note" aria-label="Consejo de uso">
+          <span class="agile-hero__note-label">Modo Dinámico</span>
+          <p>Presiona los botones para activar o desactivar metodologías y comparar sus dimensiones en tiempo real.</p>
+        </aside>
+      </section>
+
+      <div class="container agile-content">
+       
+
+
+        <section id="comparador" class="agile-section comparator-section" aria-labelledby="selection-title">
+          <div class="agile-section__heading">
+              <h2 id="selection-title">Selecciona las metodologías que quieras comparar</h2>
+          </div>
+
+
+
+          <form id="comparator-form" class="comparator-selection-form" onsubmit="event.preventDefault();" aria-label="Selector de metodologías para comparar">
+            <fieldset class="comparator-fieldset">
+              <legend class="visually-hidden">Selección de metodologías ágiles</legend>
+
+              <div class="comparator-buttons-grid" role="group" aria-label="Metodologías disponibles">
+                
+                <button
+                  type="button"
+                  id="btn-scrum"
+                  class="methodology-card-btn is-selected"
+                  data-methodology="scrum"
+                  role="checkbox"
+                  aria-checked="true"
+                  aria-controls="comparator-output"
+                >
+                  <span class="methodology-card__header">
+                    <span class="methodology-card__badge badge--scrum">Ciclos e Incrementos</span>
+                    <span class="methodology-card__checkbox" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </span>
+                  </span>
+                  <span class="methodology-card__name">Scrum</span>
+                  <span class="methodology-card__desc">Sprints iterativos de 1 a 4 semanas, ceremonias estructuradas y definición de terminado (DoD).</span>
+                  <span class="methodology-card__status"><span class="status-dot"></span> Activo en comparación</span>
+                </button>
+
+           
+                <button
+                  type="button"
+                  id="btn-kanban"
+                  class="methodology-card-btn is-selected"
+                  data-methodology="kanban"
+                  role="checkbox"
+                  aria-checked="true"
+                  aria-controls="comparator-output"
+                >
+                  <span class="methodology-card__header">
+                    <span class="methodology-card__badge badge--kanban">Flujo Continuo</span>
+                    <span class="methodology-card__checkbox" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </span>
+                  </span>
+                  <span class="methodology-card__name">Kanban</span>
+                  <span class="methodology-card__desc">Gestión visual del trabajo, limitación de trabajo en curso (WIP) y optimización del tiempo de entrega.</span>
+                  <span class="methodology-card__status"><span class="status-dot"></span> Activo en comparación</span>
+                </button>
+
+           
+                <button
+                  type="button"
+                  id="btn-xp"
+                  class="methodology-card-btn"
+                  data-methodology="xp"
+                  role="checkbox"
+                  aria-checked="false"
+                  aria-controls="comparator-output"
+                >
+                  <span class="methodology-card__header">
+                    <span class="methodology-card__badge badge--xp">Ingeniería y Pruebas</span>
+                    <span class="methodology-card__checkbox" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </span>
+                  </span>
+                  <span class="methodology-card__name">Extreme Programming (XP)</span>
+                  <span class="methodology-card__desc">Excelencia técnica, desarrollo guiado por pruebas (TDD), programación en parejas e integración continua.</span>
+                  <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
+                </button>
+
+                
+                <button
+                  type="button"
+                  id="btn-lean"
+                  class="methodology-card-btn"
+                  data-methodology="lean"
+                  role="checkbox"
+                  aria-checked="false"
+                  aria-controls="comparator-output"
+                >
+                  <span class="methodology-card__header">
+                    <span class="methodology-card__badge badge--lean">Valor y Eficiencia</span>
+                    <span class="methodology-card__checkbox" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </span>
+                  </span>
+                  <span class="methodology-card__name">Lean Software</span>
+                  <span class="methodology-card__desc">Eliminación sistemática de desperdicios, creación de conocimiento, entrega rápida y calidad intrínseca.</span>
+                  <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
+                </button>
+              </div>
+            </fieldset>
+
+        <section id="tabla-comparativa" class="agile-section" aria-labelledby="table-heading">
+          <div id="comparator-output" aria-live="polite" role="region" aria-label="Resultados de la comparación de metodologías">
+          </div>
+        </section>
+    </main>
+  </body>
+</html>
