@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encuesta de Preferencias Metodológicas | Gestión de Calidad de Software</title>
+    <link rel="stylesheet" href="CSS/estilos.css" />
+    <link rel="icon" href="fotos/Logo.jpg" type="image/png" />
+    <script src="JS/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Encabezado y Navegación Principal -->
+    <header class="topbar">
+      <nav class="nav container" aria-label="Navegación principal">
+        <ul class="nav__menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Fundamentos de Calidad</summary>
+              <ul class="nav__submenu">
+                <li><a href="fundamentos de calidad.html#quality-attributes-title">Atributos de calidad</a></li>
+                <li><a href="fundamentos de calidad.html#quality-comparison-title">Calidad y pruebas</a></li>
+                <li><a href="fundamentos de calidad.html#quality-traits-title">Características del software</a></li>
+                <li><a href="fundamentos de calidad.html#test-levels-title">Niveles de pruebas</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">SDLC</summary>
+              <ul class="nav__submenu">
+                <li><a href="sdlc.html#introduccion">¿Qué es el SDLC?</a></li>
+                <li><a href="sdlc.html#etapas">Etapas del SDLC</a></li>
+                <li><a href="sdlc.html#stlc">SDLC y STLC</a></li>
+                <li><a href="sdlc.html#glosario">Conceptos</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Metodologías Ágiles</summary>
+              <ul class="nav__submenu">
+                <li><a href="metodologias_agiles.html#que-son-agiles">¿Qué son?</a></li>
+                <li><a href="metodologias_agiles.html#aporte-calidad">Agilidad y calidad</a></li>
+                <li><a href="metodologias_agiles.html#metodologias">Metodologías</a></li>
+                <li><a href="metodologias_agiles.html#tecnicas">Técnicas de calidad</a></li>
+                <li><a href="Comparar metodologias.html">Comparador de metodologías</a></li>
+                <li><a href="Preferencia de metadologia.html" class="is-active">Encuesta de preferencias</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Recursos y Aprendizaje</summary>
+              <ul class="nav__submenu">
+                <li><a href="recursos_aprendizaje.html#recursos-educativos">Recursos educativos</a></li>
+                <li><a href="recursos_aprendizaje.html#habilidades">Habilidades</a></li>
+                <li><a href="recursos_aprendizaje.html#actividades">Actividades prácticas</a></li>
+                <li><a href="recursos_aprendizaje.html#consejos">Consejos de aprendizaje</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page agile-page survey-page">
+      <!-- Sección Hero -->
+      <section class="container agile-hero" aria-labelledby="survey-hero-title">
+        <div class="agile-hero__content">
+          <p class="agile-eyebrow">Asistente Inteligente · Diagnóstico de Proyectos</p>
+          <h1 id="survey-hero-title">Encuesta de Preferencias Metodológicas</h1>
+          <p class="agile-hero__lead">
+            Responde 6 preguntas clave sobre las dinámicas, requerimientos y prioridades de calidad de tu proyecto. Nuestro algoritmo evaluará tus respuestas y calculará el porcentaje de coincidencia con <strong>Scrum</strong>, <strong>Kanban</strong>, <strong>Extreme Programming (XP)</strong> y <strong>Lean</strong> para sugerirte la metodología más adecuada.
+          </p>
+        </div>
+        <aside class="agile-hero__note" aria-label="Beneficio del asistente">
+          <span class="agile-hero__note-label">Diagnóstico Guiado</span>
+          <p>Asistente paso a paso con cálculo inmediato de afinidad porcentual y justificación técnica.</p>
+        </aside>
+      </section>
+
+      <div class="container agile-content">
+        <!-- Sección del Asistente / Wizard -->
+        <section id="encuesta" class="agile-section survey-section" aria-labelledby="wizard-heading">
+          <div class="agile-section__heading">
+            <span class="agile-section__number">01</span>
+            <div>
+              <p class="agile-kicker">Evaluación Interactiva</p>
+              <h2 id="wizard-heading">Asistente de Selección Metodológica</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            Selecciona la opción que mejor represente la realidad o las expectativas de tu equipo en cada etapa. Podrás avanzar, retroceder y revisar tus respuestas en cualquier momento.
+          </p>
+
+          <!-- Contenedor Principal del Wizard -->
+          <div id="survey-wizard" class="wizard-container" role="region" aria-label="Asistente de encuesta metodológica">
+            
+            <!-- Barra de Progreso Superior -->
+            <div class="wizard-progress" aria-label="Progreso de la encuesta">
+              <div class="wizard-progress__meta">
+                <div class="wizard-progress__step-info">
+                  <span id="wizard-step-badge" class="wizard-badge">Pregunta 1 de 6</span>
+                  <span id="wizard-step-category" class="wizard-category">Cadencia y Entregas</span>
+                </div>
+                <span id="wizard-progress-percent" class="wizard-percent">17% completado</span>
+              </div>
+              <div class="wizard-progress__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" aria-label="Porcentaje completado">
+                <div id="wizard-progress-fill" class="wizard-progress__fill" style="width: 17%;"></div>
+              </div>
+            </div>
+
+            <!-- Formulario / Contenedor de Preguntas Paso a Paso -->
+            <form id="wizard-form" class="wizard-form" onsubmit="event.preventDefault();">
+              
+              <!-- Pregunta 1 -->
+              <div class="wizard-step is-active" data-step="0" role="group" aria-labelledby="q1-title">
+                <h3 id="q1-title" class="wizard-step__title">
+                  <span class="wizard-step__num">1.</span> ¿Con qué ritmo y frecuencia necesita tu equipo entregar valor funcional al cliente?
+                </h3>
+                <p class="wizard-step__desc">Considera la periodicidad con la que los usuarios esperan ver nuevas características probadas.</p>
+                <div class="wizard-options-grid">
+                  <button type="button" class="survey-option-btn" data-question="0" data-value="scrum">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Ciclos regulares fijos de 1 a 4 semanas</strong>
+                      <span class="option-desc">El equipo se enfoca en un lote de trabajo acotado y presenta un incremento potencialmente desplegable al final del ciclo.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="0" data-value="kanban">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Flujo continuo bajo demanda sin fechas rígidas</strong>
+                      <span class="option-desc">Las funcionalidades o correcciones se liberan inmediatamente una vez completadas y validadas.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="0" data-value="xp">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Despliegues muy frecuentes (diarios o semanales) con pruebas masivas</strong>
+                      <span class="option-desc">Iteraciones ultracortas respaldadas por suites de integración continua y testing automático exhaustivo.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="0" data-value="lean">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Velocidad máxima eliminando esperas y burocracia</strong>
+                      <span class="option-desc">Entrega modular rápida enfocada estrictamente en el valor real del usuario, eliminando todo retraso o paso innecesario.</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pregunta 2 -->
+              <div class="wizard-step" data-step="1" role="group" aria-labelledby="q2-title">
+                <h3 id="q2-title" class="wizard-step__title">
+                  <span class="wizard-step__num">2.</span> ¿Cómo está estructurado el equipo y cómo prefiere distribuir las responsabilidades?
+                </h3>
+                <p class="wizard-step__desc">Define la organización interna y los roles requeridos para la toma de decisiones.</p>
+                <div class="wizard-options-grid">
+                  <button type="button" class="survey-option-btn" data-question="1" data-value="scrum">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Roles formales definidos (Product Owner, Scrum Master, Developers)</strong>
+                      <span class="option-desc">Separación clara entre la visión de negocio/producto, la facilitación de procesos y el equipo multidisciplinario.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="1" data-value="kanban">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Sin roles predeterminados; estructura flexible y colaborativa</strong>
+                      <span class="option-desc">Respeta los roles existentes en la empresa y fomenta que cualquier integrante tome la iniciativa en el tablero.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="1" data-value="xp">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Desarrolladores y testers codo a codo con el cliente in situ</strong>
+                      <span class="option-desc">Parejas de programación (Pair Programming), propiedad colectiva del código y cliente disponible diariamente para preguntas.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="1" data-value="lean">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Equipos autoorganizados con alta autonomía para optimizar el flujo</strong>
+                      <span class="option-desc">Ingenieros empoderados para tomar decisiones técnicas rápidas y suprimir actividades que no aportan valor.</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pregunta 3 -->
+              <div class="wizard-step" data-step="2" role="group" aria-labelledby="q3-title">
+                <h3 id="q3-title" class="wizard-step__title">
+                  <span class="wizard-step__num">3.</span> ¿Cuál es la estrategia prioritaria para salvaguardar la calidad del software (QA)?
+                </h3>
+                <p class="wizard-step__desc">Selecciona la práctica técnica o de gestión con la que garantizarán la confiabilidad del producto.</p>
+                <div class="wizard-options-grid">
+                  <button type="button" class="survey-option-btn" data-question="2" data-value="scrum">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Criterios de Terminado (DoD), demos y retrospectivas periódicas</strong>
+                      <span class="option-desc">Validación de aceptación en la Sprint Review e inspección regular del proceso en la retrospectiva del equipo.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="2" data-value="kanban">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Límites estrictos de Trabajo en Curso (WIP) para visibilizar cuellos de botella</strong>
+                      <span class="option-desc">Evitar la acumulación de tareas inconclusas o defectuosas resolviendo bloqueos antes de iniciar nuevas actividades.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="2" data-value="xp">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Desarrollo Guiado por Pruebas (TDD) y refactorización continua</strong>
+                      <span class="option-desc">Escribir pruebas automatizadas antes del código, revisión en parejas y cero tolerancia a deuda técnica.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="2" data-value="lean">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Calidad intrínseca en la fuente (Jidoka) y resolución de causa raíz</strong>
+                      <span class="option-desc">Detener la línea ante cualquier defecto para erradicar su causa fundamental y prevenir que vuelva a ocurrir.</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pregunta 4 -->
+              <div class="wizard-step" data-step="3" role="group" aria-labelledby="q4-title">
+                <h3 id="q4-title" class="wizard-step__title">
+                  <span class="wizard-step__num">4.</span> ¿Cómo deben gestionarse los cambios en los requisitos del proyecto?
+                </h3>
+                <p class="wizard-step__desc">Indica cómo reacciona tu equipo frente a nuevas peticiones o modificaciones del cliente.</p>
+                <div class="wizard-options-grid">
+                  <button type="button" class="survey-option-btn" data-question="3" data-value="scrum">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Alcance protegido durante el ciclo; cambios entran al siguiente Sprint</strong>
+                      <span class="option-desc">El equipo se enfoca en el objetivo acordado; los nuevos pedidos se priorizan en el Product Backlog.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="3" data-value="kanban">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Cambios aceptados en cualquier momento según capacidad del tablero</strong>
+                      <span class="option-desc">Máxima flexibilidad: una nueva solicitud puede entrar al flujo tan pronto como se libere un espacio en la columna.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="3" data-value="xp">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Abraza el cambio continuo respaldado en diseño simple y suites de test</strong>
+                      <span class="option-desc">El código puede modificarse con total seguridad en cualquier momento gracias a la cobertura masiva de pruebas unitarias.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="3" data-value="lean">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Decidir en el 'Último Momento Responsable' para evitar retrabajos</strong>
+                      <span class="option-desc">No comprometer especificaciones prematuramente hasta tener certeza real de los requerimientos del usuario.</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pregunta 5 -->
+              <div class="wizard-step" data-step="4" role="group" aria-labelledby="q5-title">
+                <h3 id="q5-title" class="wizard-step__title">
+                  <span class="wizard-step__num">5.</span> ¿Qué herramientas visuales y métricas resultan más relevantes para monitorear el progreso?
+                </h3>
+                <p class="wizard-step__desc">Elige los instrumentos de seguimiento que mejor comuniquen el avance de tu equipo.</p>
+                <div class="wizard-options-grid">
+                  <button type="button" class="survey-option-btn" data-question="4" data-value="scrum">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Gráficos Burndown/Burnup, velocidad en Story Points y Sprint Backlog</strong>
+                      <span class="option-desc">Seguimiento diario del trabajo restante dentro del Sprint y medición de capacidad estimada del equipo.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="4" data-value="kanban">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Tablero con columnas, límites WIP, Lead Time y Diagrama de Flujo Acumulado (CFD)</strong>
+                      <span class="option-desc">Control visual del tiempo desde que se solicita una tarea hasta que se entrega en producción.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="4" data-value="xp">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Dashboard de integración continua (CI), cobertura de código y densidad de defectos</strong>
+                      <span class="option-desc">Indicadores técnicos automatizados en tiempo real sobre la salud y mantenibilidad de la base de código.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="4" data-value="lean">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Mapa de la Cadena de Valor (Value Stream Mapping) y eficiencia del flujo</strong>
+                      <span class="option-desc">Medición del porcentaje de tiempo activo agregando valor frente al tiempo total de espera desperdiciado.</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pregunta 6 -->
+              <div class="wizard-step" data-step="5" role="group" aria-labelledby="q6-title">
+                <h3 id="q6-title" class="wizard-step__title">
+                  <span class="wizard-step__num">6.</span> ¿Cuál es el principal desafío o problema que tu equipo necesita solucionar con urgencia?
+                </h3>
+                <p class="wizard-step__desc">Identifica el punto de dolor central que motivó la búsqueda de una nueva metodología.</p>
+                <div class="wizard-options-grid">
+                  <button type="button" class="survey-option-btn" data-question="5" data-value="scrum">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Falta de sincronización, entregas demoradas y poca visibilidad para los clientes</strong>
+                      <span class="option-desc">Se requiere disciplina en reuniones, cadencia estructurada y acuerdos de terminación transparentes.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="5" data-value="kanban">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Sobrecarga de trabajo simultáneo, cuellos de botella y tareas atascadas a medias</strong>
+                      <span class="option-desc">Urge limitar el trabajo en proceso, ordenar el flujo operativo y equilibrar la demanda del equipo.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="5" data-value="xp">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Bugs recurrentes en producción, deuda técnica alta y temor al modificar el código</strong>
+                      <span class="option-desc">Se necesita elevar radicalmente las habilidades de programación, testing automatizado y buenas prácticas técnicas.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="5" data-value="lean">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <strong class="option-title">Tiempos muertos excesivos, procesos burocráticos y funcionalidades que nadie usa</strong>
+                      <span class="option-desc">Es imperativo simplificar las etapas de desarrollo, suprimir desperdicios y acelerar el tiempo de llegada al mercado.</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Barra de Navegación del Asistente -->
+              <div class="wizard-nav">
+                <button type="button" id="btn-prev-step" class="wizard-nav__btn wizard-nav__btn--prev" disabled>
+                  <svg viewBox="0 0 20 20" fill="currentColor" class="nav-arrow"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Anterior
+                </button>
+
+                <div class="wizard-dots" id="wizard-dots" aria-hidden="true">
+                  <span class="wizard-dot is-active"></span>
+                  <span class="wizard-dot"></span>
+                  <span class="wizard-dot"></span>
+                  <span class="wizard-dot"></span>
+                  <span class="wizard-dot"></span>
+                  <span class="wizard-dot"></span>
+                </div>
+
+                <button type="button" id="btn-next-step" class="wizard-nav__btn wizard-nav__btn--next" disabled>
+                  Siguiente
+                  <svg viewBox="0 0 20 20" fill="currentColor" class="nav-arrow"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </button>
+              </div>
+            </form>
+
+            <!-- Panel de Resultados Dinámicos (Oculto inicialmente) -->
+            <div id="survey-results" class="survey-results" style="display: none;" role="region" aria-label="Resultado de la encuesta">
+              <!-- El contenido del resultado se inyectará dinámicamente aquí -->
+            </div>
+
+          </div>
+        </section>
+
+        
+  </body>
+</html>

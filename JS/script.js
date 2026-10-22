@@ -376,7 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </caption>
             <thead>
               <tr>
-                <th class="col-dimension" scope="col">Dimensión / Criterio</th>
+                <th class="col-dimension" scope="col">Criterio</th>
                 ${theadColumnsHTML}
               </tr>
             </thead>
@@ -450,5 +450,330 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicialización del comparador al cargar la página
     updateUI();
   }
-});
 
+  // =========================================================================
+  // US-19: Encuesta de Preferencias Metodológicas (Wizard Asistente)
+  // =========================================================================
+  const surveyWizard = document.getElementById("survey-wizard");
+
+  if (surveyWizard) {
+    const wizardForm = document.getElementById("wizard-form");
+    const surveyResults = document.getElementById("survey-results");
+    const steps = surveyWizard.querySelectorAll(".wizard-step");
+    const totalSteps = steps.length;
+    let currentStep = 0;
+    const userAnswers = {};
+
+    const stepCategories = [
+      "Cadencia y Entregas",
+      "Estructura del Equipo",
+      "Estrategia de Calidad",
+      "Gestión del Cambio",
+      "Monitoreo y Métricas",
+      "Desafío Principal"
+    ];
+
+    const stepBadge = document.getElementById("wizard-step-badge");
+    const stepCategory = document.getElementById("wizard-step-category");
+    const progressPercent = document.getElementById("wizard-progress-percent");
+    const progressFill = document.getElementById("wizard-progress-fill");
+    const btnPrev = document.getElementById("btn-prev-step");
+    const btnNext = document.getElementById("btn-next-step");
+    const dotsContainer = document.getElementById("wizard-dots");
+    const dots = dotsContainer ? dotsContainer.querySelectorAll(".wizard-dot") : [];
+
+    const METHODOLOGY_PROFILES = {
+      scrum: {
+        id: "scrum",
+        name: "Scrum",
+        badge: "Gestión por Sprints e Incrementos",
+        tagline: "El marco ágil ideal para proyectos con requisitos evolutivos que necesitan cadencia estructurada, reuniones de sincronización claras y validación periódica con usuarios.",
+        fillClass: "fill--scrum",
+        insights: [
+          { tag: "Ritmo Fijo", title: "Entregas en Sprints", desc: "La cadencia de 1 a 4 semanas permite validar hipótesis y planificar de forma incremental sin desbordar al equipo." },
+          { tag: "Calidad / QA", title: "Definición de Terminado (DoD)", desc: "Establece criterios de calidad innegociables para cada incremento antes de ser presentado a los interesados." },
+          { tag: "Roles", title: "Product Owner y Scrum Master", desc: "Facilitan la priorización del valor de negocio y la remoción continua de impedimentos y bloqueos operativos." },
+          { tag: "Mejora", title: "Retrospectivas Sistemáticas", desc: "Al final de cada ciclo el equipo reflexiona para perfeccionar sus procesos de ingeniería y colaboración." }
+        ]
+      },
+      kanban: {
+        id: "kanban",
+        name: "Kanban",
+        badge: "Flujo Continuo y Límites WIP",
+        tagline: "El marco idóneo para entornos de soporte, mantenimiento continuo o desarrollo con flujo constante de peticiones y necesidad de visibilidad inmediata sin burocracia.",
+        fillClass: "fill--kanban",
+        insights: [
+          { tag: "Flujo Continuo", title: "Sin Sprints Rígidos", desc: "Las tareas se mueven bajo demanda a través del tablero visual en función de la capacidad real del equipo." },
+          { tag: "Calidad / QA", title: "Control Estricto de WIP", desc: "Limitar el trabajo en proceso hace visibles los cuellos de botella y errores de forma instantánea." },
+          { tag: "Métricas", title: "Lead Time y Cycle Time", desc: "Monitorea con precisión científica el tiempo que toma resolver una solicitud desde el inicio hasta la entrega." },
+          { tag: "Flexibilidad", title: "Adaptación en Tiempo Real", desc: "Permite cambiar prioridades en cualquier momento respetando la capacidad disponible." }
+        ]
+      },
+      xp: {
+        id: "xp",
+        name: "Extreme Programming (XP)",
+        badge: "Excelencia Técnica y TDD",
+        tagline: "El marco por excelencia para proyectos donde la robustez técnica, la ausencia de defectos y la alta calidad interna del código son la máxima prioridad.",
+        fillClass: "fill--xp",
+        insights: [
+          { tag: "Ingeniería", title: "Desarrollo Guiado por Pruebas (TDD)", desc: "Escribir pruebas automatizadas antes del código garantiza cero regresiones y un diseño simple modular." },
+          { tag: "Calidad / QA", title: "Programación en Parejas", desc: "La programación en parejas actúa como una inspección de código continua e instantánea." },
+          { tag: "Automatización", title: "Integración Continua (CI)", desc: "Los cambios se prueban y verifican automáticamente múltiples veces al día." },
+          { tag: "Colaboración", title: "Cliente Integrado", desc: "Comunicación directa y constante con el cliente para resolver dudas de negocio sin esperas burocráticas." }
+        ]
+      },
+      lean: {
+        id: "lean",
+        name: "Lean Software",
+        badge: "Eliminación de Desperdicio y Valor",
+        tagline: "El enfoque óptimo para organizaciones y startups que buscan velocidad extrema de llegada al mercado eliminando burocracia, tiempos muertos y tareas innecesarias.",
+        fillClass: "fill--lean",
+        insights: [
+          { tag: "Eficiencia", title: "Cero Desperdicio (Muda)", desc: "Supresión radical de pasos innecesarios, documentación superflua y funcionalidades no utilizadas." },
+          { tag: "Calidad / QA", title: "Calidad en la Fuente (Jidoka)", desc: "Detener la línea ante un defecto para resolver la causa raíz de inmediato y evitar su recurrencia." },
+          { tag: "Decisiones", title: "Último Momento Responsable", desc: "Retrasar decisiones arquitectónicas hasta contar con la mayor cantidad de información empírica." },
+          { tag: "Optimización", title: "Value Stream Mapping", desc: "Medición constante de la eficiencia del flujo para reducir tiempos de ciclo." }
+        ]
+      }
+    };
+
+    const OPTION_WEIGHTS = {
+      scrum: { scrum: 3, xp: 1, kanban: 0, lean: 0 },
+      kanban: { kanban: 3, lean: 1, scrum: 0, xp: 0 },
+      xp: { xp: 3, lean: 1, scrum: 1, kanban: 0 },
+      lean: { lean: 3, kanban: 1, xp: 0, scrum: 0 }
+    };
+
+    const updateWizardUI = () => {
+      // 1. Mostrar solo el paso activo
+      steps.forEach((step, idx) => {
+        const isActive = idx === currentStep;
+        step.classList.toggle("is-active", isActive);
+        step.setAttribute("aria-hidden", isActive ? "false" : "true");
+      });
+
+      // 2. Actualizar barra de progreso
+      const progressRatio = (currentStep + 1) / totalSteps;
+      const percent = Math.round(progressRatio * 100);
+
+      if (progressFill) progressFill.style.width = `${percent}%`;
+      if (progressPercent) progressPercent.textContent = `${percent}% completado`;
+      if (stepBadge) stepBadge.textContent = `Pregunta ${currentStep + 1} de ${totalSteps}`;
+      if (stepCategory) stepCategory.textContent = stepCategories[currentStep] || "";
+
+      // 3. Actualizar dots indicadores
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle("is-active", idx === currentStep);
+        dot.classList.toggle("is-completed", userAnswers[idx] !== undefined && idx !== currentStep);
+      });
+
+      // 4. Actualizar botones de navegación
+      if (btnPrev) {
+        btnPrev.disabled = currentStep === 0;
+      }
+
+      if (btnNext) {
+        const isAnswered = userAnswers[currentStep] !== undefined;
+        btnNext.disabled = !isAnswered;
+
+        if (currentStep === totalSteps - 1) {
+          btnNext.innerHTML = `
+            Calcular Recomendación
+            <svg viewBox="0 0 20 20" fill="currentColor" class="nav-arrow"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          `;
+        } else {
+          btnNext.innerHTML = `
+            Siguiente
+            <svg viewBox="0 0 20 20" fill="currentColor" class="nav-arrow"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+          `;
+        }
+      }
+    };
+
+    // Manejar selección de opciones
+    const optionButtons = surveyWizard.querySelectorAll(".survey-option-btn");
+    optionButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const qIndex = parseInt(btn.getAttribute("data-question"), 10);
+        const value = btn.getAttribute("data-value");
+
+        userAnswers[qIndex] = value;
+
+        // Desmarcar hermanas en la misma pregunta y marcar la actual
+        const currentStepEl = steps[qIndex];
+        if (currentStepEl) {
+          currentStepEl.querySelectorAll(".survey-option-btn").forEach((b) => {
+            b.classList.remove("is-selected");
+          });
+        }
+        btn.classList.add("is-selected");
+
+        // Habilitar botón de siguiente
+        if (btnNext) btnNext.disabled = false;
+      });
+    });
+
+    // Navegar paso siguiente
+    if (btnNext) {
+      btnNext.addEventListener("click", () => {
+        if (userAnswers[currentStep] === undefined) return;
+
+        if (currentStep < totalSteps - 1) {
+          currentStep++;
+          updateWizardUI();
+        } else {
+          // Último paso -> calcular resultados
+          calculateAndRenderResults();
+        }
+      });
+    }
+
+    // Navegar paso anterior
+    if (btnPrev) {
+      btnPrev.addEventListener("click", () => {
+        if (currentStep > 0) {
+          currentStep--;
+          updateWizardUI();
+        }
+      });
+    }
+
+    // Algoritmo de cómputo y cálculo de resultados
+    const calculateAndRenderResults = () => {
+      const scores = { scrum: 0, kanban: 0, xp: 0, lean: 0 };
+
+      // Sumar puntuaciones de cada respuesta seleccionada
+      Object.keys(userAnswers).forEach((q) => {
+        const ans = userAnswers[q];
+        const weights = OPTION_WEIGHTS[ans] || { [ans]: 3 };
+        scores.scrum += weights.scrum || 0;
+        scores.kanban += weights.kanban || 0;
+        scores.xp += weights.xp || 0;
+        scores.lean += weights.lean || 0;
+      });
+
+      // Puntuación máxima teórica por metodología (18 puntos principales)
+      const maxPossible = 18;
+      const percentages = {
+        scrum: Math.min(100, Math.round((scores.scrum / maxPossible) * 100)),
+        kanban: Math.min(100, Math.round((scores.kanban / maxPossible) * 100)),
+        xp: Math.min(100, Math.round((scores.xp / maxPossible) * 100)),
+        lean: Math.min(100, Math.round((scores.lean / maxPossible) * 100))
+      };
+
+      // Ordenar metodologías por puntaje descendente
+      const ranked = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+      const winnerKey = ranked[0];
+      const runnerUpKey = ranked[1];
+      const winnerProfile = METHODOLOGY_PROFILES[winnerKey];
+      const winnerPercent = percentages[winnerKey];
+
+      // Detección de empate o afinidad híbrida cercana (diferencia <= 1 punto)
+      const isHybrid = (scores[winnerKey] - scores[runnerUpKey]) <= 1;
+      const runnerUpProfile = METHODOLOGY_PROFILES[runnerUpKey];
+
+      // Generar HTML de barras de afinidad
+      const barsHTML = ranked.map((key) => {
+        const item = METHODOLOGY_PROFILES[key];
+        const pct = percentages[key];
+        return `
+          <div class="affinity-bar-item">
+            <div class="affinity-bar-header">
+              <span class="method-name">${item.name}</span>
+              <span class="method-percent">${pct}% de afinidad</span>
+            </div>
+            <div class="affinity-bar-track">
+              <div class="affinity-bar-fill ${item.fillClass}" style="width: ${pct}%;"></div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      // Generar tarjetas de justificación
+      const insightsHTML = winnerProfile.insights.map((ins) => `
+        <li class="insight-card">
+          <span class="insight-card__tag">${ins.tag}</span>
+          <h5>${ins.title}</h5>
+          <p>${ins.desc}</p>
+        </li>
+      `).join("");
+
+      // Mensaje de recomendación (considerando enfoque híbrido si aplica)
+      let recommendationTitle = winnerProfile.name;
+      let recommendationTagline = winnerProfile.tagline;
+
+      if (isHybrid) {
+        recommendationTitle = `${winnerProfile.name} con sinergia en ${runnerUpProfile.name}`;
+        recommendationTagline = `Tu proyecto presenta un perfil híbrido excelente. Te sugerimos adoptar la base de ${winnerProfile.name} e incorporar prácticas clave de ${runnerUpProfile.name} (como un modelo tipo Scrumban o XP con sprints de Scrum).`;
+      }
+
+      // Ocultar formulario del wizard y mostrar resultados
+      if (wizardForm) wizardForm.style.display = "none";
+      const progressBox = surveyWizard.querySelector(".wizard-progress");
+      if (progressBox) progressBox.style.display = "none";
+
+      surveyResults.style.display = "block";
+      surveyResults.innerHTML = `
+        <div class="results-winner-card">
+          <div class="winner-trophy-badge">
+            <svg viewBox="0 0 20 20" fill="currentColor" style="width:1rem; height:1rem;"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            Metodología Sugerida
+          </div>
+          <h3 class="results-winner-title">${recommendationTitle}</h3>
+          <span class="results-winner-match">${winnerPercent}% de Coincidencia</span>
+          <p class="results-winner-desc">${recommendationTagline}</p>
+        </div>
+
+        <div class="results-breakdown">
+          <h4 class="results-breakdown__title">Comparativa de Afinidad entre Metodologías</h4>
+          <p class="results-breakdown__subtitle">Porcentaje de coincidencia de tus respuestas con cada uno de los 4 marcos evaluados:</p>
+          <div class="affinity-bars">
+            ${barsHTML}
+          </div>
+        </div>
+
+        <div class="results-insights">
+          <h4>¿Por qué este marco optimizará la calidad de tu software?</h4>
+          <ul class="insights-list">
+            ${insightsHTML}
+          </ul>
+        </div>
+
+        <div class="results-actions">
+          <a href="Comparar metodologias.html" class="results-action-btn results-action-btn--primary">
+            Ver en Comparador de Metodologías &rarr;
+          </a>
+          <button type="button" id="btn-restart-survey" class="results-action-btn results-action-btn--ghost">
+            Reiniciar Encuesta
+          </button>
+        </div>
+      `;
+
+      // Botón para reiniciar la encuesta
+      const btnRestart = document.getElementById("btn-restart-survey");
+      if (btnRestart) {
+        btnRestart.addEventListener("click", () => {
+          // Limpiar respuestas
+          Object.keys(userAnswers).forEach((k) => delete userAnswers[k]);
+          optionButtons.forEach((b) => b.classList.remove("is-selected"));
+          currentStep = 0;
+
+          // Restaurar vistas
+          surveyResults.style.display = "none";
+          surveyResults.innerHTML = "";
+          if (wizardForm) wizardForm.style.display = "block";
+          if (progressBox) progressBox.style.display = "block";
+
+          updateWizardUI();
+          surveyWizard.scrollIntoView({ behavior: "smooth" });
+        });
+      }
+
+      surveyWizard.scrollIntoView({ behavior: "smooth" });
+    };
+
+    // Inicializar Wizard
+    updateWizardUI();
+  }
+
+});
