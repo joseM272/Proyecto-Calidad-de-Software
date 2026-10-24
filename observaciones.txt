@@ -1,1 +1,3 @@
 en las cajas de categoria sumar una breve descripcion y un logo para cada uno
+
+segundo sprin falta metodologia agil y punto 6 No esta echo mejorar el diseño tambien 

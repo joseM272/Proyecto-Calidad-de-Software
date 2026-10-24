@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comparador de Metodologías Ágiles | Gestión de Calidad de Software</title>
+    <title>Comparador de Metodologías y Modelos de Desarrollo | Gestión de Calidad de Software</title>
     <link rel="stylesheet" href="CSS/estilos.css" />
     <link rel="icon" href="fotos/Logo.jpg" type="image/png" />
     <script src="JS/script.js" defer></script>
   </head>
   <body>
-    <!-- Encabezado y Navegación Principal -->
+
     <header class="topbar">
       <nav class="nav container" aria-label="Navegación principal">
         <ul class="nav__menu">
@@ -45,6 +45,7 @@
                 <li><a href="metodologias_agiles.html#metodologias">Metodologías</a></li>
                 <li><a href="metodologias_agiles.html#tecnicas">Técnicas de calidad</a></li>
                 <li><a href="Comparar metodologias.html" class="is-active">Comparador de metodologías</a></li>
+                <li><a href="Preferencia de metadologia.html">Encuesta de preferencias</a></li>
               </ul>
             </details>
           </li>
@@ -64,127 +65,209 @@
     </header>
 
     <main class="page agile-page comparator-page">
-      <!-- Sección Hero -->
       <section class="container agile-hero" aria-labelledby="comparator-hero-title">
         <div class="agile-hero__content">
           <p class="agile-eyebrow">Herramienta Interactiva · Toma de Decisiones en Calidad</p>
-          <h1 id="comparator-hero-title">Comparador de Metodologías Ágiles</h1>
+          <h1 id="comparator-hero-title">Comparador de Metodologías y Modelos de Desarrollo</h1>
           <p class="agile-hero__lead">
-            Contrasta de manera dinámica las características, aportes a la calidad de software, cadencia de entrega y prácticas técnicas de <strong>Scrum</strong>, <strong>Kanban</strong>, <strong>Extreme Programming (XP)</strong> y <strong>Lean</strong> para determinar el marco ideal de tu equipo de desarrollo.
+            Contrasta de manera dinámica las características operativas, impacto en la calidad del software, cadencia de entrega y roles de <strong>7 enfoques de desarrollo</strong>: metodologías ágiles (<strong>Scrum</strong>, <strong>Kanban</strong>, <strong>XP</strong> y <strong>Lean</strong>) y modelos de ciclo de vida clásicos y evolutivos (<strong>Modelo Cascada</strong>, <strong>Modelo en V</strong> y <strong>Modelo Incremental</strong>).
           </p>
         </div>
         <aside class="agile-hero__note" aria-label="Consejo de uso">
           <span class="agile-hero__note-label">Modo Dinámico</span>
-          <p>Presiona los botones para activar o desactivar metodologías y comparar sus dimensiones en tiempo real.</p>
+          <p>Haz clic en los botones para activar o desactivar metodologías y comparar sus dimensiones en tiempo real.</p>
         </aside>
       </section>
 
-      <div class="container agile-content">
-       
+      <div class="container comparator-container">
+        <!-- Formulario con los botones de las metodologías -->
+        <form id="comparator-form" class="comparator-selection-form" onsubmit="event.preventDefault();" aria-label="Selector de metodologías para comparar">
+          <fieldset class="comparator-fieldset">
+            <legend class="visually-hidden">Selección de metodologías y modelos de desarrollo</legend>
 
+            <div class="comparator-buttons-grid" role="group" aria-label="Metodologías y modelos disponibles">
+              
+              <!-- 1. Scrum -->
+              <button
+                type="button"
+                id="btn-scrum"
+                class="methodology-card-btn is-selected"
+                data-methodology="scrum"
+                role="checkbox"
+                aria-checked="true"
+                aria-controls="comparator-output"
+              >
+                <span class="methodology-card__header">
+                  <span class="methodology-card__badge badge--scrum">Ciclos e Incrementos</span>
+                  <span class="methodology-card__checkbox" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </span>
+                <span class="methodology-card__name">Scrum</span>
+                <span class="methodology-card__desc">Sprints iterativos de 1 a 4 semanas, ceremonias estructuradas y definición de terminado (DoD).</span>
+                <span class="methodology-card__status"><span class="status-dot"></span> Activo en comparación</span>
+              </button>
 
-        <section id="comparador" class="agile-section comparator-section" aria-labelledby="selection-title">
-          <div class="agile-section__heading">
-              <h2 id="selection-title">Selecciona las metodologías que quieras comparar</h2>
+              <!-- 2. Kanban -->
+              <button
+                type="button"
+                id="btn-kanban"
+                class="methodology-card-btn is-selected"
+                data-methodology="kanban"
+                role="checkbox"
+                aria-checked="true"
+                aria-controls="comparator-output"
+              >
+                <span class="methodology-card__header">
+                  <span class="methodology-card__badge badge--kanban">Flujo Continuo</span>
+                  <span class="methodology-card__checkbox" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </span>
+                <span class="methodology-card__name">Kanban</span>
+                <span class="methodology-card__desc">Gestión visual del trabajo, limitación de trabajo en curso (WIP) y optimización del tiempo de entrega.</span>
+                <span class="methodology-card__status"><span class="status-dot"></span> Activo en comparación</span>
+              </button>
+
+              <!-- 3. Extreme Programming (XP) -->
+              <button
+                type="button"
+                id="btn-xp"
+                class="methodology-card-btn"
+                data-methodology="xp"
+                role="checkbox"
+                aria-checked="false"
+                aria-controls="comparator-output"
+              >
+                <span class="methodology-card__header">
+                  <span class="methodology-card__badge badge--xp">Ingeniería y Pruebas</span>
+                  <span class="methodology-card__checkbox" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </span>
+                <span class="methodology-card__name">Extreme Programming (XP)</span>
+                <span class="methodology-card__desc">Excelencia técnica, desarrollo guiado por pruebas (TDD), programación en parejas e integración continua.</span>
+                <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
+              </button>
+
+              <!-- 4. Lean Software -->
+              <button
+                type="button"
+                id="btn-lean"
+                class="methodology-card-btn"
+                data-methodology="lean"
+                role="checkbox"
+                aria-checked="false"
+                aria-controls="comparator-output"
+              >
+                <span class="methodology-card__header">
+                  <span class="methodology-card__badge badge--lean">Valor y Eficiencia</span>
+                  <span class="methodology-card__checkbox" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </span>
+                <span class="methodology-card__name">Lean Software</span>
+                <span class="methodology-card__desc">Eliminación sistemática de desperdicios, creación de conocimiento, entrega rápida y calidad intrínseca.</span>
+                <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
+              </button>
+
+              <!-- 5. Modelo Cascada -->
+              <button
+                type="button"
+                id="btn-cascada"
+                class="methodology-card-btn"
+                data-methodology="cascada"
+                role="checkbox"
+                aria-checked="false"
+                aria-controls="comparator-output"
+              >
+                <span class="methodology-card__header">
+                  <span class="methodology-card__badge badge--cascada">Secuencial y Fases</span>
+                  <span class="methodology-card__checkbox" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </span>
+                <span class="methodology-card__name">Modelo Cascada</span>
+                <span class="methodology-card__desc">Desarrollo lineal estricto en etapas sucesivas: requisitos, diseño, codificación, pruebas y mantenimiento.</span>
+                <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
+              </button>
+
+              <!-- 6. Modelo en V -->
+              <button
+                type="button"
+                id="btn-vmodel"
+                class="methodology-card-btn"
+                data-methodology="vmodel"
+                role="checkbox"
+                aria-checked="false"
+                aria-controls="comparator-output"
+              >
+                <span class="methodology-card__header">
+                  <span class="methodology-card__badge badge--vmodel">Verificación y Validación</span>
+                  <span class="methodology-card__checkbox" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </span>
+                <span class="methodology-card__name">Modelo en V</span>
+                <span class="methodology-card__desc">Correspondencia simétrica entre cada fase de desarrollo y su nivel de pruebas anticipado (V&V).</span>
+                <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
+              </button>
+
+              <!--Modelo Incremental -->
+              <button
+                type="button"
+                id="btn-incremental"
+                class="methodology-card-btn"
+                data-methodology="incremental"
+                role="checkbox"
+                aria-checked="false"
+                aria-controls="comparator-output"
+              >
+                <span class="methodology-card__header">
+                  <span class="methodology-card__badge badge--incremental">Entregas por Módulos</span>
+                  <span class="methodology-card__checkbox" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </span>
+                <span class="methodology-card__name">Modelo Incremental</span>
+                <span class="methodology-card__desc">Construcción progresiva en versiones operativas parciales con rigurosas pruebas de regresión.</span>
+                <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
+              </button>
+            </div>
+          </fieldset>
+
+          <!--Acciones Rápidas -->
+          <div class="comparator-toolbar">
+            <div class="comparator-toolbar__info">
+              <span id="selection-counter" class="comparator-counter-pill">2 seleccionadas</span>
+            </div>
+
+            <div class="comparator-toolbar__actions">
+              <button type="button" id="btn-select-all" class="comparator-action-btn" title="Seleccionar todas las metodologías">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="action-icon"><path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path></svg>
+                Seleccionar todas
+              </button>
+              <button type="button" id="btn-clear-all" class="comparator-action-btn comparator-action-btn--ghost" title="Deseleccionar todas las metodologías">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="action-icon"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                Limpiar selección
+              </button>
+            </div>
+
+            <div class="comparator-toolbar__presets" aria-label="Comparaciones rápidas sugeridas">
+              <span class="presets-label">Atajos rápidos:</span>
+              <button type="button" class="preset-pill" data-preset="scrum,kanban">Scrum vs Kanban</button>
+              <button type="button" class="preset-pill" data-preset="cascada,vmodel">Cascada vs Modelo en V</button>
+              <button type="button" class="preset-pill" data-preset="scrum,cascada">Scrum vs Cascada</button>
+              <button type="button" class="preset-pill" data-preset="xp,vmodel">XP vs Modelo en V</button>
+              <button type="button" class="preset-pill" data-preset="scrum,incremental">Scrum vs Incremental</button>
+            </div>
           </div>
+        </form>
 
-
-
-          <form id="comparator-form" class="comparator-selection-form" onsubmit="event.preventDefault();" aria-label="Selector de metodologías para comparar">
-            <fieldset class="comparator-fieldset">
-              <legend class="visually-hidden">Selección de metodologías ágiles</legend>
-
-              <div class="comparator-buttons-grid" role="group" aria-label="Metodologías disponibles">
-                
-                <button
-                  type="button"
-                  id="btn-scrum"
-                  class="methodology-card-btn is-selected"
-                  data-methodology="scrum"
-                  role="checkbox"
-                  aria-checked="true"
-                  aria-controls="comparator-output"
-                >
-                  <span class="methodology-card__header">
-                    <span class="methodology-card__badge badge--scrum">Ciclos e Incrementos</span>
-                    <span class="methodology-card__checkbox" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    </span>
-                  </span>
-                  <span class="methodology-card__name">Scrum</span>
-                  <span class="methodology-card__desc">Sprints iterativos de 1 a 4 semanas, ceremonias estructuradas y definición de terminado (DoD).</span>
-                  <span class="methodology-card__status"><span class="status-dot"></span> Activo en comparación</span>
-                </button>
-
-           
-                <button
-                  type="button"
-                  id="btn-kanban"
-                  class="methodology-card-btn is-selected"
-                  data-methodology="kanban"
-                  role="checkbox"
-                  aria-checked="true"
-                  aria-controls="comparator-output"
-                >
-                  <span class="methodology-card__header">
-                    <span class="methodology-card__badge badge--kanban">Flujo Continuo</span>
-                    <span class="methodology-card__checkbox" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    </span>
-                  </span>
-                  <span class="methodology-card__name">Kanban</span>
-                  <span class="methodology-card__desc">Gestión visual del trabajo, limitación de trabajo en curso (WIP) y optimización del tiempo de entrega.</span>
-                  <span class="methodology-card__status"><span class="status-dot"></span> Activo en comparación</span>
-                </button>
-
-           
-                <button
-                  type="button"
-                  id="btn-xp"
-                  class="methodology-card-btn"
-                  data-methodology="xp"
-                  role="checkbox"
-                  aria-checked="false"
-                  aria-controls="comparator-output"
-                >
-                  <span class="methodology-card__header">
-                    <span class="methodology-card__badge badge--xp">Ingeniería y Pruebas</span>
-                    <span class="methodology-card__checkbox" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    </span>
-                  </span>
-                  <span class="methodology-card__name">Extreme Programming (XP)</span>
-                  <span class="methodology-card__desc">Excelencia técnica, desarrollo guiado por pruebas (TDD), programación en parejas e integración continua.</span>
-                  <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
-                </button>
-
-                
-                <button
-                  type="button"
-                  id="btn-lean"
-                  class="methodology-card-btn"
-                  data-methodology="lean"
-                  role="checkbox"
-                  aria-checked="false"
-                  aria-controls="comparator-output"
-                >
-                  <span class="methodology-card__header">
-                    <span class="methodology-card__badge badge--lean">Valor y Eficiencia</span>
-                    <span class="methodology-card__checkbox" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    </span>
-                  </span>
-                  <span class="methodology-card__name">Lean Software</span>
-                  <span class="methodology-card__desc">Eliminación sistemática de desperdicios, creación de conocimiento, entrega rápida y calidad intrínseca.</span>
-                  <span class="methodology-card__status"><span class="status-dot"></span> Inactivo (clic para incluir)</span>
-                </button>
-              </div>
-            </fieldset>
-
-        <section id="tabla-comparativa" class="agile-section" aria-labelledby="table-heading">
-          <div id="comparator-output" aria-live="polite" role="region" aria-label="Resultados de la comparación de metodologías">
-          </div>
-        </section>
+        <!-- Contenedor Dinámico de la Tabla Comparativa -->
+        <div id="comparator-output" aria-live="polite" role="region" aria-label="Resultados de la comparación de metodologías">
+        </div>
+      </div>
     </main>
   </body>
 </html>

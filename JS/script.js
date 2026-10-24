@@ -161,6 +161,60 @@ document.addEventListener("DOMContentLoaded", () => {
           artifacts: "Mapa de la cadena de valor (VSM), paneles de desperdicios y métricas de valor entregado.",
           bestFor: "Startups, proyectos de innovación y organizaciones que buscan acelerar radicalmente el Time-to-Market optimizando recursos y eliminando tareas sin valor."
         }
+      },
+      cascada: {
+        id: "cascada",
+        name: "Modelo Cascada",
+        badge: "Secuencial y Fases",
+        subtitle: "Enfoque lineal tradicional por fases",
+        headerClass: "col-cascada",
+        characteristics: {
+          philosophy: "Desarrollo lineal y secuencial estricto donde cada fase (requisitos, diseño, codificación, verificación y mantenimiento) debe completarse y documentarse rigurosamente antes de iniciar la siguiente.",
+          cadence: "Ciclo único y extenso con una única entrega de producto final al término del proyecto; no contempla iteraciones ni entregas intermedias operativas.",
+          roles: "Estructura formal y jerárquica con roles especializados: Gerente de Proyecto (control de cronograma y recursos), Analistas de Sistemas, Diseñadores de Arquitectura, Programadores y Equipo de QA/Testing independiente.",
+          changeManagement: "Muy rígida y costosa: los cambios de alcance una vez avanzada la fase de diseño requieren un procedimiento formal de Solicitud de Cambio (Change Request) y renegociación contractual.",
+          qualityContribution: "Verificación y validación tardía: el testing formal de software se ejecuta hacia el final del ciclo una vez finalizada la codificación completa, lo que dificulta y encarece la corrección de defectos arquitectónicos.",
+          technicalPractices: "Especificación formal y exhaustiva de requisitos (SRS), diseño detallado previo (SDD), documentación integral en cada hito y revisiones formales de cierre de fase.",
+          metrics: "Gestión del Valor Ganado (EVM), variación de cronograma (SV), variación de costo (CV) e índice de cumplimiento de hitos de entrega contractuales.",
+          artifacts: "Documento de Especificación de Requisitos de Software (SRS), Documento de Diseño de Software (SDD), Manuales Técnicos y Plan Maestro de Pruebas.",
+          bestFor: "Proyectos con requisitos totalmente claros, estables e inmutables desde el inicio, sistemas contractuales cerrados, licitaciones públicas o tecnologías ampliamente conocidas."
+        }
+      },
+      vmodel: {
+        id: "vmodel",
+        name: "Modelo en V",
+        badge: "Verificación y Validación",
+        subtitle: "Correspondencia directa entre fases y pruebas",
+        headerClass: "col-vmodel",
+        characteristics: {
+          philosophy: "Extensión del modelo secuencial que enfatiza el principio de Verificación y Validación (V&V), asociando a cada fase de desarrollo una fase correspondiente de pruebas planificada tempranamente.",
+          cadence: "Secuencial estructurado en forma de 'V': el brazo descendente descompone las especificaciones y el brazo ascendente ejecuta la integración y validación progresiva.",
+          roles: "Ingenieros de Requisitos, Arquitectos de Software, Desarrolladores, Ingenieros de Pruebas (Test Engineers) y Auditores de Calidad/QA con alta independencia técnica.",
+          changeManagement: "Controlada y formal: los cambios requieren actualizar matrices de trazabilidad y redefinir los casos de prueba asociados a la fase afectada antes de implementarse.",
+          qualityContribution: "Excelente aporte al aseguramiento de calidad: los planes y casos de prueba se diseñan en paralelo con las especificaciones tempranas (Requisitos <-> Pruebas de Aceptación; Arquitectura <-> Pruebas de Integración; Código <-> Pruebas Unitarias), previniendo defectos desde el diseño.",
+          technicalPractices: "Matriz de trazabilidad de requisitos (RTM), diseño anticipado de casos de prueba, revisiones técnicas formales, verificación estática y pruebas de integración jerárquicas.",
+          metrics: "Densidad de defectos por fase, cobertura de requisitos mediante pruebas (RTM coverage), tasa de detección temprana de defectos y porcentaje de casos de prueba aprobados.",
+          artifacts: "Plan de Pruebas de Aceptación, Plan de Pruebas de Sistema, Plan de Pruebas de Integración, Casos de Pruebas Unitarias y Matriz de Trazabilidad de Requisitos (RTM).",
+          bestFor: "Sistemas críticos de alta confiabilidad y seguridad (aeronáutica, dispositivos médicos, automotriz, ferroviario) donde un defecto operativo conlleva riesgos graves o fatales."
+        }
+      },
+      incremental: {
+        id: "incremental",
+        name: "Modelo Incremental",
+        badge: "Entregas por Módulos",
+        subtitle: "Construcción progresiva por incrementos funcionales",
+        headerClass: "col-incremental",
+        characteristics: {
+          philosophy: "Divide el sistema completo en módulos o incrementos funcionales. Cada incremento pasa por requisitos, diseño, codificación y pruebas, entregando partes operativas sucesivas del software.",
+          cadence: "Multi-ciclo escalonado: entregas sucesivas de versiones parciales donde el primer incremento proporciona la funcionalidad básica del núcleo y los siguientes van agregando nuevas capacidades.",
+          roles: "Líder de Proyecto, Arquitectos de Software (para garantizar que los incrementos encajen), Desarrolladores de módulo y Equipo de Pruebas enfocado en pruebas de regresión.",
+          changeManagement: "Moderada y flexible: permite incorporar cambios de requisitos o ajustes entre un incremento y el siguiente, aunque cambiar el núcleo base ya entregado requiere refactorización.",
+          qualityContribution: "Permite probar y validar módulos tempranamente con usuarios reales en cada entrega parcial; requiere rigurosas pruebas de regresión en cada incremento para verificar que lo nuevo no rompa lo anterior.",
+          technicalPractices: "Diseño modular de arquitectura, pruebas de regresión automatizadas en cada entrega, integración continua de incrementos y prototipado funcional.",
+          metrics: "Porcentaje de módulos completados vs planificados, tasa de defectos de regresión por incremento y tiempo de ciclo por entrega parcial.",
+          artifacts: "Plan de descomposición incremental, especificación de releases, versiones operativas parciales y suites de pruebas de regresión acumuladas.",
+          bestFor: "Proyectos donde se requiere poner una versión funcional básica rápidamente en el mercado o cuando el equipo es reducido y se deben escalonar los desarrollos."
+        }
       }
     };
 
@@ -278,8 +332,11 @@ document.addEventListener("DOMContentLoaded", () => {
               <button type="button" class="comparator-action-btn" id="empty-state-restore-btn">
                 Restaurar Scrum vs Kanban
               </button>
+              <button type="button" class="comparator-action-btn" id="empty-state-cascada-btn">
+                Cascada vs Modelo en V
+              </button>
               <button type="button" class="comparator-action-btn comparator-action-btn--ghost" id="empty-state-all-btn">
-                Seleccionar las 4
+                Seleccionar las 7
               </button>
             </div>
           </div>
@@ -291,6 +348,17 @@ document.addEventListener("DOMContentLoaded", () => {
             activeMethodologies.clear();
             activeMethodologies.add("scrum");
             activeMethodologies.add("kanban");
+            updateUI();
+          });
+        }
+
+        
+        const cascadaBtn = document.getElementById("empty-state-cascada-btn");
+        if (cascadaBtn) {
+          cascadaBtn.addEventListener("click", () => {
+            activeMethodologies.clear();
+            activeMethodologies.add("cascada");
+            activeMethodologies.add("vmodel");
             updateUI();
           });
         }
