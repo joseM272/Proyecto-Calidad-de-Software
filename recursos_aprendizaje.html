@@ -279,7 +279,1475 @@
             <li><span>Mantente actualizado</span><p>Consulta novedades sobre estándares, técnicas y herramientas.</p></li>
           </ol>
         </section>
-      </div>
+
+     
+        <section id="glosario" class="agile-section agile-section--tinted" aria-labelledby="glosario-title">
+          <div class="agile-section__heading">
+            <div>
+              <p class="agile-kicker">Términos y conceptos fundamentales</p>
+              <h2 id="glosario-title">Glosario de Calidad y Desarrollo de Software</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            Explora definiciones técnicas esenciales, normas internacionales y conceptos de calidad,
+            metodologías ágiles y ciclo de vida de desarrollo de software. Utiliza el buscador en tiempo real o el índice alfabético para encontrar términos rápidamente.
+          </p>
+
+          <div class="glossary-wrapper">
+            <!-- Barra de búsqueda y contador -->
+            <div class="glossary-toolbar">
+              <div class="glossary-search-box">
+                <span class="glossary-search-icon" aria-hidden="true"></span>
+                <input
+                  type="search"
+                  id="glossary-search-input"
+                  class="glossary-search-input"
+                  placeholder="Buscar por término, concepto o palabra clave (ej. QA, Scrum, Defecto, ISO)..."
+                  aria-label="Buscar término en el glosario"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <button
+                  type="button"
+                  id="glossary-clear-btn"
+                  class="glossary-clear-btn"
+                  aria-label="Limpiar campo de búsqueda"
+                  hidden
+                >&times;</button>
+              </div>
+              <div class="glossary-counter-badge" id="glossary-counter" aria-live="polite">
+                Mostrando <strong id="glossary-count-visible">26</strong> de <strong id="glossary-count-total">26</strong> términos
+              </div>
+            </div>
+
+            <!-- Índice alfabético A-Z accesible -->
+            <nav class="glossary-az-nav" aria-label="Índice alfabético de términos">
+              <ul class="glossary-az-list" id="glossary-az-list">
+                <li><button type="button" class="glossary-letter-btn is-active" data-letter="all">Todos</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="A">A</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="B">B</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="C">C</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="D">D</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="E">E</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="F">F</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="I">I</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="K">K</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="L">L</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="M">M</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="P">P</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="Q">Q</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="R">R</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="S">S</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="T">T</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="U">U</button></li>
+                <li><button type="button" class="glossary-letter-btn" data-letter="V">V</button></li>
+              </ul>
+            </nav>
+
+            <!-- Contenedor de grupos y términos -->
+            <div class="glossary-groups-container" id="glossary-groups-container">
+
+              <!-- Grupo A -->
+              <div class="glossary-group" data-group-letter="A">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">A</span>
+                  <h3 class="glossary-group__title">Términos con A</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="A">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Aseguramiento de Calidad (QA)</h4>
+                      <span class="glossary-term-tag">Gestión</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Conjunto planificado y sistemático de procesos y actividades orientadas a prevenir la aparición de defectos a lo largo del ciclo de vida del software, garantizando el cumplimiento de estándares definidos.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Enfoque:</strong> Proactivo y centrado en los procesos de desarrollo.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="A">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Atributo de Calidad</h4>
+                      <span class="glossary-term-tag">Fundamentos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Propiedad no funcional cuantificable y observable del software (como fiabilidad, seguridad, rendimiento, mantenibilidad y usabilidad) que determina su nivel de calidad según normas como ISO/IEC 25010.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Enfoque:</strong> Requisitos no funcionales (NFR).
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="A">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Automatización de Pruebas</h4>
+                      <span class="glossary-term-tag">Pruebas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Utilización de software especializado y scripts ejecutables (Selenium, JUnit, Cypress) para ejecutar casos de prueba repetitivos, verificar resultados esperados y acelerar la retroalimentación.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Enfoque:</strong> Regresión e integración continua.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo B -->
+              <div class="glossary-group" data-group-letter="B">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">B</span>
+                  <h3 class="glossary-group__title">Términos con B</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="B">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Backlog</h4>
+                      <span class="glossary-term-tag">Ágil</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Lista priorizada, dinámica y abierta de todas las funcionalidades, historias de usuario, mejoras técnicas y correcciones de errores requeridas para evolucionar un producto de software.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Gestión:</strong> Priorizado continuamente por el Product Owner.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="B">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Bug (Defecto)</h4>
+                      <span class="glossary-term-tag">Incidentes</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Imperfección, error o fallo en el diseño, código fuente o configuración de un sistema que provoca que este se comporte de manera inesperada o incumpla sus especificaciones.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Impacto:</strong> Se clasifica por severidad técnica y prioridad de negocio.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo C -->
+              <div class="glossary-group" data-group-letter="C">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">C</span>
+                  <h3 class="glossary-group__title">Términos con C</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="C">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Caja Negra (Black-box Testing)</h4>
+                      <span class="glossary-term-tag">Técnicas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Estrategia de prueba en la que se analiza y verifica el comportamiento externo del software evaluando entradas y salidas sin tener conocimiento ni acceso al código fuente interno.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Técnicas:</strong> Particiones de equivalencia y análisis de valores límite.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="C">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Caja Blanca (White-box Testing)</h4>
+                      <span class="glossary-term-tag">Técnicas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Técnica de verificación que examina la estructura interna, rutas de ejecución lógica, ramas y flujos de control del código fuente del software.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Uso común:</strong> Pruebas unitarias y cobertura lógica.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="C">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Control de Calidad (QC)</h4>
+                      <span class="glossary-term-tag">Gestión</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Proceso operacional y reactivo centrado en la inspección, ejecución de pruebas y detección de defectos en los artefactos y producto terminado antes de su entrega al usuario.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Enfoque:</strong> Reactivo y orientado al producto terminado.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="C">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Criterios de Aceptación</h4>
+                      <span class="glossary-term-tag">Requisitos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Condiciones formales, claras y medibles acordadas con los clientes y partes interesadas que una funcionalidad debe cumplir para ser validada y aceptada.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Aplicación:</strong> Definen el alcance exacto de una Historia de Usuario.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo D -->
+              <div class="glossary-group" data-group-letter="D">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">D</span>
+                  <h3 class="glossary-group__title">Términos con D</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="D">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Daily Scrum</h4>
+                      <span class="glossary-term-tag">Scrum</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Reunión diaria de sincronización de máximo 15 minutos en la que el equipo de desarrollo evalúa el progreso hacia el Objetivo del Sprint y detecta impedimentos.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Objetivo:</strong> Inspeccionar el progreso y adaptar el plan de trabajo diario.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="D">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Definición de Terminado (DoD)</h4>
+                      <span class="glossary-term-tag">Calidad / Ágil</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Conjunto consensuado y riguroso de condiciones técnicas y de calidad que un incremento de software debe satisfacer antes de ser considerado listo para entrega.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Beneficio:</strong> Previene la acumulación de deuda técnica oculta.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="D">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Deuda Técnica</h4>
+                      <span class="glossary-term-tag">Ingeniería</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Consecuencia acumulativa de elegir soluciones temporales, atajos o código de baja calidad en lugar de una arquitectura bien diseñada y sostenible.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Mitigación:</strong> Requiere refactorización periódica y planificada.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo E -->
+              <div class="glossary-group" data-group-letter="E">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">E</span>
+                  <h3 class="glossary-group__title">Términos con E</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="E">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Estándar ISO/IEC 25010</h4>
+                      <span class="glossary-term-tag">Normas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Modelo internacional de calidad de producto de software que desglosa la calidad en 8 características esenciales y sus respectivas subcaracterísticas medibles.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Familia:</strong> Marco SQuaRE (System and Software Quality Requirements).
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="E">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Extreme Programming (XP)</h4>
+                      <span class="glossary-term-tag">Metodologías</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Metodología ágil fundamentada en la excelencia de ingeniería mediante prácticas como TDD, programación en parejas, integración continua y diseño simple.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Enfoque:</strong> Máxima calidad técnica y retroalimentación veloz.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo F -->
+              <div class="glossary-group" data-group-letter="F">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">F</span>
+                  <h3 class="glossary-group__title">Términos con F</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="F">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Fiabilidad (Reliability)</h4>
+                      <span class="glossary-term-tag">Atributos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Capacidad de un sistema de mantener un nivel de rendimiento especificado bajo condiciones determinadas y durante un intervalo de tiempo establecido sin fallar.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Subatributos:</strong> Madurez, tolerancia a fallos y capacidad de recuperación.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="F">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Fallo (Failure)</h4>
+                      <span class="glossary-term-tag">Conceptos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Incapacidad manifiesta de un componente o sistema de realizar una función requerida dentro de los límites de rendimiento especificados ante el usuario.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Causa:</strong> Manifestación externa producida al ejecutarse un defecto interno.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo I -->
+              <div class="glossary-group" data-group-letter="I">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">I</span>
+                  <h3 class="glossary-group__title">Términos con I</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="I">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Integración Continua (CI)</h4>
+                      <span class="glossary-term-tag">DevOps</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Práctica de ingeniería en la que los desarrolladores integran su trabajo con frecuencia en un repositorio central, validándose con compilaciones y pruebas automáticas.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Propósito:</strong> Detectar conflictos e inconsistencias a los pocos minutos.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="I">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Incremento</h4>
+                      <span class="glossary-term-tag">Scrum</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Versión utilizable y completamente probada del producto que se entrega al final de un Sprint, sumando valor a los incrementos anteriores y cumpliendo la DoD.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Estado:</strong> Potencialmente desplegable en producción.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="I">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Iteración</h4>
+                      <span class="glossary-term-tag">SDLC</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Ciclo de desarrollo repetitivo y acotado en el tiempo en el que se ejecuta análisis, diseño, codificación y pruebas para producir una versión refinada del producto.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Fundamento:</strong> Núcleo del desarrollo ágil e incremental.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo K -->
+              <div class="glossary-group" data-group-letter="K">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">K</span>
+                  <h3 class="glossary-group__title">Términos con K</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="K">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Kanban</h4>
+                      <span class="glossary-term-tag">Metodologías</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Marco visual de gestión del flujo de trabajo que optimiza la entrega continua limitando la cantidad de trabajo en curso (WIP) y haciendo explícitas las políticas.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Dinámica:</strong> Flujo continuo sin iteraciones fijas obligatorias.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="K">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Kaizen</h4>
+                      <span class="glossary-term-tag">Calidad</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Filosofía de origen japonés de mejora continua progresiva y constante a través de pequeños ajustes sistemáticos en los procesos de trabajo.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Espíritu:</strong> Base de las retrospectivas y la eliminación de desperdicios.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo L -->
+              <div class="glossary-group" data-group-letter="L">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">L</span>
+                  <h3 class="glossary-group__title">Términos con L</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="L">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Lean Software Development</h4>
+                      <span class="glossary-term-tag">Metodologías</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Adaptación de la manufactura esbelta al desarrollo de software, enfocada en eliminar desperdicios, acelerar el aprendizaje y entregar valor al cliente lo antes posible.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Regla de oro:</strong> Eliminar toda tarea que no aporte valor directo al usuario.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="L">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Límite WIP (Work in Progress)</h4>
+                      <span class="glossary-term-tag">Kanban</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Restricción numérica explícita sobre el número máximo de tareas que pueden encontrarse simultáneamente en una columna o estado del flujo de trabajo.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Propósito:</strong> Prevenir cuellos de botella y sobrecarga del equipo.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo M -->
+              <div class="glossary-group" data-group-letter="M">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">M</span>
+                  <h3 class="glossary-group__title">Términos con M</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="M">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Mantenibilidad</h4>
+                      <span class="glossary-term-tag">Atributos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Grado de efectividad y facilidad con el que un software puede ser modificado para corregir defectos, mejorar su rendimiento o adaptarse a entornos cambiantes.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Subcaracterísticas:</strong> Modularidad, reusabilidad y testeabilidad.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="M">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Métrica de Calidad</h4>
+                      <span class="glossary-term-tag">Medición</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Valor numérico objetivo que mide el grado en que un sistema, componente o proceso posee un atributo de calidad determinado (ej. cobertura, densidad de bugs).
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Utilidad:</strong> Soporte empírico para la toma de decisiones.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="M">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Modelo en V</h4>
+                      <span class="glossary-term-tag">Tradicional</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Modelo secuencial que extiende la cascada asociando cada fase de desarrollo con una fase simétrica y correspondiente de pruebas y verificación.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Cualidad:</strong> Fuerte trazabilidad formal entre especificaciones y pruebas.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo P -->
+              <div class="glossary-group" data-group-letter="P">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">P</span>
+                  <h3 class="glossary-group__title">Términos con P</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="P">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Plan de Pruebas (Test Plan)</h4>
+                      <span class="glossary-term-tag">STLC</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Documento formal que detalla el alcance, estrategia, recursos asignados, cronograma de ejecución y criterios de éxito de las actividades de verificación.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Norma:</strong> Estructurado comúnmente según IEEE 829 / ISO 29119.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="P">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Pruebas de Regresión</h4>
+                      <span class="glossary-term-tag">Pruebas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Verificación orientada a confirmar que una modificación reciente en el código (nuevo feature o fix de bug) no haya afectado adversamente funcionalidades existentes ya aprobadas.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Recomendación:</strong> Candidatas prioritarias para automatización en CI.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="P">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Pruebas Unitarias</h4>
+                      <span class="glossary-term-tag">Pruebas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Pruebas automáticas de nivel más bajo que verifican de manera aislada el correcto funcionamiento de las unidades individuales de código fuente (funciones o métodos).
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Beneficio:</strong> Diagnóstico preciso y retroalimentación inmediata.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo Q -->
+              <div class="glossary-group" data-group-letter="Q">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">Q</span>
+                  <h3 class="glossary-group__title">Términos con Q</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="Q">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Quality Gate</h4>
+                      <span class="glossary-term-tag">CI/CD</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Conjunto de criterios y umbrales de calidad booleanos (ej. cobertura > 80%, 0 vulnerabilidades críticas) que un proyecto debe superar antes de promover el código al siguiente entorno.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Herramienta típica:</strong> Configurado en SonarQube para proteger producción.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo R -->
+              <div class="glossary-group" data-group-letter="R">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">R</span>
+                  <h3 class="glossary-group__title">Términos con R</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="R">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Refactorización</h4>
+                      <span class="glossary-term-tag">Ingeniería</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Proceso disciplinado de modificar la estructura interna del código fuente sin alterar su comportamiento funcional externo para mejorar su legibilidad y mantenibilidad.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Regla:</strong> Respaldada siempre por una suite sólida de pruebas unitarias.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="R">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Revisión por Pares (Peer Review)</h4>
+                      <span class="glossary-term-tag">Calidad Estática</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Inspección técnica colaborativa en la que otros miembros del equipo examinan el código, diseño o especificaciones antes de su integración al repositorio principal.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Efectividad:</strong> Detecta hasta el 80% de los defectos antes de ejecutar pruebas.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo S -->
+              <div class="glossary-group" data-group-letter="S">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">S</span>
+                  <h3 class="glossary-group__title">Términos con S</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="S">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Scrum</h4>
+                      <span class="glossary-term-tag">Metodologías</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Marco de trabajo ágil adaptativo basado en el empirismo y equipos multidisciplinarios autoorganizados que entregan valor incremental en ciclos regulares llamados Sprints.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Pilares:</strong> Transparencia, inspección y adaptación.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="S">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">SDLC</h4>
+                      <span class="glossary-term-tag">Fundamentos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Ciclo de Vida del Desarrollo de Software (Software Development Life Cycle); conjunto estructurado de fases (análisis, diseño, codificación, pruebas, despliegue y mantenimiento) que rige un producto.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Alcance:</strong> Desde la idea original hasta el retiro del sistema.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="S">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">STLC</h4>
+                      <span class="glossary-term-tag">Pruebas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Ciclo de Vida de Pruebas de Software (Software Testing Life Cycle); proceso sistemático enfocado en planificar, diseñar, ejecutar y evaluar pruebas de manera coordinada con el SDLC.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Fases:</strong> Análisis, diseño, ambiente, ejecución y cierre de pruebas.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="S">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">SonarQube</h4>
+                      <span class="glossary-term-tag">Herramientas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Plataforma de análisis estático continuo de código líder en la industria, utilizada para detectar bugs, vulnerabilidades de seguridad, code smells y deuda técnica acumulada.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Integración:</strong> Compatible con pipelines de GitHub Actions, GitLab y Jenkins.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo T -->
+              <div class="glossary-group" data-group-letter="T">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">T</span>
+                  <h3 class="glossary-group__title">Términos con T</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="T">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">TDD (Test-Driven Development)</h4>
+                      <span class="glossary-term-tag">Prácticas</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Práctica donde se escribe primero una prueba automatizada que falla (Rojo), luego el código mínimo para superarla (Verde) y finalmente se refactoriza para un diseño óptimo.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Ciclo:</strong> Red - Green - Refactor.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="T">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Trazabilidad</h4>
+                      <span class="glossary-term-tag">Gestión</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Capacidad de vincular y seguir el rastro de un requisito a lo largo de su diseño arquitectónico, implementación en código, casos de prueba y defectos reportados.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Utilidad:</strong> Asegura que ningún requisito quede sin implementar ni verificar.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo U -->
+              <div class="glossary-group" data-group-letter="U">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">U</span>
+                  <h3 class="glossary-group__title">Términos con U</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="U">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Usabilidad</h4>
+                      <span class="glossary-term-tag">Atributos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Medida en que un sistema de software puede ser entendido, aprendido, usado y resultar satisfactorio para el usuario final en un contexto de uso determinado (ISO/IEC 25010).
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Clave:</strong> Factor determinante en la adopción y retención de usuarios.
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="U">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">User Story (Historia de Usuario)</h4>
+                      <span class="glossary-term-tag">Requisitos</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Descripción breve y concisa de una necesidad o funcionalidad desde la perspectiva del usuario final ("Como [rol], quiero [acción], para [beneficio]").
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Complemento:</strong> Acompañada siempre de criterios de aceptación explícitos.
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Grupo V -->
+              <div class="glossary-group" data-group-letter="V">
+                <div class="glossary-group__header">
+                  <span class="glossary-letter-badge">V</span>
+                  <h3 class="glossary-group__title">Términos con V</h3>
+                </div>
+                <div class="glossary-group__grid">
+                  <article class="glossary-card" data-letter="V">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Validación</h4>
+                      <span class="glossary-term-tag">QA vs QC</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Evaluación orientada a confirmar que el producto satisface las necesidades reales, expectativas y propósito de uso previsto por el cliente final.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Pregunta clave:</strong> <em>"¿Estamos construyendo el producto correcto?"</em>
+                    </div>
+                  </article>
+
+                  <article class="glossary-card" data-letter="V">
+                    <div class="glossary-card__header">
+                      <h4 class="glossary-card__title">Verificación</h4>
+                      <span class="glossary-term-tag">QA vs QC</span>
+                    </div>
+                    <p class="glossary-card__desc">
+                      Evaluación técnica que comprueba si el software cumple fielmente con las especificaciones y requisitos formalizados en las fases previas de desarrollo.
+                    </p>
+                    <div class="glossary-card__footer">
+                      <strong>Pregunta clave:</strong> <em>"¿Estamos construyendo el producto correctamente?"</em>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="glossary-no-results" class="glossary-no-results" hidden>
+              <span class="glossary-no-results__icon" aria-hidden="true"></span>
+              <h3>No se encontraron términos</h3>
+              <p>
+                No encontramos coincidencias para "<span id="glossary-query-display"></span>". Revisa la ortografía o intenta buscar otra palabra clave.
+              </p>
+              <button type="button" id="glossary-reset-btn" class="results-action-btn results-action-btn--primary">
+                Restablecer búsqueda y ver todos
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="agile-section" aria-labelledby="faq-title">
+          <div class="agile-section__heading">
+            <div>
+              <p class="agile-kicker">Resolución de dudas frecuentes</p>
+              <h2 id="faq-title">Preguntas Frecuentes (FAQ)</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            Respuestas fundamentadas y directas a las dudas más comunes sobre aseguramiento de calidad, ciclos de desarrollo, pruebas de software y adopción de metodologías.
+          </p>
+
+          <div class="faq-accordion" id="faq-accordion">
+
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-question"
+                id="faq-btn-1"
+                aria-expanded="false"
+                aria-controls="faq-panel-1"
+              >
+                <span class="faq-question-text">1. ¿Cuál es la diferencia fundamental entre Aseguramiento de Calidad (QA) y Control de Calidad (QC)?</span>
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" hidden>
+                <div class="faq-answer-inner">
+                  <p>
+                    Aunque a menudo se usan indistintamente, cumplen propósitos complementarios pero distintos:
+                  </p>
+                  <div class="faq-highlight-box">
+                    <strong>Aseguramiento de Calidad (QA - Quality Assurance):</strong> Es un enfoque <em>proactivo</em> centrado en los <strong>procesos</strong>. Su objetivo es prevenir que los defectos aparezcan mediante estándares, auditorías de procesos, capacitación y metodologías de ingeniería.
+                  </div>
+                  <div class="faq-highlight-box">
+                    <strong>Control de Calidad (QC - Quality Control):</strong> Es un enfoque <em>reactivo</em> centrado en el <strong>producto</strong>. Su meta es detectar y reportar defectos existentes en el código o artefactos mediante inspecciones y la ejecución de casos de prueba antes del lanzamiento.
+                  </div>
+                  <p>
+                    En resumen: <em>QA diseña el proceso para que no haya errores; QC inspecciona el resultado final para confirmar que no se filtró ninguno.</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-question"
+                id="faq-btn-2"
+                aria-expanded="false"
+                aria-controls="faq-panel-2"
+              >
+                <span class="faq-question-text">2. ¿En qué se diferencian el SDLC y el STLC en el trabajo diario?</span>
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>
+                <div class="faq-answer-inner">
+                  <p>
+                    El <strong>SDLC (Software Development Life Cycle)</strong> abarca la totalidad de la construcción del software: desde la concepción del negocio, el análisis de requerimientos, diseño arquitectónico, codificación, hasta el despliegue y mantenimiento operativo.
+                  </p>
+                  <p>
+                    Por su parte, el <strong>STLC (Software Testing Life Cycle)</strong> es el ciclo especializado de pruebas que ocurre de forma sincronizada dentro del SDLC. Comprende el análisis de requisitos de prueba, la planificación del plan de pruebas, el diseño de casos de prueba y datos, la configuración del entorno, la ejecución de pruebas y el reporte de métricas de cierre.
+                  </p>
+                  <div class="faq-highlight-box">
+                    <strong>Sinergia:</strong> En equipos modernos, el STLC comienza en la misma fase de análisis del SDLC, revisando requisitos antes de que se escriba una sola línea de código.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-question"
+                id="faq-btn-3"
+                aria-expanded="false"
+                aria-controls="faq-panel-3"
+              >
+                <span class="faq-question-text">3. ¿Por qué el costo de corregir un error aumenta drásticamente en fases tardías?</span>
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>
+                <div class="faq-answer-inner">
+                  <p>
+                    Este fenómeno se modela formalmente mediante la conocida <strong>Curva de Costo del Defecto de Barry Boehm</strong>:
+                  </p>
+                  <ul>
+                    <li><strong>En fase de Requisitos:</strong> Corregir un error implica editar un documento o una historia de usuario (costo relativo: 1x).</li>
+                    <li><strong>En fase de Arquitectura / Diseño:</strong> Requiere rediseñar diagramas y ajustar interfaces (costo: 3x a 5x).</li>
+                    <li><strong>En fase de Codificación:</strong> Requiere refactorizar código y ajustar pruebas unitarias (costo: 10x).</li>
+                    <li><strong>En fase de Pruebas de Sistema:</strong> Exige detener ciclos de prueba, regenerar builds y reejecutar regresiones (costo: 15x a 20x).</li>
+                    <li><strong>En Producción:</strong> Puede requerir hotfixes de emergencia, parches de base de datos, indemnizaciones a clientes y daño reputacional irreparable (costo: 50x a 100x o más).</li>
+                  </ul>
+                  <p>
+                    Por ello, la calidad moderna promueve el principio de <em>"Shift-Left"</em>: adelantar las pruebas y la validación lo más temprano posible.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-question"
+                id="faq-btn-4"
+                aria-expanded="false"
+                aria-controls="faq-panel-4"
+              >
+                <span class="faq-question-text">4. ¿Cómo elegir entre metodologías ágiles (Scrum/Kanban) y modelos tradicionales (Cascada/V)?</span>
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>
+                <div class="faq-answer-inner">
+                  <p>
+                    La elección depende primordialmente de la <strong>estabilidad de los requisitos</strong> y el <strong>nivel de criticidad del sistema</strong>:
+                  </p>
+                  <ul>
+                    <li><strong>Opta por Cascada o Modelo en V cuando:</strong> Los requisitos estén 100% definidos y congelados por contrato, el sistema esté sujeto a normativas legales estrictas (sistemas aeroespaciales, dispositivos médicos, infraestructura crítica) y el costo de cambiar durante la construcción sea prohibitivo.</li>
+                    <li><strong>Opta por Scrum cuando:</strong> Los requisitos evolucionen constantemente, se busque retroalimentación rápida de usuarios y el equipo pueda comprometerse a iteraciones regulares de 1 a 4 semanas con entregas funcionales.</li>
+                    <li><strong>Opta por Kanban cuando:</strong> El flujo de trabajo sea de demanda continua, mantenimiento de software o soporte operativo con prioridades que cambian día a día sin necesidad de sprints rígidos.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-question"
+                id="faq-btn-5"
+                aria-expanded="false"
+                aria-controls="faq-panel-5"
+              >
+                <span class="faq-question-text">5. ¿Qué valor aporta el estándar ISO/IEC 25010 en un proyecto real?</span>
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden>
+                <div class="faq-answer-inner">
+                  <p>
+                    El estándar <strong>ISO/IEC 25010 (SQuaRE)</strong> provee una taxonomía unificada y objetiva para evaluar la calidad del producto en 8 dimensiones clave:
+                  </p>
+                  <p>
+                    1) Adecuación funcional, 2) Eficiencia de desempeño, 3) Compatibilidad, 4) Usabilidad, 5) Fiabilidad, 6) Seguridad, 7) Mantenibilidad y 8) Portabilidad.
+                  </p>
+                  <div class="faq-highlight-box">
+                    <strong>Impacto en proyectos:</strong> Permite transformar deseos ambiguos del cliente (ej. <em>"el sistema debe ser rápido y seguro"</em>) en requisitos técnicos medibles y verificables (ej. <em>"el 95% de las transacciones debe responder en menos de 800 ms con cifrado TLS 1.3"</em>).
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-question"
+                id="faq-btn-6"
+                aria-expanded="false"
+                aria-controls="faq-panel-6"
+              >
+                <span class="faq-question-text">6. ¿Las pruebas automatizadas sustituyen por completo a las pruebas manuales?</span>
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" hidden>
+                <div class="faq-answer-inner">
+                  <p>
+                    <strong>No.</strong> Ambas modalidades son indispensables y cumplen roles diferenciados:
+                  </p>
+                  <ul>
+                    <li><strong>Las pruebas automatizadas:</strong> Son óptimas para tareas repetitivas, suites de regresión extensas, pruebas de carga/estrés e integración continua. Aportan velocidad y consistencia matemática.</li>
+                    <li><strong>Las pruebas manuales:</strong> Son insustituibles en pruebas exploratorias, evaluación de la experiencia de usuario (UX), accesibilidad visual y validación de escenarios de negocio no previstos en los scripts.</li>
+                  </ul>
+                  <p>
+                    La estrategia más eficaz combina una pirámide de pruebas sólida (muchas pruebas unitarias automáticas) con pruebas exploratorias humanas periódicas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+       
+        <section id="enlaces-interes" class="agile-section agile-section--tinted" aria-labelledby="enlaces-title">
+          <div class="agile-section__heading">
+            <div>
+              <p class="agile-kicker">Bibliografía y fuentes externas</p>
+              <h2 id="enlaces-title">Enlaces de Interés y Referencias</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            Explora fuentes oficiales, organismos internacionales de normalización, libros canónicos y guías técnicas recomendadas para profundizar tus conocimientos en ingeniería de software y aseguramiento de calidad.
+          </p>
+
+          <!-- Filtro dinámico por tipo de recurso -->
+          <nav class="resources-filter-nav" aria-label="Filtrar recursos por tipo">
+            <button type="button" class="resource-filter-btn is-active" data-type="all">Todos los recursos</button>
+            <button type="button" class="resource-filter-btn" data-type="web"> Sitios Web</button>
+            <button type="button" class="resource-filter-btn" data-type="pdf"> Documentos / PDF</button>
+            <button type="button" class="resource-filter-btn" data-type="book"> Libros recomendados</button>
+            <button type="button" class="resource-filter-btn" data-type="org"> Organizaciones</button>
+          </nav>
+
+          <!-- Tarjetas de recursos con apertura segura -->
+          <div class="resources-grid" id="resources-grid">
+
+            <!-- Card 1: Web -->
+            <article class="resource-link-card" data-resource-type="web">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--web">Sitio Web</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">Manifiesto Ágil Oficial</h3>
+              <p class="resource-card-desc">
+                Documento histórico y canónico formulado en 2001 que establece los 4 valores fundamentales y los 12 principios rectores del desarrollo de software ágil.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://agilemanifesto.org/iso/es/manifesto.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Visitar sitio oficial</span>
+                  <span class="ext-arrow" aria-hidden="true">↗</span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2: PDF -->
+            <article class="resource-link-card" data-resource-type="pdf">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--pdf">Guía / PDF</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">La Guía Oficial de Scrum</h3>
+              <p class="resource-card-desc">
+                Escrita por los creadores de Scrum (Ken Schwaber y Jeff Sutherland). Contiene la definición oficial, los roles, eventos, artefactos y reglas inmutables del marco de trabajo.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://scrumguides.org/download-guides.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Descargar Guía Oficial</span>
+                  <span class="ext-arrow" aria-hidden="true">↗</span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3: Org -->
+            <article class="resource-link-card" data-resource-type="org">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--org">Organización</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">Portal ISO/IEC 25010 (SQuaRE)</h3>
+              <p class="resource-card-desc">
+                Portal de referencia internacional en español sobre la familia de normas ISO 25000 para evaluación de requisitos y calidad del producto de software.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://iso25000.com/index.php/normas-iso-25000/iso-25010"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Consultar Estándar ISO</span>
+                  <span class="ext-arrow" aria-hidden="true"></span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 4: Book -->
+            <article class="resource-link-card" data-resource-type="book">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--book">Libro</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">Clean Code (Robert C. Martin)</h3>
+              <p class="resource-card-desc">
+                Manual clásico e imprescindible sobre artesanía de software ágil, principios SOLID, diseño de funciones limpias, refactorización y pruebas unitarias legibles.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://www.oreilly.com/library/view/clean-code-a/9780136083238/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Ver ficha editorial</span>
+                  <span class="ext-arrow" aria-hidden="true">↗</span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5: Org -->
+            <article class="resource-link-card" data-resource-type="org">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--org">Organización</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">ISTQB - Testing Qualifications Board</h3>
+              <p class="resource-card-desc">
+                Organismo líder mundial en certificación profesional para testers y líderes de calidad de software. Ofrece sílabos educativos y glosarios canónicos descargables.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://www.istqb.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Explorar certificaciones</span>
+                  <span class="ext-arrow" aria-hidden="true">↗</span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6: Web -->
+            <article class="resource-link-card" data-resource-type="web">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--web">Sitio Web</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">OWASP Foundation - Seguridad</h3>
+              <p class="resource-card-desc">
+                Comunidad abierta internacional dedicada a mejorar la seguridad del software con metodologías de pruebas, guías de código seguro y el famoso ranking OWASP Top 10.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://owasp.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Acceder a guías OWASP</span>
+                  <span class="ext-arrow" aria-hidden="true">↗</span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 7: PDF / Docs -->
+            <article class="resource-link-card" data-resource-type="pdf">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--pdf">Guía / PDF</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">Documentación SonarQube</h3>
+              <p class="resource-card-desc">
+                Guías de referencia técnica para implementar análisis estático continuo, métricas de mantenibilidad, cobertura de pruebas y diseño de Quality Gates automatizados.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://docs.sonarsource.com/sonarqube/latest/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Consultar documentación</span>
+                  <span class="ext-arrow" aria-hidden="true">↗</span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 8: Book -->
+            <article class="resource-link-card" data-resource-type="book">
+              <div class="resource-card-top">
+                <span class="resource-type-badge resource-type-badge--book">Libro</span>
+                <span class="resource-icon-circle" aria-hidden="true"></span>
+              </div>
+              <h3 class="resource-card-title">The Art of Software Testing</h3>
+              <p class="resource-card-desc">
+                Obra clásica de Glenford Myers que fundamenta la psicología del testing de software, diseño de pruebas de caja negra, análisis de valores límite y pruebas de sistema.
+              </p>
+              <div class="resource-card-action">
+                <a
+                  href="https://www.wiley.com/en-us/The+Art+of+Software+Testing%2C+3rd+Edition-p-9781118031964"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-anchor-btn"
+                >
+                  <span>Ver detalles del libro</span>
+                  <span class="ext-arrow" aria-hidden="true"></span>
+                  <span class="sr-only">(se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+
+
+        <section id="ejercicios-casos" class="agile-section" aria-labelledby="ejercicios-title">
+          <div class="agile-section__heading">
+            <div>
+              <p class="agile-kicker">Aplica tus conocimientos</p>
+              <h2 id="ejercicios-title">Ejercicios y Casos Prácticos</h2>
+            </div>
+          </div>
+          <p class="agile-section__intro">
+            Pon a prueba tu criterio profesional enfrentando escenarios reales de ingeniería de software. Analiza el enunciado, elabora tu propuesta y luego haz clic en el botón para comparar tu respuesta con la solución y pauta de evaluación.
+          </p>
+
+          <div class="exercise-cards-container">
+
+            <!-- Caso 1 -->
+            <article class="exercise-challenge-card">
+              <div class="exercise-header-row">
+                <span class="exercise-number-pill">Caso Práctico 01</span>
+                <div class="exercise-meta-tags">
+                  <span class="exercise-difficulty-tag exercise-difficulty-tag--inicial">Nivel: Inicial</span>
+                  <span class="exercise-topic-tag">Pruebas de Caja Negra (BVA)</span>
+                </div>
+              </div>
+              <h3 class="exercise-title">Diseño de Pruebas: Particiones de Equivalencia y Valores Límite</h3>
+              
+              <div class="exercise-statement-box">
+                <p>
+                  <strong>Contexto del problema:</strong> Un módulo de evaluación para una solicitud de crédito bancario debe validar el campo numérico <strong>Edad del Solicitante</strong>. La regla de negocio estipula que solo se autorizan créditos a personas cuya edad esté comprendida entre <strong>18 y 65 años (ambos inclusive)</strong>. Cualquier valor menor a 18 o mayor a 65 debe ser rechazado por el sistema con un mensaje de alerta.
+                </p>
+                <p>
+                  <strong>Tu desafío:</strong>
+                </p>
+                <ol>
+                  <li>Identifica las clases o particiones de equivalencia válidas e inválidas.</li>
+                  <li>Determina los valores límite o frontera (Boundary Value Analysis - BVA) recomendados para probar exhaustivamente este campo con la menor cantidad de casos posible.</li>
+                </ol>
+              </div>
+
+              <!-- Botón interactivo (Solución oculta por defecto) -->
+              <button
+                type="button"
+                class="solution-toggle-btn"
+                aria-expanded="false"
+                aria-controls="solution-panel-1"
+                id="solution-btn-1"
+              >
+                <span class="btn-icon" aria-hidden="true"></span>
+                <span class="btn-text">Mostrar Solución y Pauta</span>
+              </button>
+
+              <!-- Panel de solución (oculto por defecto) -->
+              <div class="exercise-solution-panel" id="solution-panel-1" hidden>
+                <h4 class="solution-rubric-title">
+                  <span aria-hidden="true"></span> Pauta de Evaluación y Solución Sugerida
+                </h4>
+                <div class="solution-rubric-content">
+                  <p><strong>1. Particiones de Equivalencia identificadas:</strong></p>
+                  <ul>
+                    <li><strong>Partición Inválida 1 (Menores de edad):</strong> Valores &lt; 18 (ejemplo de dato representativo: 15).</li>
+                    <li><strong>Partición Válida (Edad apta para crédito):</strong> Valores entre 18 y 65 inclusive (ejemplo: 35).</li>
+                    <li><strong>Partición Inválida 2 (Mayores de edad no permitidos):</strong> Valores &gt; 65 (ejemplo: 72).</li>
+                  </ul>
+
+                  <p><strong>2. Análisis de Valores Límite (BVA):</strong></p>
+                  <ul>
+                    <li><strong>Frontera inferior:</strong> <code>17</code> (caso límite inválido inferior) y <code>18</code> (caso límite válido inferior).</li>
+                    <li><strong>Frontera superior:</strong> <code>65</code> (caso límite válido superior) y <code>66</code> (caso límite inválido superior).</li>
+                    <li><strong>Puntos interiores de control:</strong> <code>19</code> y <code>64</code>.</li>
+                  </ul>
+
+                  <p><strong>3. Pruebas de robustez recomendadas:</strong></p>
+                  <ul>
+                    <li>Ingreso de cadenas de texto (ej. <code>"veinte"</code>), valores vacíos o nulos, y números negativos (ej. <code>-5</code>).</li>
+                  </ul>
+
+                  <div class="solution-eval-tip">
+                    <strong>Criterio de evaluación:</strong> Una respuesta correcta debe identificar claramente los 4 puntos frontera exactos (17, 18, 65, 66) para asegurar que el código no contenga errores de condición (como usar <code>&gt;</code> en vez de <code>&gt;=</code>).
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Caso 2 -->
+            <article class="exercise-challenge-card">
+              <div class="exercise-header-row">
+                <span class="exercise-number-pill">Caso Práctico 02</span>
+                <div class="exercise-meta-tags">
+                  <span class="exercise-difficulty-tag exercise-difficulty-tag--intermedio">Nivel: Intermedio</span>
+                  <span class="exercise-topic-tag">Gestión de Defectos & QC</span>
+                </div>
+              </div>
+              <h3 class="exercise-title">Clasificación de Incidentes: Severidad Técnica vs. Prioridad de Negocio</h3>
+              
+              <div class="exercise-statement-box">
+                <p>
+                  <strong>Contexto del problema:</strong> A tres días del lanzamiento oficial de una tienda de comercio electrónico, el equipo de QA detecta dos anomalías:
+                </p>
+                <ul>
+                  <li><strong>Incidente A:</strong> En la pasarela de pagos, al presionar "Confirmar Compra con Tarjeta", el sistema genera un error 500 no controlado, deja la transacción congelada y no genera el pedido, impidiendo al usuario finalizar la compra.</li>
+                  <li><strong>Incidente B:</strong> En la página de inicio (Home), el logo corporativo principal aparece desalineado y con una falta ortográfica visible en el eslogan institucional (dice <em>"La mehor tecnología"</em>).</li>
+                </ul>
+                <p>
+                  <strong>Tu desafío:</strong> Asigna la <strong>Severidad</strong> (impacto técnico en el sistema) y la <strong>Prioridad</strong> (urgencia de resolución para el negocio) para cada uno de los dos incidentes, justificando tu clasificación.
+                </p>
+              </div>
+
+              <!-- Botón interactivo -->
+              <button
+                type="button"
+                class="solution-toggle-btn"
+                aria-expanded="false"
+                aria-controls="solution-panel-2"
+                id="solution-btn-2"
+              >
+                <span class="btn-icon" aria-hidden="true"></span>
+                <span class="btn-text">Mostrar Solución y Pauta</span>
+              </button>
+
+              <!-- Panel de solución -->
+              <div class="exercise-solution-panel" id="solution-panel-2" hidden>
+                <h4 class="solution-rubric-title">
+                  <span aria-hidden="true"></span> Pauta de Evaluación y Solución Sugerida
+                </h4>
+                <div class="solution-rubric-content">
+                  <p><strong>Incidente A (Error 500 en pasarela de pagos):</strong></p>
+                  <ul>
+                    <li><strong>Severidad:</strong> <em>Crítica / Bloqueante</em>. Provoca caída del flujo central del software sin alternativa o workaround para el usuario.</li>
+                    <li><strong>Prioridad:</strong> <em>Alta / P1 (Inmediata)</em>. Afecta directamente los ingresos económicos del negocio; el producto no puede operar comercialmente sin este módulo.</li>
+                  </ul>
+
+                  <p><strong>Incidente B (Logo desalineado y error ortográfico):</strong></p>
+                  <ul>
+                    <li><strong>Severidad:</strong> <em>Baja / Menor (Cosmética)</em>. No afecta ninguna funcionalidad, cálculo o base de datos del sistema.</li>
+                    <li><strong>Prioridad:</strong> <em>Alta / Media-Alta (P2)</em>. A pesar de que técnicamente es trivial de corregir, para el área comercial y de marketing representa un grave riesgo reputacional durante el lanzamiento.</li>
+                  </ul>
+
+                  <div class="solution-eval-tip">
+                    <strong>Criterio de evaluación:</strong> El estudiante debe demostrar que entiende que Severidad mide el impacto en el software, mientras que Prioridad mide la urgencia e impacto en los objetivos del negocio.
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Caso 3 -->
+            <article class="exercise-challenge-card">
+              <div class="exercise-header-row">
+                <span class="exercise-number-pill">Caso Práctico 03</span>
+                <div class="exercise-meta-tags">
+                  <span class="exercise-difficulty-tag exercise-difficulty-tag--intermedio">Nivel: Intermedio</span>
+                  <span class="exercise-topic-tag">Scrum & Calidad de Código</span>
+                </div>
+              </div>
+              <h3 class="exercise-title">Elaboración de una Definición de Terminado (Definition of Done - DoD)</h3>
+              
+              <div class="exercise-statement-box">
+                <p>
+                  <strong>Contexto del problema:</strong> Un equipo Scrum nuevo ha cerrado sus dos primeros Sprints con fricciones: el Product Owner rechaza historias en la Sprint Review porque el código solo funciona en el entorno local del programador, carece de pruebas unitarias y no se actualizó la documentación de las API.
+                </p>
+                <p>
+                  <strong>Tu desafío:</strong> Como QA Lead o Scrum Master, redacta una <strong>Definición de Terminado (DoD)</strong> sólida de al menos 5 criterios objetivos que el equipo deba cumplir obligatoriamente antes de marcar cualquier Historia de Usuario como "Terminada".
+                </p>
+              </div>
+
+              <!-- Botón interactivo -->
+              <button
+                type="button"
+                class="solution-toggle-btn"
+                aria-expanded="false"
+                aria-controls="solution-panel-3"
+                id="solution-btn-3"
+              >
+                <span class="btn-icon" aria-hidden="true"></span>
+                <span class="btn-text">Mostrar Solución y Pauta</span>
+              </button>
+
+              <!-- Panel de solución -->
+              <div class="exercise-solution-panel" id="solution-panel-3" hidden>
+                <h4 class="solution-rubric-title">
+                  <span aria-hidden="true"></span> Pauta de Evaluación y Solución Sugerida
+                </h4>
+                <div class="solution-rubric-content">
+                  <p><strong>Criterios esenciales de la Definición de Terminado (DoD):</strong></p>
+                  <ol>
+                    <li><strong>Integración en rama principal:</strong> Código integrado en el repositorio y compilado exitosamente en el servidor de CI sin advertencias graves.</li>
+                    <li><strong>Cobertura de pruebas unitarias:</strong> Nuevas funciones respaldadas por pruebas automatizadas con una cobertura mínima del 80% y 100% de tests pasando en verde.</li>
+                    <li><strong>Revisión de código por pares (Peer Review):</strong> Pull Request revisado y aprobado por al menos un desarrollador par.</li>
+                    <li><strong>Quality Gate estático (SonarQube):</strong> Cero vulnerabilidades de seguridad críticas y cumplimiento del estándar de deuda técnica aceptable.</li>
+                    <li><strong>Verificación en ambiente integrado (Staging):</strong> Todos los Criterios de Aceptación de la Historia probados y verificados en el entorno de pruebas, no solo en local.</li>
+                    <li><strong>Documentación técnica:</strong> Endpoints de API documentados (Swagger/OpenAPI) y notas de versión actualizadas.</li>
+                  </ol>
+
+                  <div class="solution-eval-tip">
+                    <strong>Criterio de evaluación:</strong> La pauta premia que la DoD contemple tanto la calidad interna del código (pruebas, linting, code review) como la calidad externa verificable por el Product Owner.
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Caso 4 -->
+            <article class="exercise-challenge-card">
+              <div class="exercise-header-row">
+                <span class="exercise-number-pill">Caso Práctico 04</span>
+                <div class="exercise-meta-tags">
+                  <span class="exercise-difficulty-tag exercise-difficulty-tag--avanzado">Nivel: Avanzado</span>
+                  <span class="exercise-topic-tag">Estrategia SDLC & Gestión de Riesgo</span>
+                </div>
+              </div>
+              <h3 class="exercise-title">Selección de Ciclo de Vida: Proyecto Médico vs. Red Social de Innovación</h3>
+              
+              <div class="exercise-statement-box">
+                <p>
+                  <strong>Contexto del problema:</strong> Una empresa de consultoría debe formular la estrategia de ingeniería para dos proyectos simultáneos:
+                </p>
+                <ul>
+                  <li><strong>Proyecto Alfa:</strong> Software de control embebido para una bomba de infusión intravenosa hospitalaria que suministra medicamentos a pacientes en estado crítico.</li>
+                  <li><strong>Proyecto Beta:</strong> Aplicación móvil orientada al consumidor final para una startup que busca validar rápidamente una nueva red social de trueque de libros universitarios.</li>
+                </ul>
+                <p>
+                  <strong>Tu desafío:</strong> Recomienda y justifica la metodología o modelo de desarrollo más apropiado para cada proyecto (Modelos Tradicionales: Cascada / V vs. Metodologías Ágiles: Scrum / Kanban / Lean), considerando certeza de requisitos, tolerancia al fallo y flexibilidad ante el cambio.
+                </p>
+              </div>
+
+              <!-- Botón interactivo -->
+              <button
+                type="button"
+                class="solution-toggle-btn"
+                aria-expanded="false"
+                aria-controls="solution-panel-4"
+                id="solution-btn-4"
+              >
+                <span class="btn-icon" aria-hidden="true"></span>
+                <span class="btn-text">Mostrar Solución y Pauta</span>
+              </button>
+
+              <!-- Panel de solución -->
+              <div class="exercise-solution-panel" id="solution-panel-4" hidden>
+                <h4 class="solution-rubric-title">
+                  <span aria-hidden="true"></span> Pauta de Evaluación y Solución Sugerida
+                </h4>
+                <div class="solution-rubric-content">
+                  <p><strong>Para el Proyecto Alfa (Dispositivo médico hospitalario):</strong></p>
+                  <ul>
+                    <li><strong>Metodología recomendada:</strong> <em>Modelo en V o Cascada con verificación formal estricta (bajo estándar IEC 62304 / ISO 13485).</em></li>
+                    <li><strong>Justificación:</strong> Los requerimientos de seguridad son no negociables y críticos para la vida humana. Se exige trazabilidad bidireccional formal entre cada especificación clínica y su respectiva prueba de validación, documentación regulatoria exhaustiva y cero tolerancia a la experimentación en producción.</li>
+                  </ul>
+
+                  <p><strong>Para el Proyecto Beta (Red social de trueque de libros):</strong></p>
+                  <ul>
+                    <li><strong>Metodología recomendada:</strong> <em>Metodología Ágil (Lean Startup + Scrum o Kanban).</em></li>
+                    <li><strong>Justificación:</strong> Los requerimientos son sumamente inciertos y dependientes de la aceptación del mercado. El objetivo prioritario es construir un Producto Mínimo Viable (MVP) en pocas semanas, validar hipótesis con usuarios reales y adaptar el producto ágilmente en ciclos cortos de retroalimentación.</li>
+                  </ul>
+
+                  <div class="solution-eval-tip">
+                    <strong>Criterio de evaluación:</strong> Comprender que no existe una metodología "universalmente mejor", sino que la elección correcta equilibra el costo de fallar (riesgo vital vs comercial) con la necesidad de adaptación al cambio.
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div> 
     </main>
+
+    <footer> 
+      <div class="footer-content">
+        <p>Siguenos en instagram: <a href="https://www.instagram.com/qualityteam51?stkn=MThjODZhYXNjcDNhag==" target="_blank" rel="noopener noreferrer">@qualityteam51</a> &copy; 2024 Gestión de Calidad de Software. Todos los derechos reservados. <strong>QUALITEAM</strong></p>
+      </div>
+    </footer>
   </body>
 </html>

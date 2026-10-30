@@ -844,4 +844,303 @@ document.addEventListener("DOMContentLoaded", () => {
     updateWizardUI();
   }
 
+
+  // =========================================================================
+  // US-12: Glosario Interactivo con Búsqueda en Tiempo Real e Índice A-Z
+  // =========================================================================
+  const initGlossarySearch = () => {
+    const searchInput = document.getElementById("glossary-search-input");
+    const clearBtn = document.getElementById("glossary-clear-btn");
+    const countVisibleEl = document.getElementById("glossary-count-visible");
+    const countTotalEl = document.getElementById("glossary-count-total");
+    const letterBtns = document.querySelectorAll(".glossary-letter-btn");
+    const groups = document.querySelectorAll(".glossary-group");
+    const cards = document.querySelectorAll(".glossary-card");
+    const noResultsEl = document.getElementById("glossary-no-results");
+    const queryDisplayEl = document.getElementById("glossary-query-display");
+    const resetBtn = document.getElementById("glossary-reset-btn");
+
+    if (!searchInput || !groups.length || !cards.length) return;
+
+    if (countTotalEl) {
+      countTotalEl.textContent = String(cards.length);
+    }
+
+    let activeLetter = "all";
+    let currentQuery = "";
+
+    // Normalizador de texto: sin mayúsculas ni acentos
+    const normalizeText = (text) => {
+      if (!text) return "";
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+    };
+
+    // Aplica el filtro combinado de búsqueda y letra
+    const applyFilter = () => {
+      const q = normalizeText(currentQuery);
+      let totalVisible = 0;
+
+      groups.forEach((group) => {
+        const groupCards = group.querySelectorAll(".glossary-card");
+        let groupVisibleCount = 0;
+
+        groupCards.forEach((card) => {
+          const cardLetter = card.getAttribute("data-letter");
+          const cardText = normalizeText(card.textContent || "");
+
+          const matchesLetter = activeLetter === "all" || cardLetter === activeLetter;
+          const matchesQuery = !q || cardText.includes(q);
+
+          if (matchesLetter && matchesQuery) {
+            card.classList.remove("is-hidden");
+            card.removeAttribute("hidden");
+            groupVisibleCount++;
+            totalVisible++;
+          } else {
+            card.classList.add("is-hidden");
+            card.setAttribute("hidden", "true");
+          }
+        });
+
+        if (groupVisibleCount > 0) {
+          group.classList.remove("is-hidden");
+          group.removeAttribute("hidden");
+        } else {
+          group.classList.add("is-hidden");
+          group.setAttribute("hidden", "true");
+        }
+      });
+
+      // Actualizar contador
+      if (countVisibleEl) {
+        countVisibleEl.textContent = String(totalVisible);
+      }
+
+      // Botón para limpiar campo
+      if (clearBtn) {
+        clearBtn.hidden = !currentQuery;
+      }
+
+      // Estado sin resultados
+      if (totalVisible === 0) {
+        if (noResultsEl) {
+          noResultsEl.removeAttribute("hidden");
+          if (queryDisplayEl) {
+            queryDisplayEl.textContent = currentQuery || ('Letra "' + activeLetter + '"');
+          }
+        }
+      } else {
+        if (noResultsEl) {
+          noResultsEl.setAttribute("hidden", "true");
+        }
+      }
+    };
+
+    // Eventos del buscador en tiempo real
+    searchInput.addEventListener("input", (e) => {
+      currentQuery = e.target.value;
+      applyFilter();
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        currentQuery = "";
+        searchInput.focus();
+        applyFilter();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        currentQuery = "";
+        activeLetter = "all";
+        letterBtns.forEach((b) => {
+          b.classList.toggle("is-active", b.dataset.letter === "all");
+        });
+        searchInput.focus();
+        applyFilter();
+      });
+    }
+
+    // Eventos del índice alfabético
+    letterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activeLetter = btn.getAttribute("data-letter") || "all";
+        letterBtns.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        applyFilter();
+
+        // Si se selecciona una letra específica y está visible, scroll suave
+        if (activeLetter !== "all") {
+          const targetGroup = document.querySelector('.glossary-group[data-group-letter="' + activeLetter + '"]');
+          if (targetGroup && !targetGroup.classList.contains("is-hidden")) {
+            targetGroup.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      });
+    });
+
+    // Deshabilitar letras que no posean términos
+    const existingLetters = new Set();
+    cards.forEach((c) => existingLetters.add(c.getAttribute("data-letter")));
+    letterBtns.forEach((b) => {
+      const letVal = b.getAttribute("data-letter");
+      if (letVal !== "all" && !existingLetters.has(letVal)) {
+        b.disabled = true;
+      }
+    });
+
+    // Ejecutar filtro inicial
+    applyFilter();
+  };
+
+  initGlossarySearch();
+
+
+  // =========================================================================
+  // US-13: Preguntas Frecuentes (FAQ) - Acordeón Accesible y Animado
+  // =========================================================================
+  const initFAQAccordion = () => {
+    const faqContainer = document.getElementById("faq-accordion");
+    if (!faqContainer) return;
+
+    const faqItems = faqContainer.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const questionBtn = item.querySelector(".faq-question");
+      const answerPanel = item.querySelector(".faq-answer");
+      if (!questionBtn || !answerPanel) return;
+
+      questionBtn.addEventListener("click", () => {
+        const isCurrentlyOpen = questionBtn.getAttribute("aria-expanded") === "true";
+
+        // Cierra los demás acordeones para navegación limpia
+        faqItems.forEach((otherItem) => {
+          const otherBtn = otherItem.querySelector(".faq-question");
+          const otherPanel = otherItem.querySelector(".faq-answer");
+          if (otherBtn && otherPanel) {
+            otherBtn.setAttribute("aria-expanded", "false");
+            otherItem.classList.remove("is-open");
+            otherPanel.style.maxHeight = null;
+            otherPanel.setAttribute("hidden", "true");
+          }
+        });
+
+        // Toggle del elemento actual
+        if (!isCurrentlyOpen) {
+          questionBtn.setAttribute("aria-expanded", "true");
+          item.classList.add("is-open");
+          answerPanel.removeAttribute("hidden");
+          answerPanel.style.maxHeight = answerPanel.scrollHeight + "px";
+        }
+      });
+    });
+  };
+
+  initFAQAccordion();
+
+
+  // =========================================================================
+  // US-14: Enlaces de Interés - Seguridad y Filtro por Tipo de Recurso
+  // =========================================================================
+  const initResourceLinks = () => {
+    const resourcesSection = document.getElementById("enlaces-interes");
+    if (!resourcesSection) return;
+
+    // Validación QA/Seguridad: Forzar target="_blank" y rel="noopener noreferrer"
+    const externalLinks = resourcesSection.querySelectorAll("a[href^='http'], a.resource-anchor-btn");
+    externalLinks.forEach((link) => {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    });
+
+    // Filtro interactivo por tipo de recurso
+    const filterBtns = resourcesSection.querySelectorAll(".resource-filter-btn");
+    const resourceCards = resourcesSection.querySelectorAll(".resource-link-card");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetType = btn.getAttribute("data-type") || "all";
+
+        filterBtns.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+
+        resourceCards.forEach((card) => {
+          const cardType = card.getAttribute("data-resource-type");
+          const isMatch = targetType === "all" || cardType === targetType;
+
+          if (isMatch) {
+            card.classList.remove("is-hidden");
+            card.removeAttribute("hidden");
+          } else {
+            card.classList.add("is-hidden");
+            card.setAttribute("hidden", "true");
+          }
+        });
+      });
+    });
+  };
+
+  initResourceLinks();
+
+
+  // =========================================================================
+  // US-15: Ejercicios y Casos Prácticos - Solución Desplegable Dinámica
+  // =========================================================================
+  const initExerciseSolutions = () => {
+    const exerciseCards = document.querySelectorAll(".exercise-challenge-card");
+    if (!exerciseCards.length) return;
+
+    exerciseCards.forEach((card) => {
+      const toggleBtn = card.querySelector(".solution-toggle-btn");
+      const solutionPanel = card.querySelector(".exercise-solution-panel");
+
+      if (!toggleBtn || !solutionPanel) return;
+
+      // QA: Asegurar que esté estrictamente oculto al cargar la página
+      solutionPanel.setAttribute("hidden", "true");
+      toggleBtn.setAttribute("aria-expanded", "false");
+
+      toggleBtn.addEventListener("click", () => {
+        const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+        const willExpand = !isExpanded;
+
+        toggleBtn.setAttribute("aria-expanded", String(willExpand));
+        toggleBtn.classList.toggle("is-active", willExpand);
+
+        const btnText = toggleBtn.querySelector(".btn-text");
+        const btnIcon = toggleBtn.querySelector(".btn-icon");
+
+        if (willExpand) {
+          solutionPanel.removeAttribute("hidden");
+          if (btnText) btnText.textContent = "Ocultar Solución y Pauta";
+      
+        } else {
+          solutionPanel.setAttribute("hidden", "true");
+          if (btnText) btnText.textContent = "Mostrar Solución y Pauta";
+   
+        }
+      });
+    });
+  };
+
+  initExerciseSolutions();
+
+  document.querySelectorAll("[data-profile-card]").forEach((card) => {
+    card.addEventListener("pointerenter", () => card.classList.add("is-interactive"));
+    card.addEventListener("pointerleave", () => card.classList.remove("is-interactive"));
+    card.addEventListener("focusin", () => card.classList.add("is-interactive"));
+    card.addEventListener("focusout", (event) => {
+      if (!card.contains(event.relatedTarget)) {
+        card.classList.remove("is-interactive");
+      }
+    });
+  });
+
 });

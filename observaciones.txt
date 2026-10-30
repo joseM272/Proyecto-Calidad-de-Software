@@ -1,3 +1,11 @@
+18/10
+puntos 1 a 5 echos 
 en las cajas de categoria sumar una breve descripcion y un logo para cada uno
-
 segundo sprin falta metodologia agil y punto 6 No esta echo mejorar el diseño tambien 
+23/10
+puntos 6 al 11 echos 
+24/10 
+empezando puntos 12 al 15
+29/10
+puntos 12 al 15 completados (Glosario interactivo con buscador A-Z, FAQ con acordeón accesible, Enlaces de Interés seguros y Ejercicios Prácticos con pauta desplegable).
+esta en Recursos y Aprendizaje sobre la Calidad del Software

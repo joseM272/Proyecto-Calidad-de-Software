@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros | Gestión de Calidad de Software</title>
+    <link rel="stylesheet" href="CSS/estilos.css" />
+    <link rel="stylesheet" href="CSS/sobre_nosotros.css" />
+    <link rel="icon" href="fotos/Logo.jpg" type="image/png" />
+    <script src="JS/script.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav container" aria-label="Navegación principal">
+        <ul class="nav__menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Fundamentos de Calidad</summary>
+              <ul class="nav__submenu">
+                <li><a href="fundamentos de calidad.html#quality-attributes-title">Atributos de calidad</a></li>
+                <li><a href="fundamentos de calidad.html#quality-comparison-title">Calidad y pruebas</a></li>
+                <li><a href="fundamentos de calidad.html#quality-traits-title">Características del software</a></li>
+                <li><a href="fundamentos de calidad.html#test-levels-title">Niveles de pruebas</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">SDLC</summary>
+              <ul class="nav__submenu">
+                <li><a href="sdlc.html#introduccion">¿Qué es el SDLC?</a></li>
+                <li><a href="sdlc.html#etapas">Etapas del SDLC</a></li>
+                <li><a href="sdlc.html#stlc">SDLC y STLC</a></li>
+                <li><a href="sdlc.html#glosario">Conceptos</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Metodologías Ágiles</summary>
+              <ul class="nav__submenu">
+                <li><a href="metodologias_agiles.html#que-son-agiles">¿Qué son?</a></li>
+                <li><a href="metodologias_agiles.html#aporte-calidad">Agilidad y calidad</a></li>
+                <li><a href="metodologias_agiles.html#metodologias">Metodologías</a></li>
+                <li><a href="metodologias_agiles.html#tecnicas">Técnicas de calidad</a></li>
+                <li><a href="Comparar metodologias.html">Comparador de metodologías</a></li>
+                <li><a href="Preferencia de metadologia.html">Encuesta de preferencias</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__dropdown-trigger">Recursos y Aprendizaje</summary>
+              <ul class="nav__submenu">
+                <li><a href="recursos_aprendizaje.html#recursos-educativos">Recursos educativos</a></li>
+                <li><a href="recursos_aprendizaje.html#habilidades">Habilidades</a></li>
+                <li><a href="recursos_aprendizaje.html#actividades">Actividades prácticas</a></li>
+                <li><a href="recursos_aprendizaje.html#consejos">Consejos de aprendizaje</a></li>
+              </ul>
+            </details>
+       </nav>
+    </header>
+
+    <main class="page about-page">
+      <section class="container about-hero" aria-labelledby="about-title">
+        <p class="about-hero__eyebrow">Conoce a nuestro equipo</p>
+        <h1 id="about-title">Sobre Nosotros</h1>
+        <p>
+          Somos un equipo que trabaja para compartir conocimientos sobre la gestión de calidad
+          de software. Aquí puedes conocer a cada integrante, su rol y qué lo motiva.
+        </p>
+      </section>
+
+      <section class="container team-section" aria-labelledby="team-title">
+        <div class="team-section__heading">
+          <h2 id="team-title">Nuestro equipo</h2>
+        </div>
+
+        <div class="team-grid">
+          <article class="profile-card" data-profile-card tabindex="0">
+           <img class="profile-card__portrait" src="fotos/Julian.jpeg" alt="Foto del Scrum Master">
+            <div class="profile-card__content">
+              <p class="profile-card__role">Scrum Master</p>
+              <h3 class="profile-card__label">Nombre</h3>
+              <div class="profile-card__blank profile-card__blank--name" aria-label="Nombre del Scrum Master">Julian</div>
+              <h3 class="profile-card__label">Motivación</h3>
+              <div class="profile-card__blank profile-card__blank--motivation" aria-label="Motivación del Scrum Master">Me encanta la verga</div>
+              <h3 class="profile-card__label">Institución</h3>
+              <div class="profile-card__blank" aria-label="Espacio en blanco para la institución">E.P.E.T.N°20</div>
+            </div>
+          </article>
+
+          <article class="profile-card" data-profile-card tabindex="0">
+           <img class="profile-card__portrait" src="fotos/Santiago.jpg" alt="Foto del diseñador principal">
+            <div class="profile-card__content">
+              <p class="profile-card__role">Diseñador</p>
+              <h3 class="profile-card__label">Nombre</h3>
+              <div class="profile-card__blank profile-card__blank--name" aria-label="Nombre del Diseñador">Santiago</div>
+              <h3 class="profile-card__label">Motivación</h3>
+              <div class="profile-card__blank profile-card__blank--motivation" aria-label="Motivación del Diseñador">.</div>
+              <h3 class="profile-card__label">Institución</h3>
+              <div class="profile-card__blank" aria-label="Espacio en blanco para la institución">E.P.E.T.N°20</div>
+          </article>
+
+          <article class="profile-card" data-profile-card tabindex="0">
+         <img class="profile-card__portrait" src="fotos/" alt="Foto del programador">
+            <div class="profile-card__content">
+              <p class="profile-card__role">Programador</p>
+              <h3 class="profile-card__label">Nombre</h3>
+              <div class="profile-card__blank profile-card__blank--name" aria-label="Nombre del Programador">José</div>
+              <h3 class="profile-card__label">Motivación</h3>
+              <div class="profile-card__blank profile-card__blank--motivation" aria-label="Espacio en blanco para la motivación"></div>
+              <h3 class="profile-card__label">Institución</h3>
+              <div class="profile-card__blank" aria-label="Espacio en blanco para la institución">E.P.E.T.N°20</div>
+            </div>
+          </article>
+
+          <article class="profile-card" data-profile-card tabindex="0">
+            <img class="profile-card__portrait" src="fotos/Martin.jpeg" alt="Foto del tester">
+            <div class="profile-card__content">
+              <p class="profile-card__role">Tester</p>
+              <h3 class="profile-card__label">Nombre</h3>
+              <div class="profile-card__blank profile-card__blank--name" aria-label="Nombre del Tester">Martin</div>
+              <h3 class="profile-card__label">Motivación</h3>
+              <div class="profile-card__blank profile-card__blank--motivation" aria-label="Espacio en blanco para la motivación"></div>
+              <h3 class="profile-card__label">Institución</h3>
+              <div class="profile-card__blank" aria-label="Espacio en blanco para la institución">E.P.E.T.N°20</div>
+            </div>
+          </article>
+          
+          <article class="profile-card" data-profile-card tabindex="0">
+            <img class="profile-card__portrait" src="fotos/Facundo.jpeg" alt="Foto del Diseñador/Marketing">
+            <div class="profile-card__content">
+              <p class="profile-card__role">Diseñador/Marketing</p>
+              <h3 class="profile-card__label">Nombre</h3>
+              <div class="profile-card__blank profile-card__blank--name" aria-label="nombre">Facundo</div>
+              <h3 class="profile-card__label">Motivación</h3>
+              <div class="profile-card__blank profile-card__blank--motivation" aria-label="Espacio en blanco para la motivación">Los travestis que frecuento me dijieron que les gustan los hombres que diseñan y hacen publicidad</div>
+              <h3 class="profile-card__label">Institución</h3>
+              <div class="profile-card__blank" aria-label="Espacio en blanco para la institución">E.P.E.T.N°20</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="about-footer">
+      <div class="footer-content">
+        <p>
+          Síguenos en Instagram:
+          <a href="https://www.instagram.com/qualityteam51?stkn=MThjODZhYXNjcDNhag==" target="_blank" rel="noopener noreferrer">@qualityteam51</a>
+          &copy; 2024 Gestión de Calidad de Software. Todos los derechos reservados.
+          <strong>QUALITEAM</strong>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
