@@ -304,6 +304,139 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
       </div>
     </section>
 
+
+    <!-- US-02: ISO 9126 vs ISO/IEC 25000 comparison tabs -->
+    <section class="iso-comparison" id="iso-comparison" aria-labelledby="iso-comparison-title">
+      <header class="quality-tools__header">
+        <h2 id="iso-comparison-title">Evolución de los estándares de calidad: ISO 9126 → ISO/IEC 25010</h2>
+        <p>Comparación entre el modelo clásico (ISO 9126) y su sucesor moderno (ISO/IEC 25010).</p>
+      </header>
+
+      <div class="iso-tabs" role="tablist" aria-label="Comparación de estándares ISO">
+        <button class="iso-tab-btn is-active" role="tab" aria-selected="true" aria-controls="iso-panel-9126" id="iso-btn-9126" type="button">ISO 9126 (1991–2004)</button>
+        <button class="iso-tab-btn" role="tab" aria-selected="false" aria-controls="iso-panel-25010" id="iso-btn-25010" type="button">ISO/IEC 25010 (2011–actual)</button>
+        <button class="iso-tab-btn" role="tab" aria-selected="false" aria-controls="iso-panel-diff" id="iso-btn-diff" type="button">Comparativa</button>
+      </div>
+
+      <div class="iso-panels">
+        <div class="iso-tab-panel is-active" id="iso-panel-9126" role="tabpanel" aria-labelledby="iso-btn-9126">
+          <div class="iso-panel__content">
+            <h3>ISO 9126 — Modelo clásico de calidad de software</h3>
+            <p>Publicado en 1991 y revisado en 2001, fue el primer estándar internacional ampliamente adoptado para evaluar la calidad de productos de software. Definía <strong>6 características principales</strong> y sus subcaracterísticas.</p>
+            <div class="iso-characteristics-grid">
+              <article class="iso-char iso-char--1">
+                <span class="iso-char__num">01</span>
+                <h4>Funcionalidad</h4>
+                <p>Capacidad del software para cumplir las funciones definidas según las necesidades y requisitos del usuario.</p>
+              </article>
+              <article class="iso-char iso-char--2">
+                <span class="iso-char__num">02</span>
+                <h4>Confiabilidad</h4>
+                <p>Capacidad del software para mantener su nivel de rendimiento bajo condiciones específicas durante un período determinado.</p>
+              </article>
+              <article class="iso-char iso-char--3">
+                <span class="iso-char__num">03</span>
+                <h4>Usabilidad</h4>
+                <p>Facilidad con la que los usuarios pueden aprender, operar y utilizar el sistema para sus objetivos.</p>
+              </article>
+              <article class="iso-char iso-char--4">
+                <span class="iso-char__num">04</span>
+                <h4>Eficiencia</h4>
+                <p>Relación entre el nivel de rendimiento del software y los recursos utilizados (tiempo, memoria, CPU).</p>
+              </article>
+              <article class="iso-char iso-char--5">
+                <span class="iso-char__num">05</span>
+                <h4>Mantenibilidad</h4>
+                <p>Facilidad para modificar, corregir, adaptar o mejorar el software después de su entrega.</p>
+              </article>
+              <article class="iso-char iso-char--6">
+                <span class="iso-char__num">06</span>
+                <h4>Portabilidad</h4>
+                <p>Capacidad del software para ser trasladado de un entorno a otro (sistema operativo, hardware, plataforma).</p>
+              </article>
+            </div>
+            <p class="iso-panel__note"><strong>Limitación principal:</strong> No contemplaba explícitamente la seguridad ni la compatibilidad como características independientes, aspectos cruciales en los sistemas modernos.</p>
+          </div>
+        </div>
+
+        <div class="iso-tab-panel" id="iso-panel-25010" role="tabpanel" aria-labelledby="iso-btn-25010" hidden>
+          <div class="iso-panel__content">
+            <h3>ISO/IEC 25010 — Modelo moderno SQuaRE</h3>
+            <p>Parte de la familia <strong>SQuaRE</strong> (Systems and software Quality Requirements and Evaluation), reemplazó a ISO 9126 en 2011. Amplió el modelo a <strong>8 características</strong>, incorporando aspectos críticos del software actual.</p>
+            <div class="iso-characteristics-grid iso-characteristics-grid--8">
+              <article class="iso-char iso-char--1">
+                <span class="iso-char__num">01</span>
+                <h4>Adecuación funcional</h4>
+                <p>El software hace correctamente lo que debe hacer, cubriendo las funciones y objetivos del usuario.</p>
+              </article>
+              <article class="iso-char iso-char--2">
+                <span class="iso-char__num">02</span>
+                <h4>Desempeño y eficiencia</h4>
+                <p>Rendimiento en relación con los recursos utilizados en condiciones establecidas.</p>
+              </article>
+              <article class="iso-char iso-char--3">
+                <span class="iso-char__num">03</span>
+                <h4>Compatibilidad <span class="iso-char__new">NUEVO</span></h4>
+                <p>Capacidad de coexistir e intercambiar información con otros sistemas o componentes.</p>
+              </article>
+              <article class="iso-char iso-char--4">
+                <span class="iso-char__num">04</span>
+                <h4>Usabilidad</h4>
+                <p>Facilidad de aprendizaje, operación y satisfacción del usuario final.</p>
+              </article>
+              <article class="iso-char iso-char--5">
+                <span class="iso-char__num">05</span>
+                <h4>Fiabilidad</h4>
+                <p>Funcionamiento correcto y estable durante el tiempo esperado bajo condiciones definidas.</p>
+              </article>
+              <article class="iso-char iso-char--6">
+                <span class="iso-char__num">06</span>
+                <h4>Seguridad <span class="iso-char__new">NUEVO</span></h4>
+                <p>Protección de la información y los procesos frente a accesos no autorizados o modificaciones maliciosas.</p>
+              </article>
+              <article class="iso-char iso-char--7">
+                <span class="iso-char__num">07</span>
+                <h4>Mantenibilidad</h4>
+                <p>Facilidad para modificar, corregir y mejorar el software con eficiencia.</p>
+              </article>
+              <article class="iso-char iso-char--8">
+                <span class="iso-char__num">08</span>
+                <h4>Portabilidad</h4>
+                <p>Capacidad de ser transferido a diferentes entornos de hardware o software.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="iso-tab-panel" id="iso-panel-diff" role="tabpanel" aria-labelledby="iso-btn-diff" hidden>
+          <div class="iso-panel__content">
+            <h3>Comparativa: principales diferencias</h3>
+            <div class="iso-diff-table-wrap" role="region" aria-label="Diferencias entre ISO 9126 e ISO 25010" tabindex="0">
+              <table class="iso-diff-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Aspecto</th>
+                    <th scope="col">ISO 9126</th>
+                    <th scope="col">ISO/IEC 25010</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Publicación</th><td>1991 / revisión 2001</td><td>2011 (vigente)</td></tr>
+                  <tr><th scope="row">Características</th><td>6 principales</td><td>8 principales</td></tr>
+                  <tr><th scope="row">Seguridad</th><td>Subcaracterística de funcionalidad</td><td>Característica principal independiente</td></tr>
+                  <tr><th scope="row">Compatibilidad</th><td>No contemplada explícitamente</td><td>Característica principal independiente</td></tr>
+                  <tr><th scope="row">Familia de normas</th><td>ISO 9126 (aislada)</td><td>SQuaRE (ISO/IEC 25000, sistema integrado)</td></tr>
+                  <tr><th scope="row">Enfoque</th><td>Producto de software tradicional</td><td>Sistemas y software (incluye sistemas complejos)</td></tr>
+                  <tr><th scope="row">Subcaracterísticas</th><td>21 subcaracterísticas</td><td>31 subcaracterísticas</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="iso-panel__note" style="margin-top:1rem;"><strong>En resumen:</strong> ISO/IEC 25010 moderniza y amplía ISO 9126, incorporando la seguridad y la compatibilidad como características de primer nivel, reflejando las necesidades del software actual.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <h2>Prevención de defectos</h2>
     <p>Un principio fundamental es que es más barato prevenir un error que corregirlo cuando ya llegó al usuario.</p>
     <p>Por eso se utilizan prácticas como:</p>
@@ -328,6 +461,56 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
         <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg><p><strong>Pruebas de sistema:</strong> evalúan el sistema completo.</p></li>
         <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg><p><strong>Pruebas de aceptación:</strong> comprueban que el software satisface las necesidades del cliente o usuario.</p></li>
       </ul>
+    </section>
+
+
+    <!-- US-03: Flip-cards Caja Negra vs Caja Blanca -->
+    <section class="test-techniques" id="test-techniques" aria-labelledby="test-techniques-title">
+      <h2 id="test-techniques-title">Técnicas de prueba: Caja Negra y Caja Blanca</h2>
+      <p>Según la perspectiva del tester y el acceso al código fuente, las pruebas se clasifican en dos grandes técnicas:</p>
+      <div class="flip-cards-grid">
+        <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Pruebas de Caja Negra — haz clic para ver el reverso">
+          <div class="flip-card__inner">
+            <div class="flip-card__front">
+              <span class="flip-card__icon" aria-hidden="true">⬛</span>
+              <h3>Caja Negra</h3>
+              <p class="flip-card__hint">Clic para ver detalles</p>
+            </div>
+            <div class="flip-card__back">
+              <h3>Pruebas de Caja Negra</h3>
+              <p>El tester <strong>no conoce el código interno</strong>. Solo se observan las entradas y salidas del sistema.</p>
+              <ul>
+                <li>Partición de equivalencia</li>
+                <li>Análisis de valores límite</li>
+                <li>Pruebas funcionales y de aceptación</li>
+                <li>Pruebas de usabilidad</li>
+              </ul>
+              <p class="flip-card__use"><strong>Ideal para:</strong> validar requisitos desde la perspectiva del usuario.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Pruebas de Caja Blanca — haz clic para ver el reverso">
+          <div class="flip-card__inner">
+            <div class="flip-card__front">
+              <span class="flip-card__icon" aria-hidden="true">⬜</span>
+              <h3>Caja Blanca</h3>
+              <p class="flip-card__hint">Clic para ver detalles</p>
+            </div>
+            <div class="flip-card__back">
+              <h3>Pruebas de Caja Blanca</h3>
+              <p>El tester <strong>conoce y analiza el código fuente</strong> para diseñar pruebas que cubran el máximo de caminos internos.</p>
+              <ul>
+                <li>Pruebas unitarias (TDD)</li>
+                <li>Cobertura de sentencias y ramas</li>
+                <li>Análisis estático del código</li>
+                <li>Pruebas de caminos básicos</li>
+              </ul>
+              <p class="flip-card__use"><strong>Ideal para:</strong> verificar la lógica interna y la calidad del código.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <aside class="quality-callout" aria-labelledby="quality-callout-title">
@@ -384,9 +567,21 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
         <section class="quality-tools__types" id="quality-tools-types">
             <h2>2. Principales tipos de herramientas</h2>
 
-          <div class="tool-type-list">
+          <!-- US-04: Tool category filter -->
+          <div id="tool-filter-bar" class="tool-filter-bar" role="group" aria-label="Filtrar por categoría">
+            <button class="tool-filter-btn is-active" data-filter="all" type="button" aria-pressed="true">Todas</button>
+            <button class="tool-filter-btn" data-filter="defectos" type="button" aria-pressed="false">Gestión de defectos</button>
+            <button class="tool-filter-btn" data-filter="testing" type="button" aria-pressed="false">Testing</button>
+            <button class="tool-filter-btn" data-filter="analisis" type="button" aria-pressed="false">Análisis estático</button>
+            <button class="tool-filter-btn" data-filter="versiones" type="button" aria-pressed="false">Control de versiones</button>
+            <button class="tool-filter-btn" data-filter="ci" type="button" aria-pressed="false">Integración continua</button>
+            <button class="tool-filter-btn" data-filter="rendimiento" type="button" aria-pressed="false">Rendimiento</button>
+            <button class="tool-filter-btn" data-filter="seguridad" type="button" aria-pressed="false">Seguridad</button>
+            <button class="tool-filter-btn" data-filter="documentacion" type="button" aria-pressed="false">Documentación</button>
+          </div>
+          <div class="tool-type-list" id="tool-type-list">
 
-            <article class="tool-type">
+            <article class="tool-type" data-tool-category="defectos">
               <span class="tool-type__category">Gestión de defectos</span>
                     <h3>2.1. Herramientas de gestión de defectos</h3>
 
@@ -415,7 +610,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </div>
                 </article>
 
-                  <article class="tool-type">
+                  <article class="tool-type" data-tool-category="testing">
                     <span class="tool-type__category">Testing</span>
                     <h3>2.2. Herramientas de pruebas de software</h3>
 
@@ -441,7 +636,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </div>
                 </article>
 
-                  <article class="tool-type">
+                  <article class="tool-type" data-tool-category="analisis">
                     <span class="tool-type__category">Análisis estático</span>
                     <h3>2.3. Herramientas de análisis de código</h3>
 
@@ -460,12 +655,13 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </p>
 
                     <div class="tool-type__examples">
-                        <strong>Herramienta de ejemplo:</strong>
-                      <code>SonarQube</code>.
+                        <strong>Herramientas de ejemplo:</strong>
+                      <code>ESLint</code> y <code>Pylint</code> para aplicar reglas de estilo y detectar problemas,
+                      y <code>SonarQube</code> para análisis de calidad y seguridad.
                     </div>
                 </article>
 
-                  <article class="tool-type">
+                  <article class="tool-type" data-tool-category="versiones">
                     <span class="tool-type__category">Control de versiones</span>
                     <h3>2.4. Herramientas de control de versiones</h3>
 
@@ -488,7 +684,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </div>
                 </article>
 
-                  <article class="tool-type">
+                  <article class="tool-type" data-tool-category="ci">
                     <span class="tool-type__category">Automatización</span>
                     <h3>2.5. Herramientas de integración continua</h3>
 
@@ -511,7 +707,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </div>
                 </article>
 
-                  <article class="tool-type">
+                  <article class="tool-type" data-tool-category="rendimiento">
                     <span class="tool-type__category">Rendimiento</span>
                     <h3>2.6. Herramientas de pruebas de rendimiento</h3>
 
@@ -535,7 +731,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </div>
                 </article>
 
-                  <article class="tool-type">
+                  <article class="tool-type" data-tool-category="seguridad">
                     <span class="tool-type__category">Ciberseguridad</span>
                     <h3>2.7. Herramientas de seguridad</h3>
 
@@ -558,7 +754,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                     </div>
                 </article>
 
-                  <article class="tool-type">
+                  <article class="tool-type" data-tool-category="documentacion">
                     <span class="tool-type__category">Organización</span>
                     <h3>2.8. Herramientas de documentación y gestión</h3>
 
@@ -582,6 +778,7 @@ Ejemplo: una tienda online debe poder comunicarse correctamente con una pasarela
                 </article>
 
             </div>
+          </div><!-- /#tool-type-list -->
         </section>
 
         <section class="quality-tools__benefits" id="quality-tools-benefits">

@@ -602,14 +602,56 @@ document.addEventListener("DOMContentLoaded", () => {
           { tag: "Decisiones", title: "Último Momento Responsable", desc: "Retrasar decisiones arquitectónicas hasta contar con la mayor cantidad de información empírica." },
           { tag: "Optimización", title: "Value Stream Mapping", desc: "Medición constante de la eficiencia del flujo para reducir tiempos de ciclo." }
         ]
+      },
+      cascada: {
+        id: "cascada",
+        name: "Modelo Cascada",
+        badge: "Secuencial y Fases Estructuradas",
+        tagline: "El modelo secuencial clásico por excelencia para proyectos con requisitos estables, inmutables y contratos cerrados donde la previsibilidad y la documentación formal son prioritarias.",
+        fillClass: "fill--cascada",
+        insights: [
+          { tag: "Planificación", title: "Fases Secuenciales Delimitadas", desc: "Cada etapa se completa y aprueba formalmente antes de comenzar la siguiente, asegurando estabilidad ante contratos cerrados." },
+          { tag: "Documentación", title: "Especificaciones Exhaustivas (SRS/SDD)", desc: "Requisitos y diseño técnico detallados a fondo antes de codificar, garantizando trazabilidad y control estricto del alcance." },
+          { tag: "Control", title: "Líneas Base y Gestión del Valor Ganado", desc: "Supervisión formal de cronograma y costos mediante líneas base fijas, diagramas de Gantt y métricas de avance contractual." },
+          { tag: "Calidad / QA", title: "Verificación Formal al Cierre", desc: "Pruebas de sistema e integración rigurosas y exhaustivas sobre una base de código completa y congelada." }
+        ]
+      },
+      vmodel: {
+        id: "vmodel",
+        name: "Modelo en V",
+        badge: "Verificación y Validación Rigurosa",
+        tagline: "El modelo de alta integridad idóneo para sistemas críticos, aeroespaciales, automotrices o biomédicos donde la seguridad, la trazabilidad bidireccional y la detección temprana de defectos son vitales.",
+        fillClass: "fill--vmodel",
+        insights: [
+          { tag: "Ingeniería QA", title: "Pruebas Diseñadas en Paralelo al Diseño", desc: "A cada nivel de especificación (requisitos, arquitectura, módulo) se le planifica simultáneamente su fase correspondiente de pruebas." },
+          { tag: "Trazabilidad", title: "Matriz RTM Bidireccional", desc: "Correspondencia 1:1 entre cada requerimiento y su caso de prueba para verificar cobertura total del sistema." },
+          { tag: "Prevención", title: "Detección Temprana de Fallas", desc: "Previene defectos de arquitectura y lógica antes de escribir código, reduciendo exponencialmente el costo del retrabajo." },
+          { tag: "Criticidad", title: "Auditoría y Certificación Formal", desc: "Responde a las normativas de calidad más exigentes (ISO/IEC, IEEE) en entornos de alta confiabilidad." }
+        ]
+      },
+      incremental: {
+        id: "incremental",
+        name: "Modelo Incremental",
+        badge: "Construcción por Módulos y Entregas Progresivas",
+        tagline: "El modelo evolutivo estratégico cuando se necesita poner en producción rápidamente un núcleo funcional operativo y continuar agregando módulos y capacidades en entregas sucesivas.",
+        fillClass: "fill--incremental",
+        insights: [
+          { tag: "Modularidad", title: "Descomposición en Entregas Funcionales", desc: "Divide el software en incrementos independientes pero integrables, reduciendo el riesgo y la complejidad inicial." },
+          { tag: "Time-to-Market", title: "Puesta en Producción Temprana", desc: "El cliente o usuario final empieza a generar valor operativo desde la primera versión parcial liberada." },
+          { tag: "Regresión QA", title: "Pruebas de Regresión Acumulativas", desc: "Asegura que cada nuevo incremento modular se ensamble de manera limpia y no rompa la funcionalidad anterior." },
+          { tag: "Flexibilidad", title: "Ajuste entre Versiones", desc: "Permite calibrar y priorizar los siguientes módulos según la retroalimentación obtenida del núcleo ya operativo." }
+        ]
       }
     };
 
     const OPTION_WEIGHTS = {
-      scrum: { scrum: 3, xp: 1, kanban: 0, lean: 0 },
-      kanban: { kanban: 3, lean: 1, scrum: 0, xp: 0 },
-      xp: { xp: 3, lean: 1, scrum: 1, kanban: 0 },
-      lean: { lean: 3, kanban: 1, xp: 0, scrum: 0 }
+      scrum: { scrum: 3, xp: 1, incremental: 1, kanban: 0, lean: 0, cascada: 0, vmodel: 0 },
+      kanban: { kanban: 3, lean: 1, scrum: 0, xp: 0, cascada: 0, vmodel: 0, incremental: 0 },
+      xp: { xp: 3, scrum: 1, vmodel: 1, lean: 0, kanban: 0, cascada: 0, incremental: 0 },
+      lean: { lean: 3, kanban: 1, scrum: 0, xp: 0, cascada: 0, vmodel: 0, incremental: 0 },
+      cascada: { cascada: 3, vmodel: 1, incremental: 1, scrum: 0, kanban: 0, xp: 0, lean: 0 },
+      vmodel: { vmodel: 3, cascada: 1, xp: 1, scrum: 0, kanban: 0, lean: 0, incremental: 0 },
+      incremental: { incremental: 3, scrum: 1, cascada: 1, kanban: 0, xp: 0, lean: 0, vmodel: 0 }
     };
 
     const updateWizardUI = () => {
@@ -708,26 +750,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Algoritmo de cómputo y cálculo de resultados
     const calculateAndRenderResults = () => {
-      const scores = { scrum: 0, kanban: 0, xp: 0, lean: 0 };
+      const scores = {
+        scrum: 0,
+        kanban: 0,
+        xp: 0,
+        lean: 0,
+        cascada: 0,
+        vmodel: 0,
+        incremental: 0
+      };
 
       // Sumar puntuaciones de cada respuesta seleccionada
       Object.keys(userAnswers).forEach((q) => {
         const ans = userAnswers[q];
         const weights = OPTION_WEIGHTS[ans] || { [ans]: 3 };
-        scores.scrum += weights.scrum || 0;
-        scores.kanban += weights.kanban || 0;
-        scores.xp += weights.xp || 0;
-        scores.lean += weights.lean || 0;
+        Object.keys(scores).forEach((key) => {
+          scores[key] += weights[key] || 0;
+        });
       });
 
       // Puntuación máxima teórica por metodología (18 puntos principales)
       const maxPossible = 18;
-      const percentages = {
-        scrum: Math.min(100, Math.round((scores.scrum / maxPossible) * 100)),
-        kanban: Math.min(100, Math.round((scores.kanban / maxPossible) * 100)),
-        xp: Math.min(100, Math.round((scores.xp / maxPossible) * 100)),
-        lean: Math.min(100, Math.round((scores.lean / maxPossible) * 100))
-      };
+      const percentages = {};
+      Object.keys(scores).forEach((key) => {
+        percentages[key] = Math.min(100, Math.round((scores[key] / maxPossible) * 100));
+      });
 
       // Ordenar metodologías por puntaje descendente
       const ranked = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
@@ -770,9 +817,9 @@ document.addEventListener("DOMContentLoaded", () => {
       let recommendationTitle = winnerProfile.name;
       let recommendationTagline = winnerProfile.tagline;
 
-      if (isHybrid) {
+      if (isHybrid && runnerUpProfile) {
         recommendationTitle = `${winnerProfile.name} con sinergia en ${runnerUpProfile.name}`;
-        recommendationTagline = `Tu proyecto presenta un perfil híbrido excelente. Te sugerimos adoptar la base de ${winnerProfile.name} e incorporar prácticas clave de ${runnerUpProfile.name} (como un modelo tipo Scrumban o XP con sprints de Scrum).`;
+        recommendationTagline = `Tu proyecto presenta un perfil híbrido excelente. Te sugerimos adoptar la base de ${winnerProfile.name} e integrar prácticas clave de ${runnerUpProfile.name} para equilibrar velocidad operativa, estructura y aseguramiento de la calidad.`;
       }
 
       // Ocultar formulario del wizard y mostrar resultados
@@ -785,7 +832,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="results-winner-card">
           <div class="winner-trophy-badge">
             <svg viewBox="0 0 20 20" fill="currentColor" style="width:1rem; height:1rem;"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            Metodología Sugerida
+            Enfoque Sugerido
           </div>
           <h3 class="results-winner-title">${recommendationTitle}</h3>
           <span class="results-winner-match">${winnerPercent}% de Coincidencia</span>
@@ -793,15 +840,15 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="results-breakdown">
-          <h4 class="results-breakdown__title">Comparativa de Afinidad entre Metodologías</h4>
-          <p class="results-breakdown__subtitle">Porcentaje de coincidencia de tus respuestas con cada uno de los 4 marcos evaluados:</p>
+          <h4 class="results-breakdown__title">Comparativa de Afinidad entre Metodologías y Modelos</h4>
+          <p class="results-breakdown__subtitle">Porcentaje de coincidencia de tus respuestas con los 7 enfoques evaluados (metodologías ágiles y modelos de ciclo de vida):</p>
           <div class="affinity-bars">
             ${barsHTML}
           </div>
         </div>
 
         <div class="results-insights">
-          <h4>¿Por qué este marco optimizará la calidad de tu software?</h4>
+          <h4>¿Por qué este enfoque optimizará la calidad de tu software?</h4>
           <ul class="insights-list">
             ${insightsHTML}
           </ul>
@@ -1164,5 +1211,354 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.reset();
     });
   }
+
+
+  // =========================================================================
+  // US-02: ISO Comparison Tabs (fundamentos de calidad.html)
+  // =========================================================================
+  const isoTabBtns = document.querySelectorAll('.iso-tab-btn');
+  if (isoTabBtns.length > 0) {
+    isoTabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('aria-controls');
+        isoTabBtns.forEach((b) => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+          const p = document.getElementById(b.getAttribute('aria-controls'));
+          if (p) { p.classList.remove('is-active'); p.hidden = true; }
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(targetId);
+        if (panel) { panel.classList.add('is-active'); panel.hidden = false; }
+      });
+    });
+  }
+
+  const modelTabBtns = Array.from(document.querySelectorAll('.model-tab-btn'));
+  if (modelTabBtns.length > 0) {
+    const activateModelTab = (btn, moveFocus) => {
+      modelTabBtns.forEach((tab) => {
+        const selected = tab === btn;
+        tab.classList.toggle('is-active', selected);
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        const panel = document.getElementById(tab.getAttribute('aria-controls'));
+        if (panel) {
+          panel.classList.toggle('is-active', selected);
+          panel.hidden = !selected;
+        }
+      });
+      if (moveFocus) btn.focus();
+    };
+
+    modelTabBtns.forEach((btn, index) => {
+      btn.addEventListener('click', () => activateModelTab(btn, false));
+      btn.addEventListener('keydown', (event) => {
+        let nextIndex = index;
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % modelTabBtns.length;
+        else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + modelTabBtns.length) % modelTabBtns.length;
+        else if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = modelTabBtns.length - 1;
+        else return;
+
+        event.preventDefault();
+        activateModelTab(modelTabBtns[nextIndex], true);
+      });
+    });
+  }
+
+  // =========================================================================
+  // US-04: Tool Category Filter (fundamentos de calidad.html)
+  // =========================================================================
+  const toolFilterBar = document.getElementById('tool-filter-bar');
+  if (toolFilterBar) {
+    const filterBtns = toolFilterBar.querySelectorAll('.tool-filter-btn');
+    const toolCards = document.querySelectorAll('#tool-type-list .tool-type');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach((b) => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        toolCards.forEach((card) => {
+          const cat = card.getAttribute('data-tool-category');
+          if (filter === 'all' || cat === filter) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
+    });
+  }
+
+  document.querySelectorAll('.flip-card[role="button"]').forEach((card) => {
+    const toggleCard = () => {
+      const isFlipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', String(isFlipped));
+    };
+
+    card.addEventListener('click', toggleCard);
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleCard();
+      }
+    });
+  });
+
+  // =========================================================================
+  // US-07: Lightbox for images with class .lightbox-trigger
+  // =========================================================================
+  function initLightbox() {
+    const overlay = document.getElementById('lightbox-overlay');
+    if (!overlay) return;
+
+    const overlayImg = document.getElementById('lightbox-img');
+    const overlayCap = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close');
+    let activeObjectUrl = null;
+    let triggerToRestore = null;
+
+    function openLightbox(src, alt, caption, objectUrl) {
+      if (!src) return;
+      if (activeObjectUrl) URL.revokeObjectURL(activeObjectUrl);
+      activeObjectUrl = objectUrl || null;
+      triggerToRestore = document.activeElement;
+      overlayImg.src = src;
+      overlayImg.alt = alt || '';
+      if (overlayCap) overlayCap.textContent = caption || '';
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      overlay.hidden = true;
+      overlayImg.src = '';
+      document.body.style.overflow = '';
+      if (activeObjectUrl) {
+        URL.revokeObjectURL(activeObjectUrl);
+        activeObjectUrl = null;
+      }
+      if (triggerToRestore instanceof HTMLElement) triggerToRestore.focus();
+    }
+
+    document.querySelectorAll('.lightbox-trigger').forEach((el) => {
+      el.addEventListener('click', () => {
+        let src = el.getAttribute('data-src') || '';
+        let objectUrl = null;
+        let alt = el.getAttribute('alt') || '';
+
+        if (el.tagName.toLowerCase() === 'img') {
+          src = el.src;
+        } else if (el.tagName.toLowerCase() === 'svg') {
+          const svgClone = el.cloneNode(true);
+          svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+          objectUrl = URL.createObjectURL(
+            new Blob([new XMLSerializer().serializeToString(svgClone)], { type: 'image/svg+xml' })
+          );
+          src = objectUrl;
+          alt = el.querySelector('title')?.textContent || 'Diagrama';
+        }
+
+        const caption = el.getAttribute('data-caption')
+          || el.closest('figure')?.querySelector('figcaption')?.textContent
+          || '';
+        openLightbox(src, alt, caption, objectUrl);
+      });
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !overlay.hidden) closeLightbox();
+    });
+  }
+
+  initLightbox();
+
+  // =========================================================================
+  // US-10: Scrum Deep Dive Tabs
+  // =========================================================================
+  const scrumTabBtns = document.querySelectorAll('.scrum-tab-btn');
+  if (scrumTabBtns.length > 0) {
+    scrumTabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('aria-controls');
+
+        scrumTabBtns.forEach((b) => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+          const p = document.getElementById(b.getAttribute('aria-controls'));
+          if (p) { p.classList.remove('is-active'); p.hidden = true; }
+        });
+
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(targetId);
+        if (panel) { panel.classList.add('is-active'); panel.hidden = false; }
+      });
+    });
+  }
+
+  // =========================================================================
+  // US-10: Sprint Event Timeline
+  // =========================================================================
+  const SPRINT_EVENTS = {
+    planning: {
+      title: 'Sprint Planning',
+      duration: 'Hasta 2h (Sprint de 1 semana) / 8h (Sprint de 4 semanas)',
+      desc: 'El equipo selecciona los elementos del Product Backlog y define el Objetivo del Sprint. Se crea el Sprint Backlog con el plan de trabajo para las próximas semanas.'
+    },
+    daily: {
+      title: 'Daily Scrum',
+      duration: '15 minutos cada día del Sprint',
+      desc: 'Reunión diaria de sincronización. Cada miembro comparte qué hizo ayer, qué hará hoy y si tiene impedimentos. Objetivo: alinear al equipo y detectar bloqueos.'
+    },
+    review: {
+      title: 'Sprint Review',
+      duration: 'Hasta 1h (Sprint de 1 semana) / 4h (Sprint de 4 semanas)',
+      desc: 'El equipo presenta el Incremento completado a los stakeholders. Se revisa qué se logró, se recopila feedback y se adapta el Product Backlog si es necesario.'
+    },
+    retro: {
+      title: 'Sprint Retrospectiva',
+      duration: 'Hasta 45min (Sprint de 1 semana) / 3h (Sprint de 4 semanas)',
+      desc: 'El equipo reflexiona sobre el proceso de trabajo: qué salió bien, qué mejorar y qué acciones concretas tomar en el próximo Sprint para ser más efectivos.'
+    }
+  };
+
+  document.querySelectorAll('.sprint-event').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-event');
+      const data = SPRINT_EVENTS[key];
+      if (!data) return;
+
+      const wasActive = btn.classList.contains('is-active');
+
+      // Deactivate all
+      document.querySelectorAll('.sprint-event').forEach((b) => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+
+      const detail = document.getElementById('sprint-event-detail');
+      if (!detail) return;
+
+      if (wasActive) {
+        detail.hidden = true;
+        return;
+      }
+
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      document.getElementById('sprint-event-detail-title').textContent = data.title;
+      document.getElementById('sprint-event-detail-duration').textContent = data.duration;
+      document.getElementById('sprint-event-detail-desc').textContent = data.desc;
+      detail.hidden = false;
+    });
+  });
+
+  // =========================================================================
+  // US-11: Interactive Kanban Board Demo
+  // =========================================================================
+  function initKanbanDemo() {
+    const board = document.getElementById('kanban-demo-board');
+    if (!board) return;
+
+    const COLS = ['todo', 'doing', 'done'];
+    const COL_NAMES = { todo: 'Por Hacer', doing: 'En Proceso', done: 'Hecho' };
+    const WIP_LIMITS = { todo: 3, doing: 2, done: Infinity };
+    const status = document.getElementById('kanban-demo-status');
+
+    // Cards data: id, title, desc, movable, startCol
+    const CARDS = [
+      { id: 'card-static-1', title: 'Diseñar wireframes', desc: 'Tarea estática', movable: false, col: 'todo' },
+      { id: 'card-static-2', title: 'Revisar requisitos', desc: 'Tarea estática', movable: false, col: 'doing' },
+      { id: 'card-demo', title: 'Tarjeta Demo', desc: 'Mueve esta tarjeta →', movable: true, col: 'todo' }
+    ];
+
+    const state = {};
+    CARDS.forEach((c) => { state[c.id] = c.col; });
+
+    function getColIdx(col) { return COLS.indexOf(col); }
+
+    function renderBoard() {
+      COLS.forEach((col) => {
+        const container = document.getElementById(`kanban-cards-${col}`);
+        const wipEl = document.getElementById(`kanban-wip-${col}`);
+        if (!container) return;
+
+        container.innerHTML = '';
+        const colCards = CARDS.filter((c) => state[c.id] === col);
+
+        if (wipEl && col !== 'done') {
+          const count = colCards.length;
+          const limit = WIP_LIMITS[col];
+          wipEl.textContent = `${count}/${limit}`;
+          wipEl.classList.toggle('is-over-limit', count > limit);
+        }
+
+        colCards.forEach((card) => {
+          const div = document.createElement('div');
+          div.className = 'kanban-card' + (card.movable ? ' kanban-card--demo' : '');
+          div.setAttribute('data-card-id', card.id);
+
+          const colIdx = getColIdx(state[card.id]);
+
+          div.innerHTML = `
+            <div class="kanban-card__title">${card.title}</div>
+            <div class="kanban-card__desc">${card.desc}</div>
+            ${card.movable ? `
+            <div class="kanban-card__actions">
+              <button class="kanban-card__btn" data-dir="prev" ${colIdx === 0 ? 'disabled' : ''} type="button">← Anterior</button>
+              <button class="kanban-card__btn" data-dir="next" ${colIdx === COLS.length - 1 ? 'disabled' : ''} type="button">Siguiente →</button>
+            </div>` : ''}
+          `;
+
+          if (card.movable) {
+            div.querySelectorAll('.kanban-card__btn').forEach((btn) => {
+              btn.addEventListener('click', () => {
+                const dir = btn.getAttribute('data-dir');
+                const current = COLS.indexOf(state[card.id]);
+                const next = dir === 'next' ? current + 1 : current - 1;
+                if (next < 0 || next >= COLS.length) return;
+                const nextCol = COLS[next];
+                const nextColCount = CARDS.filter((item) => state[item.id] === nextCol).length;
+                if (nextColCount >= WIP_LIMITS[nextCol]) {
+                  if (status) {
+                    status.textContent = `No se puede mover la tarjeta: la columna "${COL_NAMES[nextCol]}" alcanzó su límite WIP de ${WIP_LIMITS[nextCol]}.`;
+                  }
+                  return;
+                }
+                state[card.id] = nextCol;
+                renderBoard();
+                if (status) status.textContent = `Tarjeta Demo movida a "${COL_NAMES[nextCol]}".`;
+              });
+            });
+          }
+
+          container.appendChild(div);
+        });
+      });
+    }
+
+    renderBoard();
+  }
+
+  initKanbanDemo();
 
 });

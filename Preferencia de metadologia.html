@@ -71,12 +71,12 @@
           <p class="agile-eyebrow">Asistente Inteligente · Diagnóstico de Proyectos</p>
           <h1 id="survey-hero-title">Encuesta de Preferencias Metodológicas</h1>
           <p class="agile-hero__lead">
-            Responde 6 preguntas clave sobre las dinámicas, requerimientos y prioridades de calidad de tu proyecto. Nuestro algoritmo evaluará tus respuestas y calculará el porcentaje de coincidencia con <strong>Scrum</strong>, <strong>Kanban</strong>, <strong>Extreme Programming (XP)</strong> y <strong>Lean</strong> para sugerirte la metodología más adecuada.
+            Responde 6 preguntas clave sobre las dinámicas, requerimientos y prioridades de calidad de tu proyecto. Nuestro algoritmo evaluará tus respuestas y calculará el porcentaje de coincidencia con metodologías ágiles (<strong>Scrum</strong>, <strong>Kanban</strong>, <strong>Extreme Programming (XP)</strong> y <strong>Lean</strong>) y modelos de ciclo de vida clásicos y evolutivos (<strong>Modelo Cascada</strong>, <strong>Modelo en V</strong> y <strong>Modelo Incremental</strong>) para sugerirte el enfoque más adecuado para optimizar la calidad de tu software.
           </p>
         </div>
         <aside class="agile-hero__note" aria-label="Beneficio del asistente">
-          <span class="agile-hero__note-label">Diagnóstico Guiado</span>
-          <p>Asistente paso a paso con cálculo inmediato de afinidad porcentual y justificación técnica.</p>
+          <span class="agile-hero__note-label">Diagnóstico Integral</span>
+          <p>Asistente paso a paso con cálculo inmediato de afinidad porcentual y justificación técnica entre 7 metodologías y modelos.</p>
         </aside>
       </section>
 
@@ -84,10 +84,9 @@
         <!-- Sección del Asistente / Wizard -->
         <section id="encuesta" class="agile-section survey-section" aria-labelledby="wizard-heading">
           <div class="agile-section__heading">
-            <span class="agile-section__number">01</span>
             <div>
               <p class="agile-kicker">Evaluación Interactiva</p>
-              <h2 id="wizard-heading">Asistente de Selección Metodológica</h2>
+              <h2 id="wizard-heading">Asistente de Selección Metodológica y Modelos de Desarrollo</h2>
             </div>
           </div>
           <p class="agile-section__intro">
@@ -113,40 +112,82 @@
 
             <!-- Formulario / Contenedor de Preguntas Paso a Paso -->
             <form id="wizard-form" class="wizard-form" onsubmit="event.preventDefault();">
-              
+
               <!-- Pregunta 1 -->
               <div class="wizard-step is-active" data-step="0" role="group" aria-labelledby="q1-title">
                 <h3 id="q1-title" class="wizard-step__title">
                   <span class="wizard-step__num">1.</span> ¿Con qué ritmo y frecuencia necesita tu equipo entregar valor funcional al cliente?
                 </h3>
-                <p class="wizard-step__desc">Considera la periodicidad con la que los usuarios esperan ver nuevas características probadas.</p>
+                <p class="wizard-step__desc">Considera la periodicidad con la que los usuarios esperan ver nuevas características probadas o puestas en producción.</p>
                 <div class="wizard-options-grid">
                   <button type="button" class="survey-option-btn" data-question="0" data-value="scrum">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Ciclos regulares fijos de 1 a 4 semanas</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Ciclos regulares fijos de 1 a 4 semanas (Sprints)</strong>
+                        <span class="option-tag badge--scrum">Scrum</span>
+                      </div>
                       <span class="option-desc">El equipo se enfoca en un lote de trabajo acotado y presenta un incremento potencialmente desplegable al final del ciclo.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="0" data-value="kanban">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Flujo continuo bajo demanda sin fechas rígidas</strong>
-                      <span class="option-desc">Las funcionalidades o correcciones se liberan inmediatamente una vez completadas y validadas.</span>
+                      <div class="option-header-row">
+                        <strong class="option-title">Flujo continuo bajo demanda sin fechas rígidas</strong>
+                        <span class="option-tag badge--kanban">Kanban</span>
+                      </div>
+                      <span class="option-desc">Las funcionalidades o correcciones se liberan inmediatamente una vez completadas y validadas en el tablero.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="0" data-value="xp">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Despliegues muy frecuentes (diarios o semanales) con pruebas masivas</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Despliegues muy frecuentes (diarios o semanales) con pruebas masivas</strong>
+                        <span class="option-tag badge--xp">XP</span>
+                      </div>
                       <span class="option-desc">Iteraciones ultracortas respaldadas por suites de integración continua y testing automático exhaustivo.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="0" data-value="lean">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Velocidad máxima eliminando esperas y burocracia</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Velocidad máxima eliminando esperas y burocracia</strong>
+                        <span class="option-tag badge--lean">Lean</span>
+                      </div>
                       <span class="option-desc">Entrega modular rápida enfocada estrictamente en el valor real del usuario, eliminando todo retraso o paso innecesario.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="0" data-value="cascada">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Ciclo secuencial lineal con entrega única final tras completar todas las fases</strong>
+                        <span class="option-tag badge--cascada">Cascada</span>
+                      </div>
+                      <span class="option-desc">Un solo lanzamiento de producto acabado al culminar el cronograma completo de análisis, diseño, construcción y pruebas formales.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="0" data-value="vmodel">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Fases secuenciales con verificación rigurosa y entrega tras aprobación integral</strong>
+                        <span class="option-tag badge--vmodel">Modelo en V</span>
+                      </div>
+                      <span class="option-desc">Ciclo estructurado donde la entrega se efectúa tras completar y auditar exhaustivamente cada nivel de prueba planificado.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="0" data-value="incremental">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Lanzamientos escalonados por versiones o módulos funcionales sucesivos</strong>
+                        <span class="option-tag badge--incremental">Incremental</span>
+                      </div>
+                      <span class="option-desc">Construcción progresiva en versiones parciales: primero se libera el núcleo básico funcional y luego incrementos acumulativos.</span>
                     </span>
                   </button>
                 </div>
@@ -162,29 +203,71 @@
                   <button type="button" class="survey-option-btn" data-question="1" data-value="scrum">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Roles formales definidos (Product Owner, Scrum Master, Developers)</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Roles formales definidos (Product Owner, Scrum Master, Developers)</strong>
+                        <span class="option-tag badge--scrum">Scrum</span>
+                      </div>
                       <span class="option-desc">Separación clara entre la visión de negocio/producto, la facilitación de procesos y el equipo multidisciplinario.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="1" data-value="kanban">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Sin roles predeterminados; estructura flexible y colaborativa</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Sin roles predeterminados; estructura flexible y colaborativa</strong>
+                        <span class="option-tag badge--kanban">Kanban</span>
+                      </div>
                       <span class="option-desc">Respeta los roles existentes en la empresa y fomenta que cualquier integrante tome la iniciativa en el tablero.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="1" data-value="xp">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Desarrolladores y testers codo a codo con el cliente in situ</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Desarrolladores y testers codo a codo con el cliente in situ</strong>
+                        <span class="option-tag badge--xp">XP</span>
+                      </div>
                       <span class="option-desc">Parejas de programación (Pair Programming), propiedad colectiva del código y cliente disponible diariamente para preguntas.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="1" data-value="lean">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Equipos autoorganizados con alta autonomía para optimizar el flujo</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Equipos autoorganizados con alta autonomía para optimizar el flujo</strong>
+                        <span class="option-tag badge--lean">Lean</span>
+                      </div>
                       <span class="option-desc">Ingenieros empoderados para tomar decisiones técnicas rápidas y suprimir actividades que no aportan valor.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="1" data-value="cascada">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Estructura jerárquica con roles especializados y gestión centralizada</strong>
+                        <span class="option-tag badge--cascada">Cascada</span>
+                      </div>
+                      <span class="option-desc">Liderazgo formal del Jefe de Proyecto coordinando analistas, diseñadores, programadores y testers en etapas delimitadas.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="1" data-value="vmodel">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Separación estricta entre equipos de ingeniería y auditores independientes de QA (V&V)</strong>
+                        <span class="option-tag badge--vmodel">Modelo en V</span>
+                      </div>
+                      <span class="option-desc">Especialistas de desarrollo emparejados simétricamente con ingenieros de verificación y validación con alta independencia técnica.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="1" data-value="incremental">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Equipos modulares enfocados en componentes con coordinación de arquitectura</strong>
+                        <span class="option-tag badge--incremental">Incremental</span>
+                      </div>
+                      <span class="option-desc">Desarrolladores asignados a módulos funcionales concretos con liderazgo técnico que vela por la cohesión y el acople progresivo.</span>
                     </span>
                   </button>
                 </div>
@@ -200,29 +283,71 @@
                   <button type="button" class="survey-option-btn" data-question="2" data-value="scrum">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Criterios de Terminado (DoD), demos y retrospectivas periódicas</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Criterios de Terminado (DoD), demos y retrospectivas periódicas</strong>
+                        <span class="option-tag badge--scrum">Scrum</span>
+                      </div>
                       <span class="option-desc">Validación de aceptación en la Sprint Review e inspección regular del proceso en la retrospectiva del equipo.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="2" data-value="kanban">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Límites estrictos de Trabajo en Curso (WIP) para visibilizar cuellos de botella</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Límites estrictos de Trabajo en Curso (WIP) para visibilizar cuellos de botella</strong>
+                        <span class="option-tag badge--kanban">Kanban</span>
+                      </div>
                       <span class="option-desc">Evitar la acumulación de tareas inconclusas o defectuosas resolviendo bloqueos antes de iniciar nuevas actividades.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="2" data-value="xp">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Desarrollo Guiado por Pruebas (TDD) y refactorización continua</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Desarrollo Guiado por Pruebas (TDD) y refactorización continua</strong>
+                        <span class="option-tag badge--xp">XP</span>
+                      </div>
                       <span class="option-desc">Escribir pruebas automatizadas antes del código, revisión en parejas y cero tolerancia a deuda técnica.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="2" data-value="lean">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Calidad intrínseca en la fuente (Jidoka) y resolución de causa raíz</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Calidad intrínseca en la fuente (Jidoka) y resolución de causa raíz</strong>
+                        <span class="option-tag badge--lean">Lean</span>
+                      </div>
                       <span class="option-desc">Detener la línea ante cualquier defecto para erradicar su causa fundamental y prevenir que vuelva a ocurrir.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="2" data-value="cascada">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Control formal de calidad y pruebas exhaustivas al término del desarrollo</strong>
+                        <span class="option-tag badge--cascada">Cascada</span>
+                      </div>
+                      <span class="option-desc">Fase formal e independiente de pruebas de integración y sistema una vez finalizada y documentada toda la codificación.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="2" data-value="vmodel">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Verificación y Validación temprana asociando pruebas a cada fase de diseño</strong>
+                        <span class="option-tag badge--vmodel">Modelo en V</span>
+                      </div>
+                      <span class="option-desc">Diseño anticipado de pruebas unitarias, de integración y de aceptación en correspondencia directa con requisitos y arquitectura.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="2" data-value="incremental">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Pruebas funcionales por módulo combinadas con suites de regresión continua</strong>
+                        <span class="option-tag badge--incremental">Incremental</span>
+                      </div>
+                      <span class="option-desc">Validación de cada incremento con usuarios reales, asegurando que nuevas entregas modulares no rompan el núcleo previo.</span>
                     </span>
                   </button>
                 </div>
@@ -238,29 +363,71 @@
                   <button type="button" class="survey-option-btn" data-question="3" data-value="scrum">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Alcance protegido durante el ciclo; cambios entran al siguiente Sprint</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Alcance protegido durante el ciclo; cambios entran al siguiente Sprint</strong>
+                        <span class="option-tag badge--scrum">Scrum</span>
+                      </div>
                       <span class="option-desc">El equipo se enfoca en el objetivo acordado; los nuevos pedidos se priorizan en el Product Backlog.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="3" data-value="kanban">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Cambios aceptados en cualquier momento según capacidad del tablero</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Cambios aceptados en cualquier momento según capacidad del tablero</strong>
+                        <span class="option-tag badge--kanban">Kanban</span>
+                      </div>
                       <span class="option-desc">Máxima flexibilidad: una nueva solicitud puede entrar al flujo tan pronto como se libere un espacio en la columna.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="3" data-value="xp">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Abraza el cambio continuo respaldado en diseño simple y suites de test</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Abraza el cambio continuo respaldado en diseño simple y suites de test</strong>
+                        <span class="option-tag badge--xp">XP</span>
+                      </div>
                       <span class="option-desc">El código puede modificarse con total seguridad en cualquier momento gracias a la cobertura masiva de pruebas unitarias.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="3" data-value="lean">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Decidir en el 'Último Momento Responsable' para evitar retrabajos</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Decidir en el 'Último Momento Responsable' para evitar retrabajos</strong>
+                        <span class="option-tag badge--lean">Lean</span>
+                      </div>
                       <span class="option-desc">No comprometer especificaciones prematuramente hasta tener certeza real de los requerimientos del usuario.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="3" data-value="cascada">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Requisitos cerrados y congelados; cambios mediante control formal estricto</strong>
+                        <span class="option-tag badge--cascada">Cascada</span>
+                      </div>
+                      <span class="option-desc">Cualquier modificación tras la firma de especificaciones exige solicitudes formales de cambio (Change Request) y renegociación contractual.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="3" data-value="vmodel">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Control formal de cambios con actualización rigurosa de matrices de trazabilidad (RTM)</strong>
+                        <span class="option-tag badge--vmodel">Modelo en V</span>
+                      </div>
+                      <span class="option-desc">Los cambios deben justificar su impacto técnico y actualizar los casos de prueba asociados en todos los niveles antes de aprobarse.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="3" data-value="incremental">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Núcleo base estable; ajustes y nuevas necesidades incorporados entre incrementos</strong>
+                        <span class="option-tag badge--incremental">Incremental</span>
+                      </div>
+                      <span class="option-desc">La arquitectura central se mantiene firme mientras que nuevas necesidades se planifican en las siguientes versiones modulares.</span>
                     </span>
                   </button>
                 </div>
@@ -276,29 +443,71 @@
                   <button type="button" class="survey-option-btn" data-question="4" data-value="scrum">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Gráficos Burndown/Burnup, velocidad en Story Points y Sprint Backlog</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Gráficos Burndown/Burnup, velocidad en Story Points y Sprint Backlog</strong>
+                        <span class="option-tag badge--scrum">Scrum</span>
+                      </div>
                       <span class="option-desc">Seguimiento diario del trabajo restante dentro del Sprint y medición de capacidad estimada del equipo.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="4" data-value="kanban">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Tablero con columnas, límites WIP, Lead Time y Diagrama de Flujo Acumulado (CFD)</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Tablero con columnas, límites WIP, Lead Time y Diagrama de Flujo Acumulado (CFD)</strong>
+                        <span class="option-tag badge--kanban">Kanban</span>
+                      </div>
                       <span class="option-desc">Control visual del tiempo desde que se solicita una tarea hasta que se entrega en producción.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="4" data-value="xp">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Dashboard de integración continua (CI), cobertura de código y densidad de defectos</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Dashboard de integración continua (CI), cobertura de código y densidad de defectos</strong>
+                        <span class="option-tag badge--xp">XP</span>
+                      </div>
                       <span class="option-desc">Indicadores técnicos automatizados en tiempo real sobre la salud y mantenibilidad de la base de código.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="4" data-value="lean">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Mapa de la Cadena de Valor (Value Stream Mapping) y eficiencia del flujo</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Mapa de la Cadena de Valor (Value Stream Mapping) y eficiencia del flujo</strong>
+                        <span class="option-tag badge--lean">Lean</span>
+                      </div>
                       <span class="option-desc">Medición del porcentaje de tiempo activo agregando valor frente al tiempo total de espera desperdiciado.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="4" data-value="cascada">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Gestión del Valor Ganado (EVM), diagramas de Gantt y cumplimiento de hitos contractuales</strong>
+                        <span class="option-tag badge--cascada">Cascada</span>
+                      </div>
+                      <span class="option-desc">Seguimiento de variación de cronograma (SV), variación de costos (CV) y avance según la línea base del proyecto.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="4" data-value="vmodel">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Matriz de Trazabilidad de Requisitos (RTM), densidad de defectos por nivel y cobertura de pruebas</strong>
+                        <span class="option-tag badge--vmodel">Modelo en V</span>
+                      </div>
+                      <span class="option-desc">Monitoreo de correspondencia biunívoca entre especificaciones y casos de prueba aprobados en cada nivel de V&V.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="4" data-value="incremental">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Porcentaje de módulos entregados, tasa de defectos de regresión y avance por release</strong>
+                        <span class="option-tag badge--incremental">Incremental</span>
+                      </div>
+                      <span class="option-desc">Medición de versiones funcionales puestas en producción frente al plan maestro de descomposición incremental.</span>
                     </span>
                   </button>
                 </div>
@@ -307,36 +516,78 @@
               <!-- Pregunta 6 -->
               <div class="wizard-step" data-step="5" role="group" aria-labelledby="q6-title">
                 <h3 id="q6-title" class="wizard-step__title">
-                  <span class="wizard-step__num">6.</span> ¿Cuál es el principal desafío o problema que tu equipo necesita solucionar con urgencia?
+                  <span class="wizard-step__num">6.</span> ¿Cuál es el principal desafío o contexto operativo de tu proyecto?
                 </h3>
-                <p class="wizard-step__desc">Identifica el punto de dolor central que motivó la búsqueda de una nueva metodología.</p>
+                <p class="wizard-step__desc">Identifica el punto de dolor o la naturaleza central que motiva la selección del enfoque.</p>
                 <div class="wizard-options-grid">
                   <button type="button" class="survey-option-btn" data-question="5" data-value="scrum">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Falta de sincronización, entregas demoradas y poca visibilidad para los clientes</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Falta de sincronización, entregas demoradas y poca visibilidad para los clientes</strong>
+                        <span class="option-tag badge--scrum">Scrum</span>
+                      </div>
                       <span class="option-desc">Se requiere disciplina en reuniones, cadencia estructurada y acuerdos de terminación transparentes.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="5" data-value="kanban">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Sobrecarga de trabajo simultáneo, cuellos de botella y tareas atascadas a medias</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Sobrecarga de trabajo simultáneo, cuellos de botella y tareas atascadas a medias</strong>
+                        <span class="option-tag badge--kanban">Kanban</span>
+                      </div>
                       <span class="option-desc">Urge limitar el trabajo en proceso, ordenar el flujo operativo y equilibrar la demanda del equipo.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="5" data-value="xp">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Bugs recurrentes en producción, deuda técnica alta y temor al modificar el código</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Bugs recurrentes en producción, deuda técnica alta y temor al modificar el código</strong>
+                        <span class="option-tag badge--xp">XP</span>
+                      </div>
                       <span class="option-desc">Se necesita elevar radicalmente las habilidades de programación, testing automatizado y buenas prácticas técnicas.</span>
                     </span>
                   </button>
                   <button type="button" class="survey-option-btn" data-question="5" data-value="lean">
                     <span class="option-radio" aria-hidden="true"></span>
                     <span class="option-content">
-                      <strong class="option-title">Tiempos muertos excesivos, procesos burocráticos y funcionalidades que nadie usa</strong>
+                      <div class="option-header-row">
+                        <strong class="option-title">Tiempos muertos excesivos, procesos burocráticos y funcionalidades que nadie usa</strong>
+                        <span class="option-tag badge--lean">Lean</span>
+                      </div>
                       <span class="option-desc">Es imperativo simplificar las etapas de desarrollo, suprimir desperdicios y acelerar el tiempo de llegada al mercado.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="5" data-value="cascada">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Requisitos contractuales o regulatorios rígidos con especificaciones inmutables y plazo fijo</strong>
+                        <span class="option-tag badge--cascada">Cascada</span>
+                      </div>
+                      <span class="option-desc">Proyectos donde el alcance y tecnología están totalmente definidos y no se toleran desvíos del plan original.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="5" data-value="vmodel">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Sistemas críticos, de alta confiabilidad o seguridad donde fallar no es una opción</strong>
+                        <span class="option-tag badge--vmodel">Modelo en V</span>
+                      </div>
+                      <span class="option-desc">Entornos donde cada fallo puede tener consecuencias graves o fatales (médico, aeroespacial, financiero) y exige máxima verificación.</span>
+                    </span>
+                  </button>
+                  <button type="button" class="survey-option-btn" data-question="5" data-value="incremental">
+                    <span class="option-radio" aria-hidden="true"></span>
+                    <span class="option-content">
+                      <div class="option-header-row">
+                        <strong class="option-title">Necesidad urgente de entregar una primera versión funcional viable mientras se desarrollan módulos complejos</strong>
+                        <span class="option-tag badge--incremental">Incremental</span>
+                      </div>
+                      <span class="option-desc">Proyectos donde el usuario necesita comenzar a operar rápidamente con capacidades básicas sin esperar a la solución completa.</span>
                     </span>
                   </button>
                 </div>
@@ -372,7 +623,7 @@
 
           </div>
         </section>
-
-        
+      </div>
+    </main>
   </body>
 </html>

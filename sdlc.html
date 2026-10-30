@@ -30,6 +30,7 @@
                 <li><a href="sdlc.html#introduccion">¿Qué es el SDLC?</a></li>
                 <li><a href="sdlc.html#etapas">Etapas del SDLC</a></li>
                 <li><a href="sdlc.html#stlc">SDLC y STLC</a></li>
+                <li><a href="sdlc.html#metodologias">Modelos tradicionales</a></li>
                 <li><a href="sdlc.html#glosario">Conceptos</a></li>
               </ul>
             </details>
@@ -539,22 +540,203 @@
                 los riesgos, los requisitos y la forma de trabajo del equipo.
             </p>
 
-            <h3 id="modelo-cascada">Modelo en cascada</h3>
+            <div class="model-tabs-nav" role="tablist" aria-label="Modelos tradicionales">
+                <button class="model-tab-btn is-active" id="model-tab-cascada" role="tab"
+                        aria-selected="true" aria-controls="panel-modelo-cascada" type="button">Cascada</button>
+                <button class="model-tab-btn" id="model-tab-v" role="tab"
+                        aria-selected="false" aria-controls="panel-modelo-v" type="button">Modelo en V</button>
+                <button class="model-tab-btn" id="model-tab-iterativo" role="tab"
+                        aria-selected="false" aria-controls="panel-modelo-iterativo" type="button">Iterativo e incremental</button>
+            </div>
 
-            <p>
-                Organiza el desarrollo en etapas secuenciales. Cada
-                etapa suele completarse antes de avanzar a la siguiente.
-                Puede resultar útil cuando los requisitos son estables
-                y están bien definidos.
-            </p>
+            <div class="model-panel is-active" id="panel-modelo-cascada" role="tabpanel"
+                 aria-labelledby="model-tab-cascada">
+            <article class="traditional-model" id="modelo-cascada">
+                <h3>Modelo en cascada</h3>
+                <p>
+                    Organiza el desarrollo en etapas secuenciales: requisitos,
+                    diseño, implementación, pruebas y mantenimiento. Cada etapa
+                    suele completarse antes de avanzar a la siguiente, por lo que
+                    los cambios tardíos pueden requerir volver a fases anteriores.
+                </p>
+                <figure class="model-illustration">
+                    <svg class="lightbox-trigger" viewBox="0 0 760 145" role="img"
+                         aria-labelledby="waterfall-title" tabindex="0"
+                         data-caption="Modelo en cascada: etapas secuenciales desde los requisitos hasta el mantenimiento.">
+                        <title id="waterfall-title">Etapas del modelo en cascada</title>
+                        <g font-family="Segoe UI, sans-serif" font-size="16" text-anchor="middle">
+                            <g fill="#dfeaf6" stroke="#2d6aa8" stroke-width="2">
+                                <rect x="10" y="24" width="130" height="66" rx="12"/>
+                                <rect x="165" y="24" width="130" height="66" rx="12"/>
+                                <rect x="320" y="24" width="130" height="66" rx="12"/>
+                                <rect x="475" y="24" width="130" height="66" rx="12"/>
+                                <rect x="630" y="24" width="120" height="66" rx="12"/>
+                            </g>
+                            <g fill="#102d4a" font-weight="700">
+                                <text x="75" y="63">Requisitos</text>
+                                <text x="230" y="63">Diseño</text>
+                                <text x="385" y="63">Desarrollo</text>
+                                <text x="540" y="63">Pruebas</text>
+                                <text x="690" y="63">Mantenimiento</text>
+                            </g>
+                            <g stroke="#2d6aa8" stroke-width="3" fill="none">
+                                <path d="M142 57h18m-7-7 7 7-7 7"/>
+                                <path d="M297 57h18m-7-7 7 7-7 7"/>
+                                <path d="M452 57h18m-7-7 7 7-7 7"/>
+                                <path d="M607 57h18m-7-7 7 7-7 7"/>
+                            </g>
+                        </g>
+                    </svg>
+                    <figcaption>Flujo secuencial: una fase finaliza antes de iniciar la siguiente.</figcaption>
+                </figure>
+                <div class="model-tradeoffs">
+                    <div class="model-tradeoffs__panel model-tradeoffs__panel--pro">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li>Fases, entregables y responsabilidades fáciles de planificar.</li>
+                            <li>Documentación y seguimiento claros.</li>
+                            <li>Funciona bien cuando el alcance y los requisitos son estables.</li>
+                        </ul>
+                    </div>
+                    <div class="model-tradeoffs__panel model-tradeoffs__panel--con">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li>Es costoso y lento incorporar cambios tardíos.</li>
+                            <li>La validación del producto ocurre relativamente tarde.</li>
+                            <li>No es adecuado cuando los requisitos son inciertos o evolucionan mucho.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="model-when"><strong>Cuándo utilizarlo:</strong> proyectos pequeños o regulados con requisitos bien conocidos, alcance acotado y pocas modificaciones previstas.</p>
+            </article>
+            </div>
 
-            <h3 id="modelo-iterativo">Modelo iterativo e incremental</h3>
+            <div class="model-panel" id="panel-modelo-v" role="tabpanel"
+                 aria-labelledby="model-tab-v" hidden>
+            <article class="traditional-model" id="modelo-v">
+                <h3>Modelo en V (Verificación y Validación)</h3>
+                <p>
+                    Es una extensión del modelo secuencial que relaciona cada
+                    fase de definición y diseño con una actividad de prueba.
+                    La planificación de pruebas comienza desde el principio,
+                    haciendo explícita la verificación y validación (V&amp;V).
+                </p>
+                <figure class="model-illustration">
+                    <svg class="lightbox-trigger" viewBox="0 0 680 300" role="img"
+                         aria-labelledby="vmodel-title" tabindex="0"
+                         data-caption="Modelo en V: las fases de desarrollo se corresponden con niveles de prueba.">
+                        <title id="vmodel-title">Fases de desarrollo y pruebas del modelo en V</title>
+                        <g font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" text-anchor="middle">
+                            <g fill="#dfeaf6" stroke="#2d6aa8" stroke-width="2">
+                                <rect x="18" y="20" width="170" height="42" rx="9"/>
+                                <rect x="70" y="82" width="170" height="42" rx="9"/>
+                                <rect x="122" y="144" width="170" height="42" rx="9"/>
+                                <rect x="274" y="224" width="132" height="42" rx="9"/>
+                                <rect x="390" y="144" width="170" height="42" rx="9"/>
+                                <rect x="442" y="82" width="170" height="42" rx="9"/>
+                                <rect x="492" y="20" width="170" height="42" rx="9"/>
+                            </g>
+                            <g fill="#102d4a">
+                                <text x="103" y="46">Requisitos</text>
+                                <text x="155" y="108">Arquitectura</text>
+                                <text x="207" y="170">Diseño detallado</text>
+                                <text x="340" y="250">Codificación</text>
+                                <text x="475" y="170">Pruebas unitarias</text>
+                                <text x="527" y="108">Pruebas de integración</text>
+                                <text x="577" y="46">Pruebas de aceptación</text>
+                            </g>
+                            <path d="M104 63 340 220 577 63" fill="none" stroke="#2d6aa8" stroke-width="4"/>
+                            <path d="M105 64 577 64M155 126 527 126M207 188 475 188"
+                                  fill="none" stroke="#86a8cc" stroke-width="2" stroke-dasharray="7 5"/>
+                        </g>
+                    </svg>
+                    <figcaption>Correspondencia entre las fases de desarrollo y sus niveles de prueba.</figcaption>
+                </figure>
+                <div class="model-tradeoffs">
+                    <div class="model-tradeoffs__panel model-tradeoffs__panel--pro">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li>Los planes de prueba se crean en paralelo con el desarrollo.</li>
+                            <li>Alta trazabilidad entre requisitos y pruebas.</li>
+                            <li>Útil para sistemas críticos donde la verificación formal es importante.</li>
+                        </ul>
+                    </div>
+                    <div class="model-tradeoffs__panel model-tradeoffs__panel--con">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li>Es rígido ante cambios de requisitos.</li>
+                            <li>La retroalimentación del usuario puede llegar tarde.</li>
+                            <li>Requiere requisitos y criterios de aceptación bien definidos.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="model-when"><strong>Cuándo utilizarlo:</strong> sistemas de alta criticidad o sujetos a normas, cuando se necesita trazabilidad y los requisitos pueden definirse con precisión.</p>
+            </article>
+            </div>
 
-            <p>
-                El producto se desarrolla mediante ciclos sucesivos.
-                Cada iteración permite revisar resultados, recibir
-                comentarios y mejorar el sistema.
-            </p>
+            <div class="model-panel" id="panel-modelo-iterativo" role="tabpanel"
+                 aria-labelledby="model-tab-iterativo" hidden>
+            <article class="traditional-model" id="modelo-iterativo">
+                <h3>Modelo iterativo e incremental</h3>
+                <p>
+                    El desarrollo avanza en ciclos. En cada iteración se revisa
+                    y mejora lo construido; de forma incremental, se agregan
+                    capacidades utilizables al producto. Así, cada entrega
+                    aporta retroalimentación y valor antes de completar todo
+                    el alcance.
+                </p>
+                <figure class="model-illustration">
+                    <svg class="lightbox-trigger" viewBox="0 0 700 190" role="img"
+                         aria-labelledby="iterative-title" tabindex="0"
+                         data-caption="Modelo iterativo e incremental: ciclos sucesivos amplían y mejoran el producto.">
+                        <title id="iterative-title">Ciclos iterativos e incrementos del producto</title>
+                        <g font-family="Segoe UI, sans-serif" text-anchor="middle">
+                            <g fill="#dfeaf6" stroke="#2d6aa8" stroke-width="2">
+                                <rect x="20" y="45" width="150" height="88" rx="12"/>
+                                <rect x="275" y="45" width="150" height="88" rx="12"/>
+                                <rect x="530" y="45" width="150" height="88" rx="12"/>
+                            </g>
+                            <g fill="#102d4a" font-size="16" font-weight="700">
+                                <text x="95" y="78">Iteración 1</text>
+                                <text x="350" y="78">Iteración 2</text>
+                                <text x="605" y="78">Iteración 3</text>
+                            </g>
+                            <g fill="#2d6aa8" font-size="13">
+                                <text x="95" y="103">Incremento inicial</text>
+                                <text x="350" y="103">Mejora y nuevas funciones</text>
+                                <text x="605" y="103">Producto ampliado</text>
+                            </g>
+                            <g stroke="#2d6aa8" stroke-width="3" fill="none">
+                                <path d="M174 89h92m-10-8 10 8-10 8"/>
+                                <path d="M429 89h92m-10-8 10 8-10 8"/>
+                            </g>
+                            <path d="M95 147v20h510v-20" fill="none" stroke="#86a8cc" stroke-width="2"/>
+                            <text x="350" y="184" fill="#2d3e50" font-size="13">Revisión, aprendizaje y adaptación en cada ciclo</text>
+                        </g>
+                    </svg>
+                    <figcaption>Cada ciclo revisa el producto y agrega o mejora funcionalidades.</figcaption>
+                </figure>
+                <div class="model-tradeoffs">
+                    <div class="model-tradeoffs__panel model-tradeoffs__panel--pro">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li>Permite recibir comentarios y validar temprano.</li>
+                            <li>Entrega valor de manera gradual.</li>
+                            <li>Los riesgos pueden revisarse y abordarse en cada ciclo.</li>
+                        </ul>
+                    </div>
+                    <div class="model-tradeoffs__panel model-tradeoffs__panel--con">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li>Requiere planificación y coordinación continuas.</li>
+                            <li>Los cambios frecuentes pueden afectar el alcance y los costos.</li>
+                            <li>Sin una arquitectura clara, pueden acumularse problemas de integración.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="model-when"><strong>Cuándo utilizarlo:</strong> productos cuyos requisitos pueden evolucionar y en los que conviene validar entregas parciales con usuarios o clientes.</p>
+            </article>
+            </div>
 
             <h3 id="modelo-agil">Metodologías ágiles</h3>
 
@@ -670,6 +852,16 @@
         </section>
 
     </main>
+
+    <div id="lightbox-overlay" class="lightbox-overlay" role="dialog" aria-modal="true"
+         aria-label="Diagrama ampliado" hidden>
+        <button class="lightbox-overlay__close" id="lightbox-close" type="button"
+                aria-label="Cerrar diagrama ampliado">&times;</button>
+        <figure class="lightbox-overlay__figure">
+            <img class="lightbox-overlay__img" id="lightbox-img" src="" alt="" />
+            <figcaption class="lightbox-overlay__caption" id="lightbox-caption"></figcaption>
+        </figure>
+    </div>
 
     <footer>
         <p>Material educativo sobre SDLC y calidad de software.</p>
