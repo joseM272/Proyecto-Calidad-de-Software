@@ -85,7 +85,7 @@
               <h3 class="profile-card__label">Nombre</h3>
               <div class="profile-card__blank profile-card__blank--name" aria-label="Nombre del Scrum Master">Julian</div>
               <h3 class="profile-card__label">Motivación</h3>
-              <div class="profile-card__blank profile-card__blank--motivation" aria-label="Motivación del Scrum Master">Me encanta la verga</div>
+              <div class="profile-card__blank profile-card__blank--motivation" aria-label="Motivación del Scrum Master">Mi motivación es el aprendizaje de nuevas tecnologías y métodos mas fáciles de programar</div>
               <h3 class="profile-card__label">Institución</h3>
               <div class="profile-card__blank" aria-label="Espacio en blanco para la institución">E.P.E.T.N°20</div>
             </div>
@@ -141,6 +141,30 @@
               <div class="profile-card__blank" aria-label="Espacio en blanco para la institución">E.P.E.T.N°20</div>
           </article>
         </div>
+      </section>
+
+      <section class="container contact-section" aria-labelledby="contact-title">
+        <div class="contact-section__heading">
+          <h2 id="contact-title">Formulario de Contacto</h2>
+          <p>Envíanos tus consultas o comentarios. Todos los campos son obligatorios.</p>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="contact-form__field">
+            <label for="contact-name">Nombre</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-email">Correo electrónico</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-message">Consulta o feedback</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="contact-form__submit" type="submit">Enviar</button>
+          <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
     </main>
 

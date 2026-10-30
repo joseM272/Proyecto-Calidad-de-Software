@@ -1143,4 +1143,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const contactForm = document.getElementById("contact-form");
+
+  if (contactForm) {
+    const contactStatus = document.getElementById("contact-status");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      contactForm.querySelectorAll("input, textarea").forEach((field) => {
+        field.value = field.value.trim();
+      });
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      contactStatus.textContent = "Tus datos fueron validados correctamente. ¡Gracias por contactarnos!";
+      contactForm.reset();
+    });
+  }
+
 });
